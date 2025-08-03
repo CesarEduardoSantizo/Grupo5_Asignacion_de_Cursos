@@ -204,6 +204,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Facultades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facultades.Designer.cs">
+      <DependentUpon>Facultades.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Facultades.resx">
+      <DependentUpon>Facultades.cs</DependentUpon>
+    </EmbeddedResource>	
     <EmbeddedResource Include="SeleccionarUsuario.resx">
       <DependentUpon>SeleccionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
