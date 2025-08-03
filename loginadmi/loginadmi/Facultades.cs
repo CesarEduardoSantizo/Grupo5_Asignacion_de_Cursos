@@ -44,23 +44,23 @@ namespace loginadmi
 
         private void btn_agregar4_Click(object sender, EventArgs e)
         {
-            Facultades2 nuevoFormulario = new Facultades2();
-            nuevoFormulario.Show();
-            this.Hide();
+            //Facultades2 nuevoFormulario = new Facultades2();
+            //nuevoFormulario.Show();
+           // this.Hide();
         }
 
         private void btn_agregar6_Click(object sender, EventArgs e)
         {
-            Carreras nuevoFormulario = new Carreras();
-            nuevoFormulario.Show();
-            this.Hide();
+            //Carreras nuevoFormulario = new Carreras();
+            //nuevoFormulario.Show();
+           // this.Hide();
         }
 
         private void btn_agregar5_Click(object sender, EventArgs e)
         {
-            Pensum nuevoFormulario = new Pensum();
-            nuevoFormulario.Show();
-            this.Hide();
+          //  Pensum nuevoFormulario = new Pensum();
+          //  nuevoFormulario.Show();
+           // this.Hide();
         }
     }
 }
