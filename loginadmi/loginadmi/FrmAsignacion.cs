@@ -86,9 +86,10 @@ namespace loginadmi
                         {
                             MessageBox.Show("Todos los datos son correctos.");
 
-                            //FrmAsignacionCursos nuevoFormulario = new FrmAsignacionCursos();
+
+                           // FrmAsignacionCursos nuevoFormulario = new FrmAsignacionCursos();
                             //nuevoFormulario.Show();
-                            this.Hide();
+                            //this.Hide();
                         }
                         else
                         {
