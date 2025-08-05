@@ -116,6 +116,7 @@
     <Compile Include="agregar_catedratico.Designer.cs">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="EditarCatedratico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="EditarEstudiante.Designer.cs">
       <DependentUpon>EditarEstudiante.cs</DependentUpon>
+=======
+    <Compile Include="frmFacultades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacultades.Designer.cs">
+      <DependentUpon>frmFacultades.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
@@ -237,11 +245,16 @@
     <EmbeddedResource Include="agregar_catedratico.resx">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="EditarCatedratico.resx">
       <DependentUpon>EditarCatedratico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarEstudiante.resx">
       <DependentUpon>EditarEstudiante.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmFacultades.resx">
+      <DependentUpon>frmFacultades.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>
