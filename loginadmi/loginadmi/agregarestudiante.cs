@@ -102,34 +102,77 @@ namespace loginadmi
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            string nombres = txt_nombres.Text;
-            string apellidos = txt_apellidos.Text;
-            string carne = txt_carne.Text;
-            string carrera = txt_carrera.Text;
-            string correo = txt_correo.Text;
-            string telefono = txt_telefono.Text;
-            string usuario = txt_usuario.Text;
-            string contraseña = txt_contraseña.Text;
+            string snombres = txt_nombres.Text;
+            string sapellidos = txt_apellidos.Text;
+            string scarne = txt_carne.Text;
+            string scarrera = txt_carrera.Text;
+            string scorreo = txt_correo.Text;
+            string stelefono = txt_telefono.Text;
+            string susuario = txt_usuario.Text;
+            string scontraseña = txt_contraseña.Text;
 
-            string conexionBD = ConexionBD.CadenaConexion();
+            if (string.IsNullOrWhiteSpace(snombres) || string.IsNullOrWhiteSpace(sapellidos) ||
+               string.IsNullOrWhiteSpace(scarne) || string.IsNullOrWhiteSpace(stelefono) ||
+               string.IsNullOrWhiteSpace(scorreo) || string.IsNullOrWhiteSpace(susuario) ||
+               string.IsNullOrWhiteSpace(scontraseña))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return;
+            }
 
-            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+            string sconexionBD = ConexionBD.CadenaConexion();
+
+            using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
             {
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT codigoCarrera_pk FROM carrera where nombreCarrera = @carrera";
-                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
-                    comando.Parameters.AddWithValue("@carrera", carrera);
+
+                   
+                    string sconsultaUsuario = "SELECT COUNT(*) FROM usuario WHERE usuario = @usuario";
+                    MySqlCommand comandoValidarUsuario = new MySqlCommand(sconsultaUsuario, conexion);
+                    comandoValidarUsuario.Parameters.AddWithValue("@usuario", susuario);
+                    int count = Convert.ToInt32(comandoValidarUsuario.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("El nombre de usuario ya está en uso. Por favor elige otro.");
+                        return;
+                    }
+
+                    string sconsultaCarnet = "SELECT COUNT(*) FROM estudiante WHERE carnetEstudiante_pk = @carnet";
+                    MySqlCommand comandoValidarCarnet = new MySqlCommand(sconsultaCarnet, conexion);
+                    comandoValidarCarnet.Parameters.AddWithValue("@carnet", scarne);
+                    count = Convert.ToInt32(comandoValidarCarnet.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        MessageBox.Show("El carné ya está registrado. Por favor, ingresa otro carné.");
+                        return;
+                    }
+
+                    string sconsultacorreo = "SELECT COUNT(*) FROM estudiante WHERE correoEstudiante = @correo";
+                    MySqlCommand comandoValidarCorreo = new MySqlCommand(sconsultacorreo, conexion);
+                    comandoValidarCorreo.Parameters.AddWithValue("@correo", scorreo);
+                    count = Convert.ToInt32(comandoValidarCorreo.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        MessageBox.Show("El correo ya está registrado. Por favor, ingresa otro correo.");
+                        return;
+                    }
+
+                    // Verificar si la carrera existe
+                    string sconsulta = "SELECT codigoCarrera_pk FROM carrera where nombreCarrera = @carrera";
+                    MySqlCommand comando = new MySqlCommand(sconsulta, conexion);
+                    comando.Parameters.AddWithValue("@carrera", scarrera);
                     object resultado = comando.ExecuteScalar();
                     int codigoCarrera;
 
                     if (resultado == null)
                     {
-                        //Insertar nuevo registro en la tabla carrera
-                        string insertarCarrera = "INSERT INTO carrera (nombreCarrera) VALUES (@carrera)";
-                        MySqlCommand comandoInsertarCarrera = new MySqlCommand(insertarCarrera, conexion);
-                        comandoInsertarCarrera.Parameters.AddWithValue("@carrera", carrera);
+                        
+                        string sinsertarCarrera = "INSERT INTO carrera (nombreCarrera) VALUES (@carrera)";
+                        MySqlCommand comandoInsertarCarrera = new MySqlCommand(sinsertarCarrera, conexion);
+                        comandoInsertarCarrera.Parameters.AddWithValue("@carrera", scarrera);
                         comandoInsertarCarrera.ExecuteNonQuery();
 
                         comando = new MySqlCommand("SELECT LAST_INSERT_ID()", conexion);
@@ -137,31 +180,31 @@ namespace loginadmi
                     }
                     else
                     {
-                        // Carrera ya existe, obtener ID
                         codigoCarrera = Convert.ToInt32(resultado);
                     }
-                    string insertarEstudiante = "INSERT INTO estudiante (nombreEstudiante, apellidosEstudiante, carnetEstudiante_pk, codigoCarrera_fk, correoEstudiante, telefonoEstudiante) " +
+
+                   
+                    string sinsertarEstudiante = "INSERT INTO estudiante (nombreEstudiante, apellidosEstudiante, carnetEstudiante_pk, codigoCarrera_fk, correoEstudiante, telefonoEstudiante) " +
                                                 "VALUES (@nombres, @apellidos, @carne, @codigoCarrera, @correo, @telefono)";
-                    MySqlCommand comandoInsertarEstudiante = new MySqlCommand(insertarEstudiante, conexion);
-                    comandoInsertarEstudiante.Parameters.AddWithValue("@nombres", nombres);
-                    comandoInsertarEstudiante.Parameters.AddWithValue("@apellidos", apellidos);
-                    comandoInsertarEstudiante.Parameters.AddWithValue("@carne", carne);
+                    MySqlCommand comandoInsertarEstudiante = new MySqlCommand(sinsertarEstudiante, conexion);
+                    comandoInsertarEstudiante.Parameters.AddWithValue("@nombres", snombres);
+                    comandoInsertarEstudiante.Parameters.AddWithValue("@apellidos", sapellidos);
+                    comandoInsertarEstudiante.Parameters.AddWithValue("@carne", scarne);
                     comandoInsertarEstudiante.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
-                    comandoInsertarEstudiante.Parameters.AddWithValue("@correo", correo);
-                    comandoInsertarEstudiante.Parameters.AddWithValue("@telefono", telefono);
+                    comandoInsertarEstudiante.Parameters.AddWithValue("@correo", scorreo);
+                    comandoInsertarEstudiante.Parameters.AddWithValue("@telefono", stelefono);
                     comandoInsertarEstudiante.ExecuteNonQuery();
 
-
+                    
                     string insertarUsuario = "INSERT INTO usuario (usuario, contraseña, carnetEstudiante_fk, codigoRolUsuario_fk) " +
                                                 "VALUES (@usuario, @contraseña, @carnetEstudiante, 1)";
                     MySqlCommand comandoInsertarUsuario = new MySqlCommand(insertarUsuario, conexion);
-                    comandoInsertarUsuario.Parameters.AddWithValue("@usuario", usuario);
-                    comandoInsertarUsuario.Parameters.AddWithValue("@contraseña", contraseña);
-                    comandoInsertarUsuario.Parameters.AddWithValue("@carnetEstudiante", carne);
+                    comandoInsertarUsuario.Parameters.AddWithValue("@usuario", susuario);
+                    comandoInsertarUsuario.Parameters.AddWithValue("@contraseña", scontraseña);
+                    comandoInsertarUsuario.Parameters.AddWithValue("@carnetEstudiante", scarne);
                     comandoInsertarUsuario.ExecuteNonQuery();
 
                     MessageBox.Show("Estudiante registrado exitosamente.");
-
                 }
                 catch (Exception ex)
                 {
@@ -185,7 +228,7 @@ namespace loginadmi
         {
             ListaEstudiantes nuevoFormulario = new ListaEstudiantes();
             nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
+            this.Hide(); 
         }
     }
 }
