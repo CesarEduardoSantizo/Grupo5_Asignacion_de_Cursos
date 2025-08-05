@@ -52,6 +52,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanBienvenidos = new System.Windows.Forms.Panel();
             this.PanMenu = new System.Windows.Forms.Panel();
+            this.cboPensum = new System.Windows.Forms.ComboBox();
+            this.lblNocurso = new System.Windows.Forms.Label();
             this.lstPensumEstudiante = new System.Windows.Forms.DataGridView();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,8 +76,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.ptb_estudiante = new System.Windows.Forms.PictureBox();
-            this.lblNocurso = new System.Windows.Forms.Label();
-            this.cboPensum = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicInscripcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCursos)).BeginInit();
@@ -375,6 +375,25 @@
             this.PanMenu.Size = new System.Drawing.Size(1057, 788);
             this.PanMenu.TabIndex = 88;
             // 
+            // cboPensum
+            // 
+            this.cboPensum.FormattingEnabled = true;
+            this.cboPensum.Location = new System.Drawing.Point(152, 160);
+            this.cboPensum.Name = "cboPensum";
+            this.cboPensum.Size = new System.Drawing.Size(121, 24);
+            this.cboPensum.TabIndex = 51;
+            this.cboPensum.SelectedIndexChanged += new System.EventHandler(this.cboPensum_SelectedIndexChanged);
+            // 
+            // lblNocurso
+            // 
+            this.lblNocurso.AutoSize = true;
+            this.lblNocurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblNocurso.Location = new System.Drawing.Point(148, 132);
+            this.lblNocurso.Name = "lblNocurso";
+            this.lblNocurso.Size = new System.Drawing.Size(95, 24);
+            this.lblNocurso.TabIndex = 50;
+            this.lblNocurso.Text = "No. Curso";
+            // 
             // lstPensumEstudiante
             // 
             this.lstPensumEstudiante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -648,25 +667,6 @@
             this.ptb_estudiante.TabIndex = 4;
             this.ptb_estudiante.TabStop = false;
             // 
-            // lblNocurso
-            // 
-            this.lblNocurso.AutoSize = true;
-            this.lblNocurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNocurso.Location = new System.Drawing.Point(148, 132);
-            this.lblNocurso.Name = "lblNocurso";
-            this.lblNocurso.Size = new System.Drawing.Size(95, 24);
-            this.lblNocurso.TabIndex = 50;
-            this.lblNocurso.Text = "No. Curso";
-            // 
-            // cboPensum
-            // 
-            this.cboPensum.FormattingEnabled = true;
-            this.cboPensum.Location = new System.Drawing.Point(152, 160);
-            this.cboPensum.Name = "cboPensum";
-            this.cboPensum.Size = new System.Drawing.Size(121, 24);
-            this.cboPensum.TabIndex = 51;
-            this.cboPensum.SelectedIndexChanged += new System.EventHandler(this.cboPensum_SelectedIndexChanged);
-            // 
             // FrmPensumEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -699,6 +699,7 @@
             this.Name = "FrmPensumEstudiante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPensumEstudiante";
+            this.Load += new System.EventHandler(this.FrmPensumEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicInscripcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCursos)).EndInit();
