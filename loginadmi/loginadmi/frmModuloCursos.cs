@@ -20,16 +20,16 @@ namespace loginadmi.Administrador.Cursos
         // ----------------------------- Programado por: Anderson Trigueros ------------------------------------------//
         private void btnListadoCursos_Click(object sender, EventArgs e)
         {
-           // frmListadoCursos frmListadoCursos = new frmListadoCursos();
-           // frmListadoCursos.Show();
-           // this.Hide();
+            frmListadoCursos frmListadoCursos = new frmListadoCursos();
+            frmListadoCursos.Show();
+            this.Hide();
         }
 
         private void btnAsignarCursos_Click(object sender, EventArgs e)
         {
-            //frmHabilitacionCursos habilitacionCursos = new frmHabilitacionCursos();
-           // habilitacionCursos.Show();
-          //  this.Hide(); 
+            frmHabilitacionCursos habilitacionCursos = new frmHabilitacionCursos();
+            habilitacionCursos.Show();
+            this.Hide();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
@@ -41,16 +41,16 @@ namespace loginadmi.Administrador.Cursos
 
         private void btnAsignarLaboratorios_Click(object sender, EventArgs e)
         {
-            //frmAsignacionLaboratorio frmAsignacionLaboratorio = new frmAsignacionLaboratorio();
-           // frmAsignacionLaboratorio.Show();
-           // this.Hide();
+            frmAsignacionLaboratorio frmAsignacionLaboratorio = new frmAsignacionLaboratorio();
+            frmAsignacionLaboratorio.Show();
+            this.Hide();
         }
 
         private void btnListadoLaboratorios_Click(object sender, EventArgs e)
         {
-            //frmListadoLaboratorio frmListadoLaboratorio = new frmListadoLaboratorio();
-            //frmListadoLaboratorio.Show();
-            //this.Hide();
+            frmListadoLaboratorio frmListadoLaboratorio = new frmListadoLaboratorio();
+            frmListadoLaboratorio.Show();
+            this.Hide();
         }
     }
 }

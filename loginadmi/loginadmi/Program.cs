@@ -1,4 +1,5 @@
-﻿using System;
+﻿using loginadmi.Administrador.Cursos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace loginadmi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHomeEstudiantes());
+            Application.Run(new frmModuloCursos());
         }
     }
 }
