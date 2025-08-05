@@ -116,6 +116,12 @@
     <Compile Include="agregar_catedratico.Designer.cs">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarCatedratico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCatedratico.Designer.cs">
+      <DependentUpon>EditarCatedratico.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,17 +205,17 @@
     <Compile Include="homeadmi.Designer.cs">
       <DependentUpon>homeadmi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaEstudiantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListaEstudiantes.Designer.cs">
-      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListaCatedratico.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListaCatedratico.Designer.cs">
       <DependentUpon>ListaCatedratico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaEstudiantes.Designer.cs">
+      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="agregar_catedratico.resx">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCatedratico.resx">
+      <DependentUpon>EditarCatedratico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>
@@ -264,11 +273,11 @@
     <EmbeddedResource Include="homeadmi.resx">
       <DependentUpon>homeadmi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaEstudiantes.resx">
-      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListaCatedratico.resx">
       <DependentUpon>ListaCatedratico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaEstudiantes.resx">
+      <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
