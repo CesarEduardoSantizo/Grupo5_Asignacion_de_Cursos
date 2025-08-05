@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -117,6 +118,58 @@ namespace loginadmi
             this.Hide();
             Form agregar_catedratico = new agregar_catedratico();
             agregar_catedratico.Show();
+        }
+
+        private void pnl_home_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_Lista_estudiantes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_EditarEstudiante_Click(object sender, EventArgs e)
+        {
+            string carnet = txt_nocarnetestudiante.Text.Trim();
+
+            if (string.IsNullOrEmpty(carnet))
+            {
+                MessageBox.Show("Por favor ingresa el número de carné.");
+                return;
+            }
+
+            string conexionBD = ConexionBD.CadenaConexion();
+
+            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string consulta = "SELECT COUNT(*) FROM estudiante WHERE carnetEstudiante_pk = @carnet";
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@carnet", carnet);
+                    int existe = Convert.ToInt32(comando.ExecuteScalar());
+
+                    if (existe > 0)
+                    {
+                        // Abrir ventana para editar el estudiante
+                        EditarEstudiante ventanaEditar = new EditarEstudiante(carnet);
+                        ventanaEditar.ShowDialog();
+                        CargarEstudiantes(); // Refresca los datos al cerrar la ventana
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un estudiante con ese carné.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al buscar estudiante: " + ex.Message);
+                }
+            }
         }
     }
 }
