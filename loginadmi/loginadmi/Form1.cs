@@ -46,34 +46,52 @@ namespace loginadmi
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            string usuario = txt_usuario.Text;
-            string contraseña = txt_contraseña.Text;
+            string sUsuario = txt_usuario.Text;
+            string sContraseña = txt_contraseña.Text;
 
-            string conexionBD = ConexionBD.CadenaConexion();
+            string sConexionBD = ConexionBD.CadenaConexion();
 
-            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+            using (MySqlConnection conexion = new MySqlConnection(sConexionBD))
             {
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT COUNT(*) FROM usuario WHERE usuario = @usuario AND contraseña = @contraseña";
-                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
-                    comando.Parameters.AddWithValue("@usuario", usuario);
-                    comando.Parameters.AddWithValue("@contraseña", contraseña);
-                    int resultado = Convert.ToInt32(comando.ExecuteScalar());
-                    if (resultado > 0)
-                    {
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        homeadmi nuevoFormulario = new homeadmi();
-                        nuevoFormulario.Show();
-                        this.Hide(); // o this.Close(); si quieres cerrarlo
+                    string sConsulta = "SELECT codigoRolUsuario_fk FROM usuario WHERE usuario = @usuario AND contraseña = @contraseña";
+                    MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
+                    comando.Parameters.AddWithValue("@usuario", sUsuario);
+                    comando.Parameters.AddWithValue("@contraseña", sContraseña);
 
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        int iRol = Convert.ToInt32(resultado);
+
+                        MessageBox.Show("Inicio de sesión exitoso.");
+
+                        if (iRol == 1)
+                        {
+                            FrmHomeEstudiantes frmEstudiante = new FrmHomeEstudiantes();
+                            frmEstudiante.Show();
+                        }
+                        else if (iRol == 2)
+                        {
+                            homeadmi frmAdmin = new homeadmi();
+                            frmAdmin.Show();
+
+                        }
+                        else if (iRol == 3)
+                        {
+                            homeadmi frmAdmin = new homeadmi();
+                            frmAdmin.Show();
+                        }
+
+                        this.Hide(); // o this.Close(); si quieres cerrarlo
                     }
                     else
                     {
                         MessageBox.Show("Usuario o contraseña incorrectos.");
                     }
-
                 }
                 catch (Exception ex)
                 {

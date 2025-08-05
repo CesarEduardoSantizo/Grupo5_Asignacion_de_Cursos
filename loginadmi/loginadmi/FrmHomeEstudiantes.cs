@@ -74,5 +74,12 @@ namespace loginadmi
             nuevoFormulario.Show();
             this.Hide(); // o this.Close(); si quieres cerrarlo
         }
+
+        private void btnPensum_Click(object sender, EventArgs e)
+        {
+            FrmPensumEstudiante nuevoFormulario = new FrmPensumEstudiante();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
     }
 }

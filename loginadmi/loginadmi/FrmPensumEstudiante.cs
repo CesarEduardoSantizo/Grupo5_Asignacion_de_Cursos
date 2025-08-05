@@ -163,5 +163,10 @@ namespace loginadmi
             nuevoFormulario.Show();
             this.Hide();
         }
+
+        private void FrmPensumEstudiante_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

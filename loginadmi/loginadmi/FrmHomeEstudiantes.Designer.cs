@@ -621,6 +621,7 @@ namespace loginadmi
             this.btnPensum.TabIndex = 79;
             this.btnPensum.Text = "Pesum";
             this.btnPensum.UseVisualStyleBackColor = false;
+            this.btnPensum.Click += new System.EventHandler(this.btnPensum_Click);
             // 
             // PicAsignacion
             // 
