@@ -133,6 +133,12 @@
     <Compile Include="FrmAsignacion.Designer.cs">
       <DependentUpon>FrmAsignacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignacionLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignacionLaboratorio.Designer.cs">
+      <DependentUpon>frmAsignacionLaboratorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHabilitacionCursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAsignacion.resx">
       <DependentUpon>FrmAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignacionLaboratorio.resx">
+      <DependentUpon>frmAsignacionLaboratorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHabilitacionCursos.resx">
       <DependentUpon>frmHabilitacionCursos.cs</DependentUpon>
