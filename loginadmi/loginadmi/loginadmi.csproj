@@ -205,6 +205,12 @@
     <Compile Include="ListaEstudiantes.Designer.cs">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaCatedratico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCatedratico.Designer.cs">
+      <DependentUpon>ListaCatedratico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleccionarUsuario.cs">
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCatedratico.resx">
+      <DependentUpon>ListaCatedratico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
