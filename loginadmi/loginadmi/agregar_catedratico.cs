@@ -164,9 +164,9 @@ namespace loginadmi
 
         private void btn_listacatedratico_Click(object sender, EventArgs e)
         {
-            ListaCatedratico nuevoFormulario = new ListaCatedratico();
-            nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
+            //ListaCatedratico nuevoFormulario = new ListaCatedratico();
+            //nuevoFormulario.Show();
+            //this.Hide(); // o this.Close(); si quieres cerrarlo
         }
     }
 }
