@@ -125,8 +125,9 @@
     <Compile Include="EditarEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarEstudiante.Designer.cs">
-      <DependentUpon>EditarEstudiante.cs</DependentUpon>
+	<Compile Include="EditarEstudiante.Designer.cs">
+	  <DependentUpon>EditarEstudiante.cs</DependentUpon>
+	</Compile>	
     <Compile Include="frmFacultades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,16 +243,14 @@
     <EmbeddedResource Include="agregar_catedratico.resx">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="EditarCatedratico.resx">
       <DependentUpon>EditarCatedratico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarEstudiante.resx">
       <DependentUpon>EditarEstudiante.cs</DependentUpon>
-=======
+	</EmbeddedResource>
     <EmbeddedResource Include="frmFacultades.resx">
       <DependentUpon>frmFacultades.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>
