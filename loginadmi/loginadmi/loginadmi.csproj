@@ -122,6 +122,12 @@
     <Compile Include="EditarCatedratico.Designer.cs">
       <DependentUpon>EditarCatedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarEstudiante.Designer.cs">
+      <DependentUpon>EditarEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarCatedratico.resx">
       <DependentUpon>EditarCatedratico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarEstudiante.resx">
+      <DependentUpon>EditarEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>
