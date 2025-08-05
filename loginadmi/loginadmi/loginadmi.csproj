@@ -129,6 +129,12 @@
     <Compile Include="FrmAsignacion.Designer.cs">
       <DependentUpon>FrmAsignacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAsignacionCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsignacionCursos.Designer.cs">
+      <DependentUpon>FrmAsignacionCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomeEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
