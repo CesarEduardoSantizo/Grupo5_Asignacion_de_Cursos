@@ -116,6 +116,10 @@
     <Compile Include="agregar_catedratico.Designer.cs">
       <DependentUpon>agregar_catedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="clsCarrera.cs" />
+    <Compile Include="clsCatedraticos.cs" />
+    <Compile Include="clsCurso.cs" />
+    <Compile Include="clsDiasCurso.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -146,6 +150,12 @@
     </Compile>
     <Compile Include="FrmInscripcion.Designer.cs">
       <DependentUpon>FrmInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoCursos.Designer.cs">
+      <DependentUpon>frmListadoCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModuloCursos.cs">
       <SubType>Form</SubType>
@@ -205,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInscripcion.resx">
       <DependentUpon>FrmInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoCursos.resx">
+      <DependentUpon>frmListadoCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloCursos.resx">
       <DependentUpon>frmModuloCursos.cs</DependentUpon>
