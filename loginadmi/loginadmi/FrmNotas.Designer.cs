@@ -63,6 +63,9 @@
             this.txtCarnetEstudiante = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtCodigoNotas = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel2.SuspendLayout();
@@ -265,6 +268,9 @@
             // pnl_home
             // 
             this.pnl_home.BackColor = System.Drawing.Color.White;
+            this.pnl_home.Controls.Add(this.label8);
+            this.pnl_home.Controls.Add(this.label1);
+            this.pnl_home.Controls.Add(this.txtCodigoNotas);
             this.pnl_home.Controls.Add(this.label7);
             this.pnl_home.Controls.Add(this.label6);
             this.pnl_home.Controls.Add(this.label5);
@@ -300,7 +306,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(691, 133);
+            this.label6.Location = new System.Drawing.Point(691, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 16);
             this.label6.TabIndex = 16;
@@ -318,7 +324,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 133);
+            this.label4.Location = new System.Drawing.Point(337, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 16);
             this.label4.TabIndex = 14;
@@ -336,7 +342,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 133);
+            this.label2.Location = new System.Drawing.Point(22, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 16);
             this.label2.TabIndex = 12;
@@ -398,7 +404,7 @@
             // 
             // txtNotaActividades
             // 
-            this.txtNotaActividades.Location = new System.Drawing.Point(835, 127);
+            this.txtNotaActividades.Location = new System.Drawing.Point(835, 154);
             this.txtNotaActividades.Name = "txtNotaActividades";
             this.txtNotaActividades.Size = new System.Drawing.Size(139, 22);
             this.txtNotaActividades.TabIndex = 5;
@@ -412,7 +418,7 @@
             // 
             // txtNotaPrimerParcial
             // 
-            this.txtNotaPrimerParcial.Location = new System.Drawing.Point(505, 127);
+            this.txtNotaPrimerParcial.Location = new System.Drawing.Point(505, 151);
             this.txtNotaPrimerParcial.Name = "txtNotaPrimerParcial";
             this.txtNotaPrimerParcial.Size = new System.Drawing.Size(139, 22);
             this.txtNotaPrimerParcial.TabIndex = 3;
@@ -426,7 +432,7 @@
             // 
             // txtCarnetEstudiante
             // 
-            this.txtCarnetEstudiante.Location = new System.Drawing.Point(173, 127);
+            this.txtCarnetEstudiante.Location = new System.Drawing.Point(173, 151);
             this.txtCarnetEstudiante.Name = "txtCarnetEstudiante";
             this.txtCarnetEstudiante.Size = new System.Drawing.Size(139, 22);
             this.txtCarnetEstudiante.TabIndex = 0;
@@ -454,6 +460,32 @@
             this.pictureBox3.TabIndex = 83;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // txtCodigoNotas
+            // 
+            this.txtCodigoNotas.Location = new System.Drawing.Point(173, 111);
+            this.txtCodigoNotas.Name = "txtCodigoNotas";
+            this.txtCodigoNotas.Size = new System.Drawing.Size(139, 22);
+            this.txtCodigoNotas.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 16);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Codigo Curso";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // FrmNotas
             // 
@@ -534,5 +566,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtCodigoNotas;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
     }
 }
