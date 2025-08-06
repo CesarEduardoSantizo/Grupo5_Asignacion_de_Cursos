@@ -53,7 +53,7 @@
             this.PanBienvenidos = new System.Windows.Forms.Panel();
             this.PanMenu = new System.Windows.Forms.Panel();
             this.cboPensum = new System.Windows.Forms.ComboBox();
-            this.lblNocurso = new System.Windows.Forms.Label();
+            this.lblNoCiclo = new System.Windows.Forms.Label();
             this.lstPensumEstudiante = new System.Windows.Forms.DataGridView();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -141,6 +141,7 @@
             this.btnNotas.TabIndex = 100;
             this.btnNotas.Text = "Notas";
             this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
             // btnCursos
             // 
@@ -366,7 +367,7 @@
             this.PanMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PanMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PanMenu.Controls.Add(this.cboPensum);
-            this.PanMenu.Controls.Add(this.lblNocurso);
+            this.PanMenu.Controls.Add(this.lblNoCiclo);
             this.PanMenu.Controls.Add(this.lstPensumEstudiante);
             this.PanMenu.Controls.Add(this.PanBienvenidos);
             this.PanMenu.Location = new System.Drawing.Point(256, 2);
@@ -384,15 +385,15 @@
             this.cboPensum.TabIndex = 51;
             this.cboPensum.SelectedIndexChanged += new System.EventHandler(this.cboPensum_SelectedIndexChanged);
             // 
-            // lblNocurso
+            // lblNoCiclo
             // 
-            this.lblNocurso.AutoSize = true;
-            this.lblNocurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNocurso.Location = new System.Drawing.Point(148, 132);
-            this.lblNocurso.Name = "lblNocurso";
-            this.lblNocurso.Size = new System.Drawing.Size(95, 24);
-            this.lblNocurso.TabIndex = 50;
-            this.lblNocurso.Text = "No. Curso";
+            this.lblNoCiclo.AutoSize = true;
+            this.lblNoCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblNoCiclo.Location = new System.Drawing.Point(148, 132);
+            this.lblNoCiclo.Name = "lblNoCiclo";
+            this.lblNoCiclo.Size = new System.Drawing.Size(87, 24);
+            this.lblNoCiclo.TabIndex = 50;
+            this.lblNoCiclo.Text = "No. Ciclo";
             // 
             // lstPensumEstudiante
             // 
@@ -779,7 +780,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox ptb_estudiante;
         private System.Windows.Forms.DataGridView lstPensumEstudiante;
-        private System.Windows.Forms.Label lblNocurso;
+        private System.Windows.Forms.Label lblNoCiclo;
         private System.Windows.Forms.ComboBox cboPensum;
     }
 }

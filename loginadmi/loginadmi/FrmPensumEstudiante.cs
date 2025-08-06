@@ -14,7 +14,7 @@ namespace loginadmi
             CargarCiclos();
         }
 
-        // Método para obtener el código de carrera del estudiante logueado
+
         private int ObtenerCarreraDelEstudiante()
         {
             int carnet = clsSesion.CarnetEstudiante;
@@ -47,7 +47,6 @@ namespace loginadmi
             return codigoCarrera;
         }
 
-        // Carga el pensum completo según la carrera del estudiante
         private void CargarPensum()
         {
             int codigoCarrera = ObtenerCarreraDelEstudiante();
@@ -94,7 +93,7 @@ namespace loginadmi
             }
         }
 
-        // Carga los ciclos disponibles para la carrera del estudiante
+
         private void CargarCiclos()
         {
             int codigoCarrera = ObtenerCarreraDelEstudiante();
@@ -193,7 +192,7 @@ namespace loginadmi
             }
         }
 
-        // Botones de navegación entre formularios
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             FrmHomeEstudiantes nuevoFormulario = new FrmHomeEstudiantes();
@@ -224,12 +223,18 @@ namespace loginadmi
 
         private void FrmPensumEstudiante_Load(object sender, EventArgs e)
         {
-            // Este evento ya no necesita lógica porque se llama desde el constructor
+
         }
 
         private void lstPensumEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Opcional: lógica si se desea manejar clics en celdas
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotasEstudiante nuevoFormulario = new FrmNotasEstudiante();
+            nuevoFormulario.Show();
+            this.Hide(); 
         }
     }
 }
