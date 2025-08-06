@@ -14,8 +14,49 @@ namespace loginadmi
             CargarCiclos();
         }
 
+        // Método para obtener el código de carrera del estudiante logueado
+        private int ObtenerCarreraDelEstudiante()
+        {
+            int carnet = clsSesion.CarnetEstudiante;
+            int codigoCarrera = -1;
+
+            string sconexionBD = ConexionBD.CadenaConexion();
+            string query = "SELECT codigoCarrera_fk FROM Estudiante WHERE carnetEstudiante_pk = @carnet";
+
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
+                {
+                    conexion.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@carnet", carnet);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            codigoCarrera = Convert.ToInt32(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener la carrera del estudiante: " + ex.Message);
+            }
+
+            return codigoCarrera;
+        }
+
+        // Carga el pensum completo según la carrera del estudiante
         private void CargarPensum()
         {
+            int codigoCarrera = ObtenerCarreraDelEstudiante();
+            if (codigoCarrera == -1)
+            {
+                MessageBox.Show("No se pudo determinar la carrera del estudiante.");
+                return;
+            }
+
             string sconexionBD = ConexionBD.CadenaConexion();
             string query = @"
                 SELECT 
@@ -25,6 +66,7 @@ namespace loginadmi
                     p.numeroCiclo
                 FROM Pensum p
                 INNER JOIN Curso c ON p.codigoCurso_fk = c.codigoCurso_pk
+                WHERE p.codigoCarrera_fk = @codigoCarrera
             ";
 
             try
@@ -34,14 +76,14 @@ namespace loginadmi
                     conexion.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion))
                     {
+                        adapter.SelectCommand.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         lstPensumEstudiante.DataSource = dt;
 
-
                         lstPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
                         lstPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
-                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre rrequisito";
+                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
                         lstPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
                     }
                 }
@@ -52,10 +94,19 @@ namespace loginadmi
             }
         }
 
+        // Carga los ciclos disponibles para la carrera del estudiante
         private void CargarCiclos()
         {
+            int codigoCarrera = ObtenerCarreraDelEstudiante();
+            if (codigoCarrera == -1)
+            {
+                MessageBox.Show("No se pudo determinar la carrera del estudiante.");
+                return;
+            }
+
             string sconexionBD = ConexionBD.CadenaConexion();
-            string query = "SELECT MAX(numeroCiclo) FROM Pensum";
+            string query = "SELECT MAX(numeroCiclo) FROM Pensum WHERE codigoCarrera_fk = @codigoCarrera";
+
             try
             {
                 using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
@@ -63,8 +114,9 @@ namespace loginadmi
                     conexion.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                     {
+                        cmd.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
                         object result = cmd.ExecuteScalar();
-                        if (result != DBNull.Value && result != null)
+                        if (result != null && result != DBNull.Value)
                         {
                             int maxCiclo = Convert.ToInt32(result);
                             cboPensum.Items.Clear();
@@ -82,11 +134,7 @@ namespace loginadmi
             }
         }
 
-        private void lstPensumEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        // Carga los cursos del ciclo seleccionado
         private void cboPensum_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboPensum.SelectedItem != null)
@@ -96,8 +144,16 @@ namespace loginadmi
             }
         }
 
+        // Carga el pensum del ciclo filtrado por carrera
         private void CargarPensumPorCiclo(int ciclo)
         {
+            int codigoCarrera = ObtenerCarreraDelEstudiante();
+            if (codigoCarrera == -1)
+            {
+                MessageBox.Show("No se pudo determinar la carrera del estudiante.");
+                return;
+            }
+
             string sconexionBD = ConexionBD.CadenaConexion();
             string query = @"
                 SELECT 
@@ -107,7 +163,7 @@ namespace loginadmi
                     p.numeroCiclo
                 FROM Pensum p
                 INNER JOIN Curso c ON p.codigoCurso_fk = c.codigoCurso_pk
-                WHERE p.numeroCiclo = @ciclo
+                WHERE p.numeroCiclo = @ciclo AND p.codigoCarrera_fk = @codigoCarrera
             ";
 
             try
@@ -118,13 +174,15 @@ namespace loginadmi
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion))
                     {
                         adapter.SelectCommand.Parameters.AddWithValue("@ciclo", ciclo);
+                        adapter.SelectCommand.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
+
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         lstPensumEstudiante.DataSource = dt;
 
                         lstPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
                         lstPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
-                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre rrequisito";
+                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
                         lstPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
                     }
                 }
@@ -135,11 +193,12 @@ namespace loginadmi
             }
         }
 
+        // Botones de navegación entre formularios
         private void btnInicio_Click(object sender, EventArgs e)
         {
             FrmHomeEstudiantes nuevoFormulario = new FrmHomeEstudiantes();
             nuevoFormulario.Show();
-            this.Hide(); 
+            this.Hide();
         }
 
         private void btnPensum_Click(object sender, EventArgs e)
@@ -147,14 +206,13 @@ namespace loginadmi
             FrmPensumEstudiante nuevoFormulario = new FrmPensumEstudiante();
             nuevoFormulario.Show();
             this.Hide();
-
         }
 
         private void btnInscripcion_Click(object sender, EventArgs e)
         {
             FrmInscripcion nuevoFormulario = new FrmInscripcion();
             nuevoFormulario.Show();
-            this.Hide(); 
+            this.Hide();
         }
 
         private void btnAsignacion_Click(object sender, EventArgs e)
@@ -166,7 +224,12 @@ namespace loginadmi
 
         private void FrmPensumEstudiante_Load(object sender, EventArgs e)
         {
+            // Este evento ya no necesita lógica porque se llama desde el constructor
+        }
 
+        private void lstPensumEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Opcional: lógica si se desea manejar clics en celdas
         }
     }
 }
