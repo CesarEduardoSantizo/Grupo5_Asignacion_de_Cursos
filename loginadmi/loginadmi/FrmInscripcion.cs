@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-
+// Cesar Eduardo Santizo 0901-22-5215//
 
 
 namespace loginadmi
@@ -134,89 +134,148 @@ namespace loginadmi
 
         private void btnPago_Click(object sender, EventArgs e)
         {
-            string año = txtAnio.Text;
-            string semestre = txtSemestre.Text;
-            string valor = txtValor.Text;
+            string año = cboAnio.Text;
+            string semestre = cboSemestre.Text;
 
-            if (string.IsNullOrWhiteSpace(año) || string.IsNullOrWhiteSpace(semestre) || string.IsNullOrWhiteSpace(valor))
+            if (string.IsNullOrWhiteSpace(año) || string.IsNullOrWhiteSpace(semestre))
             {
                 MessageBox.Show("Por favor debe completar todos los campos.");
                 return;
             }
 
-            if (valor != "1050")
-            {
-                MessageBox.Show("Costo está malo. El valor debe ser exactamente 1050.");
-                return;
-            }
-
-            string sconecionBD = ConexionBD.CadenaConexion();
+            string conexionBD = ConexionBD.CadenaConexion();
             long codigo = 0;
+            string valorDesdeBD = "";
 
-            using (MySqlConnection conexion = new MySqlConnection(sconecionBD))
+            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
             {
                 try
                 {
                     conexion.Open();
 
-                    string insertar = "INSERT INTO costoinscripcion (semestre, año, costo) VALUES (@semestre, @año, @costo)";
-                    using (MySqlCommand cmd = new MySqlCommand(insertar, conexion))
+                    string consulta = "SELECT codigoCostoInscripcion_pk, costo FROM costoinscripcion WHERE semestre = @semestre AND año = @año";
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
                     {
                         cmd.Parameters.AddWithValue("@semestre", semestre);
                         cmd.Parameters.AddWithValue("@año", año);
-                        cmd.Parameters.AddWithValue("@costo", valor);
 
-                        int filasAfectadas = cmd.ExecuteNonQuery();
-
-                        // Ahora sí puedes obtener el ID insertado
-                        codigo = cmd.LastInsertedId;
-
-                        if (filasAfectadas > 0)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            MessageBox.Show("Inscripción hecha correctamente");
-
-                            // Limpiar los campos
-                            txtAnio.Text = "";
-                            txtSemestre.Text = "";
-                            txtValor.Text = "";
-
-                            // Ahora generas el PDF con el código correcto
-                            SaveFileDialog saveFileDialog = new SaveFileDialog();
-                            saveFileDialog.Filter = "Archivo PDF (*.pdf)|*.pdf";
-                            saveFileDialog.FileName = "boleta_inscripcion_" + codigo + ".pdf";
-
-                            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                            if (reader.Read())
                             {
-                                Document doc = new Document();
-                                PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
-                                doc.Open();
+                                codigo = reader.GetInt64("codigoCostoInscripcion_pk");
+                                valorDesdeBD = reader.GetDecimal("costo").ToString("F2");
 
-                                doc.Add(new Paragraph("BOLETA DE INSCRIPCIÓN", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)));
-                                doc.Add(new Paragraph(" "));
-                                doc.Add(new Paragraph("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy")));
-                                doc.Add(new Paragraph("Código de inscripción: " + codigo));
-                                doc.Add(new Paragraph("Año: " + año));
-                                doc.Add(new Paragraph("Semestre: " + semestre));
-                                doc.Add(new Paragraph("Valor pagado: Q" + valor));
+                                MessageBox.Show("Datos verificados correctamente.");
 
-                                doc.Close();
+                                // Generar PDF
+                                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                                saveFileDialog.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                                saveFileDialog.FileName = "boleta_inscripcion_" + codigo + ".pdf";
 
-                                MessageBox.Show("PDF generado exitosamente.");
+                                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                                {
+                                    Document doc = new Document();
+                                    PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
+                                    doc.Open();
+
+                                    doc.Add(new Paragraph("BOLETA DE INSCRIPCIÓN", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)));
+                                    doc.Add(new Paragraph(" "));
+                                    doc.Add(new Paragraph("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy")));
+                                    doc.Add(new Paragraph("Código de inscripción: " + codigo));
+                                    doc.Add(new Paragraph("Año: " + año));
+                                    doc.Add(new Paragraph("Semestre: " + semestre));
+                                    doc.Add(new Paragraph("Valor pagado: Q" + valorDesdeBD));
+
+                                    doc.Close();
+
+                                    MessageBox.Show("PDF generado exitosamente.");
+                                }
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se pudo realizar la inscripción");
+                            else
+                            {
+                                MessageBox.Show("No se encontró una inscripción con esos datos.");
+                            }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al insertar: " + ex.Message);
+                    MessageBox.Show("Error al buscar los datos: " + ex.Message);
                 }
             }
         }
 
+
+        private void FrmInscripcion_Load(object sender, EventArgs e)
+        {
+
+           
+                cboSemestre.Items.Clear();
+                cboSemestre.Items.Add("1");
+                cboSemestre.Items.Add("2");
+
+                cboAnio.Items.Clear();
+                cboAnio.Items.Add("2024");
+                cboAnio.Items.Add("2025");
+                cboAnio.Items.Add("2026");
+                cboAnio.Items.Add("2027");
+                cboAnio.Items.Add("2028");
+                cboAnio.Items.Add("2029");
+
+     
+            
+
+        }
+
+        private void ObtenerValorInscripcion()
+        {
+            string semestre = cboSemestre.Text;
+            string anio = cboAnio.Text;
+
+            if (string.IsNullOrWhiteSpace(semestre) || string.IsNullOrWhiteSpace(anio))
+                return;
+
+            string query = "SELECT costo FROM costoinscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
+
+            using (MySqlConnection conexion = new MySqlConnection("tu_conexion"))
+            {
+                conexion.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@semestre", semestre);
+                    cmd.Parameters.AddWithValue("@anio", anio);
+
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                      
+                        txt_nombres.Text = reader["nombreCatedratico"].ToString();
+                    }
+                    else
+                    {
+                        txtValor.TextBox.Clear();
+                        txtValor.Items.Add("No encontrado");
+                        txtValor.SelectedIndex = 0;
+                    }
+
+                }
+            }
+        }
+
+
+
+
+        private void txtSemestre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PanInscripcion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

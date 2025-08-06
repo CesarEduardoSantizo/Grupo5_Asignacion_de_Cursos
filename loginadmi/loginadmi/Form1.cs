@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// Cesar Eduardo Santizo 0901-22-5215//
 namespace loginadmi
 {
     public partial class frm_login : Form

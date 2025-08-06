@@ -194,5 +194,10 @@ namespace loginadmi.Administrador.Cursos
             frmModuloCursos.Show();
             this.Hide();
         }
+
+        private void cboCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

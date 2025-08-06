@@ -40,11 +40,8 @@ namespace loginadmi
             this.PicLogo1 = new System.Windows.Forms.PictureBox();
             this.btnPago = new System.Windows.Forms.Button();
             this.PanInscripcion = new System.Windows.Forms.Panel();
-            this.txtAnio = new System.Windows.Forms.TextBox();
             this.lblAnio = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
-            this.txtSemestre = new System.Windows.Forms.TextBox();
             this.lblSemestre = new System.Windows.Forms.Label();
             this.lblDatos = new System.Windows.Forms.Label();
             this.PanIncripcion = new System.Windows.Forms.Panel();
@@ -56,6 +53,9 @@ namespace loginadmi
             this.PicNotas = new System.Windows.Forms.PictureBox();
             this.PicInicio = new System.Windows.Forms.PictureBox();
             this.PicLogo = new System.Windows.Forms.PictureBox();
+            this.cboAnio = new System.Windows.Forms.ComboBox();
+            this.cboSemestre = new System.Windows.Forms.ComboBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.PanMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo1)).BeginInit();
             this.PanInscripcion.SuspendLayout();
@@ -187,11 +187,11 @@ namespace loginadmi
             // PanInscripcion
             // 
             this.PanInscripcion.BackColor = System.Drawing.SystemColors.Menu;
-            this.PanInscripcion.Controls.Add(this.txtAnio);
-            this.PanInscripcion.Controls.Add(this.lblAnio);
             this.PanInscripcion.Controls.Add(this.txtValor);
+            this.PanInscripcion.Controls.Add(this.cboSemestre);
+            this.PanInscripcion.Controls.Add(this.cboAnio);
+            this.PanInscripcion.Controls.Add(this.lblAnio);
             this.PanInscripcion.Controls.Add(this.lblValor);
-            this.PanInscripcion.Controls.Add(this.txtSemestre);
             this.PanInscripcion.Controls.Add(this.lblSemestre);
             this.PanInscripcion.Controls.Add(this.lblDatos);
             this.PanInscripcion.Location = new System.Drawing.Point(114, 163);
@@ -199,43 +199,24 @@ namespace loginadmi
             this.PanInscripcion.Name = "PanInscripcion";
             this.PanInscripcion.Size = new System.Drawing.Size(550, 356);
             this.PanInscripcion.TabIndex = 45;
-            // 
-            // txtAnio
-            // 
-            this.txtAnio.Location = new System.Drawing.Point(146, 204);
-            this.txtAnio.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAnio.Multiline = true;
-            this.txtAnio.Name = "txtAnio";
-            this.txtAnio.Size = new System.Drawing.Size(266, 35);
-            this.txtAnio.TabIndex = 52;
-            this.txtAnio.TextChanged += new System.EventHandler(this.txtAnio_TextChanged);
+            this.PanInscripcion.Paint += new System.Windows.Forms.PaintEventHandler(this.PanInscripcion_Paint);
             // 
             // lblAnio
             // 
             this.lblAnio.AutoSize = true;
             this.lblAnio.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblAnio.Location = new System.Drawing.Point(142, 182);
+            this.lblAnio.Location = new System.Drawing.Point(142, 195);
             this.lblAnio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnio.Name = "lblAnio";
             this.lblAnio.Size = new System.Drawing.Size(43, 21);
             this.lblAnio.TabIndex = 51;
             this.lblAnio.Text = "Año";
             // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(144, 274);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtValor.Multiline = true;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(266, 35);
-            this.txtValor.TabIndex = 50;
-            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
-            // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblValor.Location = new System.Drawing.Point(142, 252);
+            this.lblValor.Location = new System.Drawing.Point(142, 261);
             this.lblValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(163, 21);
@@ -243,20 +224,11 @@ namespace loginadmi
             this.lblValor.Text = "Valor De Inscripción";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtSemestre
-            // 
-            this.txtSemestre.Location = new System.Drawing.Point(144, 137);
-            this.txtSemestre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSemestre.Multiline = true;
-            this.txtSemestre.Name = "txtSemestre";
-            this.txtSemestre.Size = new System.Drawing.Size(266, 35);
-            this.txtSemestre.TabIndex = 48;
-            // 
             // lblSemestre
             // 
             this.lblSemestre.AutoSize = true;
             this.lblSemestre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblSemestre.Location = new System.Drawing.Point(143, 116);
+            this.lblSemestre.Location = new System.Drawing.Point(142, 142);
             this.lblSemestre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSemestre.Name = "lblSemestre";
             this.lblSemestre.Size = new System.Drawing.Size(81, 21);
@@ -375,6 +347,39 @@ namespace loginadmi
             this.PicLogo.TabStop = false;
             this.PicLogo.Click += new System.EventHandler(this.PicLogo_Click);
             // 
+            // cboAnio
+            // 
+            this.cboAnio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboAnio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboAnio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAnio.FormattingEnabled = true;
+            this.cboAnio.Location = new System.Drawing.Point(146, 223);
+            this.cboAnio.Margin = new System.Windows.Forms.Padding(2);
+            this.cboAnio.Name = "cboAnio";
+            this.cboAnio.Size = new System.Drawing.Size(264, 27);
+            this.cboAnio.TabIndex = 52;
+            // 
+            // cboSemestre
+            // 
+            this.cboSemestre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSemestre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSemestre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSemestre.FormattingEnabled = true;
+            this.cboSemestre.Location = new System.Drawing.Point(146, 164);
+            this.cboSemestre.Margin = new System.Windows.Forms.Padding(2);
+            this.cboSemestre.Name = "cboSemestre";
+            this.cboSemestre.Size = new System.Drawing.Size(264, 27);
+            this.cboSemestre.TabIndex = 53;
+            // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(144, 284);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValor.Multiline = true;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(262, 27);
+            this.txtValor.TabIndex = 55;
+            // 
             // FrmInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +405,7 @@ namespace loginadmi
             this.Name = "FrmInscripcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInscripcion";
+            this.Load += new System.EventHandler(this.FrmInscripcion_Load);
             this.PanMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo1)).EndInit();
             this.PanInscripcion.ResumeLayout(false);
@@ -437,13 +443,13 @@ namespace loginadmi
         private System.Windows.Forms.Label lblInscripcion;
         private System.Windows.Forms.Panel PanInscripcion;
         private System.Windows.Forms.Label lblDatos;
-        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox txtSemestre;
         private System.Windows.Forms.Label lblSemestre;
         private System.Windows.Forms.Button btnPago;
         private System.Windows.Forms.PictureBox PicLogo1;
-        private System.Windows.Forms.TextBox txtAnio;
         private System.Windows.Forms.Label lblAnio;
+        private System.Windows.Forms.ComboBox cboSemestre;
+        private System.Windows.Forms.ComboBox cboAnio;
+        private System.Windows.Forms.TextBox txtValor;
     }
 }

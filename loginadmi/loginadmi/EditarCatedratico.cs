@@ -147,5 +147,10 @@ namespace loginadmi
         {
 
         }
+
+        private void txt_apellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

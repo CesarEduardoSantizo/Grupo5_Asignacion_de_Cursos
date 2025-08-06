@@ -159,6 +159,7 @@ namespace loginadmi
             this.btn_agregar6.TabIndex = 21;
             this.btn_agregar6.Text = "Agregar";
             this.btn_agregar6.UseVisualStyleBackColor = false;
+            this.btn_agregar6.Click += new System.EventHandler(this.btn_agregar6_Click);
             // 
             // btn_agregar5
             // 
