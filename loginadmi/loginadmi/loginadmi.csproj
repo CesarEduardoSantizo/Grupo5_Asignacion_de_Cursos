@@ -229,6 +229,12 @@
     <Compile Include="ListaCatedratico.Designer.cs">
       <DependentUpon>ListaCatedratico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoPensum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoPensum.Designer.cs">
+      <DependentUpon>frmListadoPensum.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaCatedratico.resx">
       <DependentUpon>ListaCatedratico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoPensum.resx">
+      <DependentUpon>frmListadoPensum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
