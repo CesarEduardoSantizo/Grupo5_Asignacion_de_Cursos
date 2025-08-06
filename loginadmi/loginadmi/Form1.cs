@@ -53,34 +53,38 @@ namespace loginadmi
 
             using (MySqlConnection conexion = new MySqlConnection(sConexionBD))
             {
-                try
+                conexion.Open();
+                string sConsulta = @"
+                    SELECT codigoUsuario_pk, usuario, codigoRolUsuario_fk, carnetEstudiante_fk
+                    FROM usuario
+                    WHERE usuario = @usuario AND contraseña = @contraseña";
+                MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
+                comando.Parameters.AddWithValue("@usuario", sUsuario);
+                comando.Parameters.AddWithValue("@contraseña", sContraseña);
+
+                using (var reader = comando.ExecuteReader())
                 {
-                    conexion.Open();
-                    string sConsulta = "SELECT codigoRolUsuario_fk FROM usuario WHERE usuario = @usuario AND contraseña = @contraseña";
-                    MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
-                    comando.Parameters.AddWithValue("@usuario", sUsuario);
-                    comando.Parameters.AddWithValue("@contraseña", sContraseña);
-
-                    object resultado = comando.ExecuteScalar();
-
-                    if (resultado != null)
+                    if (reader.Read())
                     {
-                        int iRol = Convert.ToInt32(resultado);
+                        clsSesion.CodigoUsuario = reader.GetInt32("codigoUsuario_pk");
+                        clsSesion.Usuario = reader.GetString("usuario");
+                        clsSesion.CodigoRol = reader.GetInt32("codigoRolUsuario_fk");
+                        clsSesion.CarnetEstudiante = reader.IsDBNull(reader.GetOrdinal("carnetEstudiante_fk")) ? 0 : reader.GetInt32("carnetEstudiante_fk");
 
                         MessageBox.Show("Inicio de sesión exitoso.");
 
-                        if (iRol == 1)
+                        if (clsSesion.CodigoRol == 1)
                         {
                             FrmHomeEstudiantes frmEstudiante = new FrmHomeEstudiantes();
                             frmEstudiante.Show();
                         }
-                        else if (iRol == 2)
+                        else if (clsSesion.CodigoRol == 2)
                         {
                             homeadmi frmAdmin = new homeadmi();
                             frmAdmin.Show();
 
                         }
-                        else if (iRol == 3)
+                        else if (clsSesion.CodigoRol == 3)
                         {
                             homeadmi frmAdmin = new homeadmi();
                             frmAdmin.Show();
@@ -92,11 +96,6 @@ namespace loginadmi
                     {
                         MessageBox.Show("Usuario o contraseña incorrectos.");
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
-                    return;
                 }
             }
         }
