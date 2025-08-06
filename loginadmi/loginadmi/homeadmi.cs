@@ -81,11 +81,6 @@ namespace loginadmi
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_agregar2_Click(object sender, EventArgs e)
         {
             agregar_catedratico nuevoFormulario = new agregar_catedratico();
@@ -140,6 +135,13 @@ namespace loginadmi
         {
              
 
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            frmModuloCursos frmModuloCursos = new frmModuloCursos();
+            frmModuloCursos.Show();
+            this.Hide();
         }
     }
 }

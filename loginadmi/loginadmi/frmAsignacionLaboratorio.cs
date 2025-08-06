@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace loginadmi.Administrador.Cursos
+namespace loginadmi
 {
     public partial class frmAsignacionLaboratorio : Form
     {
@@ -147,6 +147,41 @@ namespace loginadmi.Administrador.Cursos
         {
             frmModuloCursos frmModuloCursos = new frmModuloCursos();
             frmModuloCursos.Show();
+            this.Hide();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            homeadmi homeadmi = new homeadmi();
+            homeadmi.Show();
+            this.Hide();
+        }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            agregarestudiante agregarestudiante = new agregarestudiante();
+            agregarestudiante.Show();
+            this.Hide();
+        }
+
+        private void btnCatedratico_Click(object sender, EventArgs e)
+        {
+            agregar_catedratico agregar_Catedratico = new agregar_catedratico();
+            agregar_Catedratico.Show();
+            this.Hide();
+        }
+
+        private void btnFacultades_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide();
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotas frmNotas = new FrmNotas();
+            frmNotas.Show();
             this.Hide();
         }
     }

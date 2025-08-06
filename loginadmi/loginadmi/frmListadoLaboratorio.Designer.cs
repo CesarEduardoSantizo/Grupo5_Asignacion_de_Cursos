@@ -1,4 +1,4 @@
-﻿namespace loginadmi.Administrador.Cursos
+﻿namespace loginadmi
 {
     partial class frmListadoLaboratorio
     {
@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoLaboratorio));
             this.btnCursos = new System.Windows.Forms.Button();
-            this.btn = new System.Windows.Forms.Button();
             this.btnFacultades = new System.Windows.Forms.Button();
             this.btnNotas = new System.Windows.Forms.Button();
             this.btnCatedratico = new System.Windows.Forms.Button();
@@ -50,24 +49,25 @@
             this.panEncabezado = new System.Windows.Forms.Panel();
             this.lblCursos = new System.Windows.Forms.Label();
             this.picFacultades = new System.Windows.Forms.PictureBox();
-            this.pic = new System.Windows.Forms.PictureBox();
-            this.picCursos = new System.Windows.Forms.PictureBox();
             this.picNotas = new System.Windows.Forms.PictureBox();
+            this.picCursos = new System.Windows.Forms.PictureBox();
             this.picCatedrático = new System.Windows.Forms.PictureBox();
             this.picInicio = new System.Windows.Forms.PictureBox();
             this.picEstudiante = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picInscripcion = new System.Windows.Forms.PictureBox();
+            this.btnInscripcion = new System.Windows.Forms.Button();
             this.pnl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaboratorios)).BeginInit();
             this.panEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFacultades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCatedrático)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCursos
@@ -84,19 +84,6 @@
             this.btnCursos.UseVisualStyleBackColor = false;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
-            // btn
-            // 
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.ForeColor = System.Drawing.Color.White;
-            this.btn.Location = new System.Drawing.Point(92, 622);
-            this.btn.Margin = new System.Windows.Forms.Padding(4);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(111, 34);
-            this.btn.TabIndex = 110;
-            this.btn.Text = "Notas";
-            this.btn.UseVisualStyleBackColor = false;
-            // 
             // btnFacultades
             // 
             this.btnFacultades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
@@ -109,6 +96,7 @@
             this.btnFacultades.TabIndex = 109;
             this.btnFacultades.Text = "Facultades";
             this.btnFacultades.UseVisualStyleBackColor = false;
+            this.btnFacultades.Click += new System.EventHandler(this.btnFacultades_Click);
             // 
             // btnNotas
             // 
@@ -122,6 +110,7 @@
             this.btnNotas.TabIndex = 108;
             this.btnNotas.Text = "Notas";
             this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
             // btnCatedratico
             // 
@@ -135,6 +124,7 @@
             this.btnCatedratico.TabIndex = 107;
             this.btnCatedratico.Text = "Catedrático";
             this.btnCatedratico.UseVisualStyleBackColor = false;
+            this.btnCatedratico.Click += new System.EventHandler(this.btnCatedratico_Click);
             // 
             // btnEstudiantes
             // 
@@ -148,6 +138,7 @@
             this.btnEstudiantes.TabIndex = 106;
             this.btnEstudiantes.Text = "Estudiante";
             this.btnEstudiantes.UseVisualStyleBackColor = false;
+            this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
             // 
             // btnInicio
             // 
@@ -312,16 +303,16 @@
             this.picFacultades.TabIndex = 104;
             this.picFacultades.TabStop = false;
             // 
-            // pic
+            // picNotas
             // 
-            this.pic.Image = ((System.Drawing.Image)(resources.GetObject("pic.Image")));
-            this.pic.Location = new System.Drawing.Point(0, 606);
-            this.pic.Margin = new System.Windows.Forms.Padding(4);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(67, 62);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic.TabIndex = 103;
-            this.pic.TabStop = false;
+            this.picNotas.Image = ((System.Drawing.Image)(resources.GetObject("picNotas.Image")));
+            this.picNotas.Location = new System.Drawing.Point(0, 442);
+            this.picNotas.Margin = new System.Windows.Forms.Padding(4);
+            this.picNotas.Name = "picNotas";
+            this.picNotas.Size = new System.Drawing.Size(67, 62);
+            this.picNotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNotas.TabIndex = 103;
+            this.picNotas.TabStop = false;
             // 
             // picCursos
             // 
@@ -333,17 +324,6 @@
             this.picCursos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCursos.TabIndex = 102;
             this.picCursos.TabStop = false;
-            // 
-            // picNotas
-            // 
-            this.picNotas.Image = ((System.Drawing.Image)(resources.GetObject("picNotas.Image")));
-            this.picNotas.Location = new System.Drawing.Point(0, 440);
-            this.picNotas.Margin = new System.Windows.Forms.Padding(4);
-            this.picNotas.Name = "picNotas";
-            this.picNotas.Size = new System.Drawing.Size(67, 62);
-            this.picNotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNotas.TabIndex = 101;
-            this.picNotas.TabStop = false;
             // 
             // picCatedrático
             // 
@@ -389,23 +369,47 @@
             this.picLogo.TabIndex = 96;
             this.picLogo.TabStop = false;
             // 
+            // picInscripcion
+            // 
+            this.picInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("picInscripcion.Image")));
+            this.picInscripcion.Location = new System.Drawing.Point(0, 605);
+            this.picInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.picInscripcion.Name = "picInscripcion";
+            this.picInscripcion.Size = new System.Drawing.Size(67, 62);
+            this.picInscripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInscripcion.TabIndex = 99;
+            this.picInscripcion.TabStop = false;
+            // 
+            // btnInscripcion
+            // 
+            this.btnInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnInscripcion.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcion.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcion.Location = new System.Drawing.Point(94, 622);
+            this.btnInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInscripcion.Name = "btnInscripcion";
+            this.btnInscripcion.Size = new System.Drawing.Size(111, 34);
+            this.btnInscripcion.TabIndex = 98;
+            this.btnInscripcion.Text = "Inscripción";
+            this.btnInscripcion.UseVisualStyleBackColor = false;
+            // 
             // frmListadoLaboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1312, 783);
+            this.Controls.Add(this.picInscripcion);
+            this.Controls.Add(this.btnInscripcion);
             this.Controls.Add(this.btnCursos);
-            this.Controls.Add(this.btn);
             this.Controls.Add(this.btnFacultades);
             this.Controls.Add(this.btnNotas);
             this.Controls.Add(this.btnCatedratico);
             this.Controls.Add(this.btnEstudiantes);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.picFacultades);
-            this.Controls.Add(this.pic);
-            this.Controls.Add(this.picCursos);
             this.Controls.Add(this.picNotas);
+            this.Controls.Add(this.picCursos);
             this.Controls.Add(this.picCatedrático);
             this.Controls.Add(this.picInicio);
             this.Controls.Add(this.picEstudiante);
@@ -420,13 +424,13 @@
             this.panEncabezado.ResumeLayout(false);
             this.panEncabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFacultades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCatedrático)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEstudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,14 +438,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnCursos;
-        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Button btnFacultades;
         private System.Windows.Forms.Button btnNotas;
         private System.Windows.Forms.Button btnCatedratico;
         private System.Windows.Forms.Button btnEstudiantes;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.PictureBox picFacultades;
-        private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.PictureBox picCursos;
         private System.Windows.Forms.PictureBox picNotas;
         private System.Windows.Forms.PictureBox picCatedrático;
@@ -461,5 +463,7 @@
         private System.Windows.Forms.Label lblTituloListado;
         private System.Windows.Forms.Panel panEncabezado;
         private System.Windows.Forms.Label lblCursos;
+        private System.Windows.Forms.PictureBox picInscripcion;
+        private System.Windows.Forms.Button btnInscripcion;
     }
 }
