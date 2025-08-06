@@ -83,7 +83,11 @@ namespace loginadmi
 
         private void btn_inicio_Click(object sender, EventArgs e)
         {
+            FrmHomeEstudiantes nuevoFormulario = new FrmHomeEstudiantes();
 
+            nuevoFormulario.Show();
+
+            this.Hide(); // o this.Close(); si quieres cerrarlo
         }
 
         private void pictureBox13_Click(object sender, EventArgs e)

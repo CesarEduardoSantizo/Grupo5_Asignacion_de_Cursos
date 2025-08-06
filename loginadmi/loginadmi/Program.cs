@@ -17,7 +17,7 @@ namespace loginadmi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SeleccionarUsuario());
+            Application.Run(new homeadmi());
 
         }
     }
