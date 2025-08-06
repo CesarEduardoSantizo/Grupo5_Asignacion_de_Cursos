@@ -98,7 +98,7 @@ namespace loginadmi
 
         private void btn_listaFacu_Click(object sender, EventArgs e)
         {
-            ListaFacultades listaFacultades = new ListaFacultades();
+            frmListaFacultades listaFacultades = new frmListaFacultades();
             listaFacultades.Show();
             this.Hide();
         }
