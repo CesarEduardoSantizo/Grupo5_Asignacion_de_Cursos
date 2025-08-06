@@ -81,5 +81,19 @@ namespace loginadmi
             nuevoFormulario.Show();
             this.Hide();
         }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotas nuevoFormulario = new FrmNotas();
+            nuevoFormulario.Show();
+            this.Hide(); // o this.Close(); si quieres cerrarlo
+        }
+
+        private void btnNotas1_Click(object sender, EventArgs e)
+        {
+            FrmNotas nuevoFormulario = new FrmNotas();
+            nuevoFormulario.Show();
+            this.Hide(); // o this.Close(); si quieres cerrarlo
+        }
     }
 }
