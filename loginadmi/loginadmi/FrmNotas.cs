@@ -198,6 +198,7 @@ namespace loginadmi
                     if (comandoInsertarNota.LastInsertedId > 0)
                     {
                         MessageBox.Show("Notas registradas exitosamente.");
+                        CargarNotas();
                     }
 
                 }
@@ -344,6 +345,7 @@ namespace loginadmi
 
         {
 
+            string sCodigoNota = txtCodigoNotas.Text;
             string sCarnetEstudiante = txtCarnetEstudiante.Text;
             string sNombreCurso = txtNombreCurso.Text;
             string sNotaPrimerParcial = txtNotaPrimerParcial.Text;
@@ -351,18 +353,18 @@ namespace loginadmi
             string sNotaActividades = txtNotaActividades.Text;
             string sNotaFinalParcial = txtNotaFinalParcial.Text;
 
-            string sconexionBD = ConexionBD.CadenaConexion();
+            string conexionBD = ConexionBD.CadenaConexion();
 
-            using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
+            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
             {
                 try
                 {
                     conexion.Open();
 
                     // Obtener código del curso
-                    string sconsultaCurso = "SELECT codigoCurso_pk FROM curso WHERE nombreCurso = @snombreCurso";
-                    MySqlCommand cmdCurso = new MySqlCommand(sconsultaCurso, conexion);
-                    cmdCurso.Parameters.AddWithValue("@snombreCurso", sNombreCurso);
+                    string consultaCurso = "SELECT codigoCurso_pk FROM curso WHERE nombreCurso = @nombreCurso";
+                    MySqlCommand cmdCurso = new MySqlCommand(consultaCurso, conexion);
+                    cmdCurso.Parameters.AddWithValue("@nombreCurso", sNombreCurso);
                     object resultCurso = cmdCurso.ExecuteScalar();
 
                     if (resultCurso == null)
@@ -390,11 +392,11 @@ namespace loginadmi
                     // UPDATE
                     string consultaUpdate = @"UPDATE notas 
                                        SET carnetEstudiante_fk = @carnet,
-                                           codigoCurso_fk = @sNombreCurso,
-                                           notaPrimerParcial = @sNotaPrimerParcial,
-                                           notaSegundoParcial = @sNotaSegundoParcial,
-                                           notaActividades = @sNotaActividades,
-                                           examenFinal = @sNotaFinalParcial
+                                           codigoCurso_fk = @curso,
+                                           notaPrimerParcial = @nota1,
+                                           notaSegundoParcial = @nota2,
+                                           notaActividades = @notaA,
+                                           examenFinal = @notaF
                                      WHERE codigoNota_pk = @codigoNota";
 
                     MySqlCommand cmdUpdate = new MySqlCommand(consultaUpdate, conexion);
@@ -404,7 +406,7 @@ namespace loginadmi
                     cmdUpdate.Parameters.AddWithValue("@nota2", sNotaSegundoParcial);
                     cmdUpdate.Parameters.AddWithValue("@notaA", sNotaActividades);
                     cmdUpdate.Parameters.AddWithValue("@notaF", sNotaFinalParcial);
-                    
+                    cmdUpdate.Parameters.AddWithValue("@codigoNota", sCodigoNota);
 
                     int filasAfectadas = cmdUpdate.ExecuteNonQuery();
 
@@ -426,6 +428,11 @@ namespace loginadmi
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
