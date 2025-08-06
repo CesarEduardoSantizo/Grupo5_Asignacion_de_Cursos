@@ -384,6 +384,7 @@
             this.btnInscripcion.TabIndex = 96;
             this.btnInscripcion.Text = "Inscripción";
             this.btnInscripcion.UseVisualStyleBackColor = false;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
             // 
             // picNotas
             // 
