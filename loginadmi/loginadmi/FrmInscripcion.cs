@@ -209,23 +209,66 @@ namespace loginadmi
 
         private void FrmInscripcion_Load(object sender, EventArgs e)
         {
+            cboSemestre.Items.Add("1");
+            cboSemestre.Items.Add("2");
 
-           
-                cboSemestre.Items.Clear();
-                cboSemestre.Items.Add("1");
-                cboSemestre.Items.Add("2");
+            cboAnio.Items.Add("2024");
+            cboAnio.Items.Add("2025");
+            cboAnio.Items.Add("2026");
+            cboAnio.Items.Add("2027");
+            cboAnio.Items.Add("2028");
 
-                cboAnio.Items.Clear();
-                cboAnio.Items.Add("2024");
-                cboAnio.Items.Add("2025");
-                cboAnio.Items.Add("2026");
-                cboAnio.Items.Add("2027");
-                cboAnio.Items.Add("2028");
-                cboAnio.Items.Add("2029");
+            // Enlazar los eventos que detectan cambios
+            cboSemestre.SelectedIndexChanged += new EventHandler(Cbo_SelectedIndexChanged);
+            cboAnio.SelectedIndexChanged += new EventHandler(Cbo_SelectedIndexChanged);
+            txtValor.ReadOnly = true;
 
-     
-            
+        }
 
+        private void Cbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string semestre = cboSemestre.Text;
+            string anio = cboAnio.Text;
+
+            if (string.IsNullOrWhiteSpace(semestre) || string.IsNullOrWhiteSpace(anio))
+            {
+                txtValor.Text = "";
+                return;
+            }
+
+            string conexionBD = ConexionBD.CadenaConexion();
+
+            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string query = "SELECT costo FROM costoinscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@semestre", semestre);
+                        cmd.Parameters.AddWithValue("@anio", anio);
+
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            decimal costo = Convert.ToDecimal(resultado);
+                            txtValor.Text = "Q" + costo.ToString("F2");
+                        }
+                        else
+                        {
+                            txtValor.Text = "No encontrado";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener el valor: " + ex.Message);
+                }
+            }
         }
 
         private void ObtenerValorInscripcion()
@@ -234,35 +277,44 @@ namespace loginadmi
             string anio = cboAnio.Text;
 
             if (string.IsNullOrWhiteSpace(semestre) || string.IsNullOrWhiteSpace(anio))
+            {
+                txtValor.Text = ""; // Limpia si faltan datos
                 return;
+            }
 
             string query = "SELECT costo FROM costoinscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
 
-            using (MySqlConnection conexion = new MySqlConnection("tu_conexion"))
+            string conexionBD = ConexionBD.CadenaConexion(); // Usa tu método de conexión
+            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
             {
-                conexion.Open();
-                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@semestre", semestre);
-                    cmd.Parameters.AddWithValue("@anio", anio);
-
-                    object resultado = cmd.ExecuteScalar();
-
-                    if (resultado != null)
+                    conexion.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                     {
-                      
-                        txt_nombres.Text = reader["nombreCatedratico"].ToString();
-                    }
-                    else
-                    {
-                        txtValor.TextBox.Clear();
-                        txtValor.Items.Add("No encontrado");
-                        txtValor.SelectedIndex = 0;
-                    }
+                        cmd.Parameters.AddWithValue("@semestre", semestre);
+                        cmd.Parameters.AddWithValue("@anio", anio);
 
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            decimal costo = Convert.ToDecimal(resultado);
+                            txtValor.Text = "Q" + costo.ToString("F2");
+                        }
+                        else
+                        {
+                            txtValor.Text = "No encontrado";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener el costo: " + ex.Message);
                 }
             }
         }
+
 
 
 
@@ -275,6 +327,21 @@ namespace loginadmi
         private void PanInscripcion_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cboSemestre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboAnio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValor_TextChanged_1(object sender, EventArgs e)
+        {
+                
         }
     }
 }
