@@ -247,6 +247,12 @@
     <Compile Include="frmListaFacultades.Designer.cs">
       <DependentUpon>frmListaFacultades.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPensum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPensum.Designer.cs">
+      <DependentUpon>frmPensum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleccionarUsuario.cs">
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaFacultades.resx">
       <DependentUpon>frmListaFacultades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPensum.resx">
+      <DependentUpon>frmPensum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
