@@ -292,7 +292,9 @@
             this.Controls.Add(this.picInicio);
             this.Controls.Add(this.PicLogo);
             this.Controls.Add(this.panMenu);
+            this.MaximizeBox = false;
             this.Name = "frmHomeCatedraticos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHomeCatedraticos";
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicNotas)).EndInit();

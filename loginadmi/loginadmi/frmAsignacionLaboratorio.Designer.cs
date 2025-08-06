@@ -533,6 +533,7 @@
             this.btnInscripcion.TabIndex = 114;
             this.btnInscripcion.Text = "Inscripción";
             this.btnInscripcion.UseVisualStyleBackColor = false;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
             // 
             // frmAsignacionLaboratorio
             // 

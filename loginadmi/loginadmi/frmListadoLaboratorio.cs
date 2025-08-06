@@ -344,5 +344,12 @@ namespace loginadmi
             frmNotas.Show();
             this.Hide();
         }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            frmCostoInscripcion.Show();
+            this.Hide();
+        }
     }
 }
