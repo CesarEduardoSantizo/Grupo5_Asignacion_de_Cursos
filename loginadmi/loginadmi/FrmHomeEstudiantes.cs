@@ -84,16 +84,16 @@ namespace loginadmi
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
-            FrmNotas nuevoFormulario = new FrmNotas();
+            FrmNotasEstudiante nuevoFormulario = new FrmNotasEstudiante();
             nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
+            this.Hide();
         }
 
         private void btnNotas1_Click(object sender, EventArgs e)
         {
-            FrmNotas nuevoFormulario = new FrmNotas();
+            FrmNotasEstudiante nuevoFormulario = new FrmNotasEstudiante();
             nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
+            this.Hide();
         }
     }
 }
