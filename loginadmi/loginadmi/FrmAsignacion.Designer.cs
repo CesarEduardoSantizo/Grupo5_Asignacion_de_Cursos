@@ -191,7 +191,7 @@ namespace loginadmi
             this.PanInscripcion.Controls.Add(this.lblAnio);
             this.PanInscripcion.Controls.Add(this.lblDatos);
             this.PanInscripcion.Location = new System.Drawing.Point(114, 163);
-            this.PanInscripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanInscripcion.Margin = new System.Windows.Forms.Padding(2);
             this.PanInscripcion.Name = "PanInscripcion";
             this.PanInscripcion.Size = new System.Drawing.Size(550, 356);
             this.PanInscripcion.TabIndex = 45;
@@ -199,7 +199,7 @@ namespace loginadmi
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(149, 279);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(2);
             this.txtValor.Multiline = true;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(266, 35);
@@ -220,7 +220,7 @@ namespace loginadmi
             // txtSemestre
             // 
             this.txtSemestre.Location = new System.Drawing.Point(153, 126);
-            this.txtSemestre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSemestre.Margin = new System.Windows.Forms.Padding(2);
             this.txtSemestre.Multiline = true;
             this.txtSemestre.Name = "txtSemestre";
             this.txtSemestre.Size = new System.Drawing.Size(266, 35);
@@ -240,7 +240,7 @@ namespace loginadmi
             // txtAnio
             // 
             this.txtAnio.Location = new System.Drawing.Point(151, 199);
-            this.txtAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnio.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnio.Multiline = true;
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(266, 35);
@@ -274,7 +274,7 @@ namespace loginadmi
             this.PanIncripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.PanIncripcion.Controls.Add(this.lblAsignacion);
             this.PanIncripcion.Location = new System.Drawing.Point(0, 0);
-            this.PanIncripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanIncripcion.Margin = new System.Windows.Forms.Padding(2);
             this.PanIncripcion.Name = "PanIncripcion";
             this.PanIncripcion.Size = new System.Drawing.Size(795, 76);
             this.PanIncripcion.TabIndex = 44;
@@ -387,6 +387,7 @@ namespace loginadmi
             this.Name = "FrmAsignacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsignacion";
+            this.Load += new System.EventHandler(this.FrmAsignacion_Load);
             this.PanMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo1)).EndInit();
             this.PanInscripcion.ResumeLayout(false);

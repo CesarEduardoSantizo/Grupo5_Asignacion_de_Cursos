@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// Cesar Eduardo Santizo 0901-22-5215//
 namespace loginadmi
 {
     public partial class FrmAsignacion : Form
@@ -107,6 +107,11 @@ namespace loginadmi
         }
 
         private void lblSemestre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAsignacion_Load(object sender, EventArgs e)
         {
 
         }

@@ -52,5 +52,10 @@ namespace loginadmi.Administrador.Cursos
             frmListadoLaboratorio.Show();
             this.Hide();
         }
+
+        private void frmModuloCursos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
