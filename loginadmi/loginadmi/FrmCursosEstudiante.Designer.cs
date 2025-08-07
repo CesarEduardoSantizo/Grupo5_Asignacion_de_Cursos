@@ -38,6 +38,7 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.PanBienvenidos = new System.Windows.Forms.Panel();
             this.PanMenu = new System.Windows.Forms.Panel();
+            this.dgvNotas = new System.Windows.Forms.DataGridView();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_agregar_estudiante = new System.Windows.Forms.Label();
@@ -53,6 +54,12 @@
             this.lbl_carreras = new System.Windows.Forms.Label();
             this.lbl_catedraticos = new System.Windows.Forms.Label();
             this.lbl_estudiantes = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ptb_estudiante = new System.Windows.Forms.PictureBox();
             this.PicAsignacion = new System.Windows.Forms.PictureBox();
             this.PicInscripcion = new System.Windows.Forms.PictureBox();
             this.PicCursos = new System.Windows.Forms.PictureBox();
@@ -67,17 +74,24 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.ptb_estudiante = new System.Windows.Forms.PictureBox();
-            this.dgvNotas = new System.Windows.Forms.DataGridView();
+            this.btnMostrarCursos = new System.Windows.Forms.Button();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.lblAño = new System.Windows.Forms.Label();
+            this.txtSemestre = new System.Windows.Forms.TextBox();
+            this.lblSemestre = new System.Windows.Forms.Label();
+            this.lblInstruccion = new System.Windows.Forms.Label();
+            this.lblTituloHabilitacion = new System.Windows.Forms.Label();
             this.PanBienvenidos.SuspendLayout();
             this.PanMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).BeginInit();
             this.pnl_home.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicInscripcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCursos)).BeginInit();
@@ -92,23 +106,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCursos
             // 
             this.lblCursos.AutoSize = true;
-            this.lblCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
+            this.lblCursos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCursos.ForeColor = System.Drawing.Color.White;
-            this.lblCursos.Location = new System.Drawing.Point(307, 10);
+            this.lblCursos.Location = new System.Drawing.Point(403, 5);
             this.lblCursos.Name = "lblCursos";
-            this.lblCursos.Size = new System.Drawing.Size(225, 69);
+            this.lblCursos.Size = new System.Drawing.Size(222, 70);
             this.lblCursos.TabIndex = 0;
             this.lblCursos.Text = "Cursos";
             this.lblCursos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,13 +218,35 @@
             // 
             this.PanMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PanMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanMenu.Controls.Add(this.btnMostrarCursos);
             this.PanMenu.Controls.Add(this.dgvNotas);
+            this.PanMenu.Controls.Add(this.txtAño);
             this.PanMenu.Controls.Add(this.PanBienvenidos);
+            this.PanMenu.Controls.Add(this.lblAño);
+            this.PanMenu.Controls.Add(this.lblTituloHabilitacion);
+            this.PanMenu.Controls.Add(this.txtSemestre);
+            this.PanMenu.Controls.Add(this.lblInstruccion);
+            this.PanMenu.Controls.Add(this.lblSemestre);
             this.PanMenu.Location = new System.Drawing.Point(260, 4);
             this.PanMenu.Margin = new System.Windows.Forms.Padding(4);
             this.PanMenu.Name = "PanMenu";
             this.PanMenu.Size = new System.Drawing.Size(1057, 788);
             this.PanMenu.TabIndex = 88;
+            // 
+            // dgvNotas
+            // 
+            this.dgvNotas.AllowUserToAddRows = false;
+            this.dgvNotas.AllowUserToDeleteRows = false;
+            this.dgvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNotas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNotas.Location = new System.Drawing.Point(131, 265);
+            this.dgvNotas.Name = "dgvNotas";
+            this.dgvNotas.ReadOnly = true;
+            this.dgvNotas.RowHeadersWidth = 51;
+            this.dgvNotas.RowTemplate.Height = 24;
+            this.dgvNotas.Size = new System.Drawing.Size(824, 307);
+            this.dgvNotas.TabIndex = 45;
             // 
             // pnl_home
             // 
@@ -413,6 +442,72 @@
             this.lbl_estudiantes.TabIndex = 11;
             this.lbl_estudiantes.Text = "Estudiantes";
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(755, 464);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 10;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(476, 464);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 9;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(160, 464);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 7;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(755, 165);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(475, 165);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // ptb_estudiante
+            // 
+            this.ptb_estudiante.Image = ((System.Drawing.Image)(resources.GetObject("ptb_estudiante.Image")));
+            this.ptb_estudiante.Location = new System.Drawing.Point(164, 165);
+            this.ptb_estudiante.Margin = new System.Windows.Forms.Padding(4);
+            this.ptb_estudiante.Name = "ptb_estudiante";
+            this.ptb_estudiante.Size = new System.Drawing.Size(121, 108);
+            this.ptb_estudiante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_estudiante.TabIndex = 4;
+            this.ptb_estudiante.TabStop = false;
+            // 
             // PicAsignacion
             // 
             this.PicAsignacion.Image = ((System.Drawing.Image)(resources.GetObject("PicAsignacion.Image")));
@@ -567,83 +662,74 @@
             this.pictureBox2.TabIndex = 81;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox9
+            // btnMostrarCursos
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(755, 464);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(121, 108);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
+            this.btnMostrarCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnMostrarCursos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarCursos.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarCursos.Location = new System.Drawing.Point(604, 214);
+            this.btnMostrarCursos.Name = "btnMostrarCursos";
+            this.btnMostrarCursos.Size = new System.Drawing.Size(183, 36);
+            this.btnMostrarCursos.TabIndex = 108;
+            this.btnMostrarCursos.Text = "Mostrar Cursos";
+            this.btnMostrarCursos.UseVisualStyleBackColor = false;
+            this.btnMostrarCursos.Click += new System.EventHandler(this.btnMostrarCursos_Click);
             // 
-            // pictureBox8
+            // txtAño
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(476, 464);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(121, 108);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 9;
-            this.pictureBox8.TabStop = false;
+            this.txtAño.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAño.Location = new System.Drawing.Point(427, 224);
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(154, 26);
+            this.txtAño.TabIndex = 107;
             // 
-            // pictureBox7
+            // lblAño
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(160, 464);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(121, 108);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
+            this.lblAño.AutoSize = true;
+            this.lblAño.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAño.Location = new System.Drawing.Point(423, 201);
+            this.lblAño.Name = "lblAño";
+            this.lblAño.Size = new System.Drawing.Size(39, 20);
+            this.lblAño.TabIndex = 106;
+            this.lblAño.Text = "Año";
             // 
-            // pictureBox6
+            // txtSemestre
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(755, 165);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(121, 108);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
+            this.txtSemestre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSemestre.Location = new System.Drawing.Point(234, 224);
+            this.txtSemestre.Name = "txtSemestre";
+            this.txtSemestre.Size = new System.Drawing.Size(154, 26);
+            this.txtSemestre.TabIndex = 105;
             // 
-            // pictureBox5
+            // lblSemestre
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(475, 165);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(121, 108);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemestre.Location = new System.Drawing.Point(230, 201);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(75, 20);
+            this.lblSemestre.TabIndex = 104;
+            this.lblSemestre.Text = "Semestre";
             // 
-            // ptb_estudiante
+            // lblInstruccion
             // 
-            this.ptb_estudiante.Image = ((System.Drawing.Image)(resources.GetObject("ptb_estudiante.Image")));
-            this.ptb_estudiante.Location = new System.Drawing.Point(164, 165);
-            this.ptb_estudiante.Margin = new System.Windows.Forms.Padding(4);
-            this.ptb_estudiante.Name = "ptb_estudiante";
-            this.ptb_estudiante.Size = new System.Drawing.Size(121, 108);
-            this.ptb_estudiante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptb_estudiante.TabIndex = 4;
-            this.ptb_estudiante.TabStop = false;
+            this.lblInstruccion.AutoSize = true;
+            this.lblInstruccion.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstruccion.Location = new System.Drawing.Point(349, 160);
+            this.lblInstruccion.Name = "lblInstruccion";
+            this.lblInstruccion.Size = new System.Drawing.Size(350, 21);
+            this.lblInstruccion.TabIndex = 103;
+            this.lblInstruccion.Text = "Ingrese los datos de los siguientes filtros";
             // 
-            // dgvNotas
+            // lblTituloHabilitacion
             // 
-            this.dgvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNotas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNotas.Location = new System.Drawing.Point(124, 187);
-            this.dgvNotas.Name = "dgvNotas";
-            this.dgvNotas.RowHeadersWidth = 51;
-            this.dgvNotas.RowTemplate.Height = 24;
-            this.dgvNotas.Size = new System.Drawing.Size(824, 467);
-            this.dgvNotas.TabIndex = 45;
+            this.lblTituloHabilitacion.AutoSize = true;
+            this.lblTituloHabilitacion.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloHabilitacion.Location = new System.Drawing.Point(368, 109);
+            this.lblTituloHabilitacion.Name = "lblTituloHabilitacion";
+            this.lblTituloHabilitacion.Size = new System.Drawing.Size(303, 39);
+            this.lblTituloHabilitacion.TabIndex = 102;
+            this.lblTituloHabilitacion.Text = "Cursos Asignados";
             // 
             // FrmCursosEstudiante
             // 
@@ -676,14 +762,23 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmCursosEstudiante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCursosEstudiante";
             this.PanBienvenidos.ResumeLayout(false);
             this.PanBienvenidos.PerformLayout();
             this.PanMenu.ResumeLayout(false);
+            this.PanMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).EndInit();
             this.pnl_home.ResumeLayout(false);
             this.pnl_home.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicInscripcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCursos)).EndInit();
@@ -698,13 +793,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,5 +843,12 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox ptb_estudiante;
         private System.Windows.Forms.DataGridView dgvNotas;
+        private System.Windows.Forms.Button btnMostrarCursos;
+        private System.Windows.Forms.TextBox txtAño;
+        private System.Windows.Forms.Label lblAño;
+        private System.Windows.Forms.Label lblTituloHabilitacion;
+        private System.Windows.Forms.TextBox txtSemestre;
+        private System.Windows.Forms.Label lblInstruccion;
+        private System.Windows.Forms.Label lblSemestre;
     }
 }

@@ -150,7 +150,9 @@ namespace loginadmi
 
         private void btnListadoCursos_Click(object sender, EventArgs e)
         {
-            
+            frmCursosCatedratico frmCursosCatedratico = new frmCursosCatedratico();
+            frmCursosCatedratico.Show();
+            this.Hide();
         }
 
         private void btnNotas_Click(object sender, EventArgs e)
@@ -246,6 +248,13 @@ namespace loginadmi
                     MessageBox.Show("Error al modificar la nota: " + ex.Message);
                 }
             }
+        }
+
+        private void btnListados_Click(object sender, EventArgs e)
+        {
+            frmListadosAlumnos frmListadosAlumnos = new frmListadosAlumnos();
+            frmListadosAlumnos.Show();
+            this.Hide();
         }
     }
 }
