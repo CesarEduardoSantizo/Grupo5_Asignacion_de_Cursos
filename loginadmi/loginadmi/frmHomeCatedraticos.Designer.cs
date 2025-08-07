@@ -71,6 +71,7 @@
             this.btnNotas.TabIndex = 92;
             this.btnNotas.Text = "Notas";
             this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
             // btnListados
             // 
@@ -84,6 +85,7 @@
             this.btnListados.TabIndex = 90;
             this.btnListados.Text = "Listados";
             this.btnListados.UseVisualStyleBackColor = false;
+            this.btnListados.Click += new System.EventHandler(this.btnListados_Click);
             // 
             // PicAsignacion
             // 
@@ -107,6 +109,7 @@
             this.btnListadoCursos.TabIndex = 88;
             this.btnListadoCursos.Text = "Cursos";
             this.btnListadoCursos.UseVisualStyleBackColor = false;
+            this.btnListadoCursos.Click += new System.EventHandler(this.btnListadoCursos_Click);
             // 
             // btnInicio
             // 
@@ -120,6 +123,7 @@
             this.btnInicio.TabIndex = 85;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // PicNotas
             // 
