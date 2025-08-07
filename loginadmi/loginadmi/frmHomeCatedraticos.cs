@@ -17,5 +17,24 @@ namespace loginadmi
             InitializeComponent();
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListadoCursos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

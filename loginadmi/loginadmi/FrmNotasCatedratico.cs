@@ -11,127 +11,14 @@ using System.Windows.Forms;
 
 namespace loginadmi
 {
-    public partial class FrmNotas : Form
+    public partial class FrmNotasCatedratico : Form
     {
-        string conexion = "server=localhost;user=grupoCinco;password=U&grupo5_2501.;database=bd_asignacioncursos";
-        public FrmNotas()
+        public FrmNotasCatedratico()
         {
             InitializeComponent();
         }
 
-        private void FrmNotas_Load(object sender, EventArgs e)
-        {
-
-            CargarNotas();
-        }
-
-        private void pnl_home_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-            FrmNotas nuevoFormulario = new FrmNotas();
-            nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_lab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_notas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_catedratico_Click(object sender, EventArgs e)
-        {
-            agregar_catedratico nuevoFormulario = new agregar_catedratico();
-
-            nuevoFormulario.Show();
-
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
-
-        private void btn_estudiantes_Click(object sender, EventArgs e)
-        {
-
-            agregarestudiante nuevoFormulario = new agregarestudiante();
-
-            nuevoFormulario.Show();
-
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
-
-        private void btn_inicio_Click(object sender, EventArgs e)
-        {
-            FrmHomeEstudiantes nuevoFormulario = new FrmHomeEstudiantes();
-
-            nuevoFormulario.Show();
-
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
-
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_cursos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodigoNotas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonInsert_Click_Click(object sender, EventArgs e)
+        private void buttonInsert_Click(object sender, EventArgs e)
         {
             string sCarnetEstudiante = txtCarnetEstudiante.Text;
             string sNombreCurso = txtNombreCurso.Text;
@@ -215,10 +102,7 @@ namespace loginadmi
 
             }
         }
-
-
-
-        private void CargarNotas()
+             private void CargarNotas()
         {
             // 1) Construimos la conexión (puedes usar tu helper ConexionBD si lo prefieres)
             string cadena = ConexionBD.CadenaConexion();     // o tu string literal
@@ -231,14 +115,13 @@ namespace loginadmi
 
                     // 2) Preparamos el SELECT
                     string sql = @"SELECT codigoNota_pk AS Código,
-                           carnetEstudiante_fk AS Carnet,
-                           c.nombreCurso     AS Curso,
-                           notaPrimerParcial  AS '1er Parcial',
-                           notaSegundoParcial AS '2º Parcial',
-                           notaActividades    AS Actividades,
-                           examenFinal        AS Final
-                    FROM notas join curso c on notas.codigocurso_fk=c.codigocurso_pk";
-
+                                  carnetEstudiante_fk AS Carnet,
+                                  codigoCurso_fk     AS Curso,
+                                  notaPrimerParcial  AS '1er Parcial',
+                                  notaSegundoParcial AS '2º Parcial',
+                                  notaActividades    AS Actividades,
+                                  examenFinal        AS Final
+                           FROM notas";
 
                     // 3) Llenamos un DataTable
                     using (MySqlDataAdapter da = new MySqlDataAdapter(sql, cn))
@@ -255,102 +138,30 @@ namespace loginadmi
                     MessageBox.Show($"No pude cargar las notas: {ex.Message}");
                 }
             }
-        }
-
-
-        private void buttonEli_click(object sender, EventArgs e)
-        {
 
         }
 
-        private void LimpiarCampos()
-{
-    
-    txtCarnetEstudiante.Clear();
-    txtNombreCurso.Clear();
-    txtNotaPrimerParcial.Clear();
-    txtNotaSegundoParcial.Clear();
-    txtNotaActividades.Clear();
-    txtNotaFinalParcial.Clear();
-}
-        private void buttonEli_click_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            // Verificamos si hay un código de nota seleccionado
-            if (string.IsNullOrWhiteSpace(txtCarnetEstudiante.Text))
-            {
-                MessageBox.Show("Por favor selecciona una nota para eliminar.");
-                return;
-            }
-
-            int carnetEstudiante = Convert.ToInt32(txtCarnetEstudiante.Text);
-            string conexionBD = ConexionBD.CadenaConexion();
-
-            // Confirmación de eliminación
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar esta nota?",
-                                                  "Confirmar eliminación",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
-            {
-                using (MySqlConnection conexion = new MySqlConnection(conexionBD))
-                {
-                    try
-                    {
-                        conexion.Open();
-
-                        string consultaEliminar = "DELETE FROM notas WHERE carnetEstudiante_fk = @estudiante";
-                        MySqlCommand comandoEliminar = new MySqlCommand(consultaEliminar, conexion);
-                        comandoEliminar.Parameters.AddWithValue("@estudiante", carnetEstudiante);
-
-                        int filasAfectadas = comandoEliminar.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
-                        {
-                            MessageBox.Show("Nota eliminada correctamente.");
-                            CargarNotas(); // Actualiza el DataGridView
-                            LimpiarCampos(); // Limpia los campos de texto (ver siguiente paso)
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró la nota a eliminar.");
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error al eliminar la nota: " + ex.Message);
-                    }
-                }
-            }
-
-
+            frmHomeCatedraticos frmHomeCatedraticos = new frmHomeCatedraticos();
+            frmHomeCatedraticos.Show();
+            this.Hide();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnListadoCursos_Click(object sender, EventArgs e)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ReadOnly = true;               // Evita edición directa si lo deseas
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
+        }
 
-
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
-
-                // Asignamos los valores de la fila seleccionada a los TextBox
-                txtCarnetEstudiante.Text = fila.Cells["Carnet"].Value.ToString();
-                txtNombreCurso.Text = fila.Cells["Curso"].Value.ToString();
-                txtNotaPrimerParcial.Text = fila.Cells["1er Parcial"].Value.ToString();
-                txtNotaSegundoParcial.Text = fila.Cells["2º Parcial"].Value.ToString();
-                txtNotaActividades.Text = fila.Cells["Actividades"].Value.ToString();
-                txtNotaFinalParcial.Text = fila.Cells["Final"].Value.ToString();
-            }
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotasCatedratico frmNotasCatedratico = new FrmNotasCatedratico();
+            frmNotasCatedratico.Show();
+            this.Hide();
         }
 
         private void buttonMod_Click(object sender, EventArgs e)
-
         {
-
             string sCodigoNota = txtCodigoNotas.Text;
             string sCarnetEstudiante = txtCarnetEstudiante.Text;
             string sNombreCurso = txtNombreCurso.Text;
@@ -435,91 +246,6 @@ namespace loginadmi
                     MessageBox.Show("Error al modificar la nota: " + ex.Message);
                 }
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Notas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodigoNotas_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNotaFinalParcial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNotaActividades_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNotaSegundoParcial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNotaPrimerParcial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreCurso_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCarnetEstudiante_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

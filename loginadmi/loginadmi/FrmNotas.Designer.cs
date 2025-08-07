@@ -45,6 +45,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_home = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigoNotas = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.txtCarnetEstudiante = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtCodigoNotas = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,6 +164,7 @@
             this.lbl_Notas.TabIndex = 0;
             this.lbl_Notas.Text = "Notas";
             this.lbl_Notas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Notas.Click += new System.EventHandler(this.lbl_Notas_Click);
             // 
             // btn_notas
             // 
@@ -294,6 +295,34 @@
             this.pnl_home.TabIndex = 81;
             this.pnl_home.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_home_Paint);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 16);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Codigo Curso";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // txtCodigoNotas
+            // 
+            this.txtCodigoNotas.Location = new System.Drawing.Point(173, 111);
+            this.txtCodigoNotas.Name = "txtCodigoNotas";
+            this.txtCodigoNotas.Size = new System.Drawing.Size(139, 22);
+            this.txtCodigoNotas.TabIndex = 18;
+            this.txtCodigoNotas.TextChanged += new System.EventHandler(this.txtCodigoNotas_TextChanged_1);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -302,6 +331,7 @@
             this.label7.Size = new System.Drawing.Size(113, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Nota Final Parcial";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -311,6 +341,7 @@
             this.label6.Size = new System.Drawing.Size(110, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "Nota Actividades";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -320,6 +351,7 @@
             this.label5.Size = new System.Drawing.Size(139, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Nota Segundo Parcial";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -329,6 +361,7 @@
             this.label4.Size = new System.Drawing.Size(123, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Nota Primer Parcial";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -338,6 +371,7 @@
             this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Nombre de Curso";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -347,6 +381,7 @@
             this.label2.Size = new System.Drawing.Size(112, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Carnet Estudiante";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridView1
             // 
@@ -401,6 +436,7 @@
             this.txtNotaFinalParcial.Name = "txtNotaFinalParcial";
             this.txtNotaFinalParcial.Size = new System.Drawing.Size(139, 22);
             this.txtNotaFinalParcial.TabIndex = 6;
+            this.txtNotaFinalParcial.TextChanged += new System.EventHandler(this.txtNotaFinalParcial_TextChanged);
             // 
             // txtNotaActividades
             // 
@@ -408,6 +444,7 @@
             this.txtNotaActividades.Name = "txtNotaActividades";
             this.txtNotaActividades.Size = new System.Drawing.Size(139, 22);
             this.txtNotaActividades.TabIndex = 5;
+            this.txtNotaActividades.TextChanged += new System.EventHandler(this.txtNotaActividades_TextChanged);
             // 
             // txtNotaSegundoParcial
             // 
@@ -415,6 +452,7 @@
             this.txtNotaSegundoParcial.Name = "txtNotaSegundoParcial";
             this.txtNotaSegundoParcial.Size = new System.Drawing.Size(139, 22);
             this.txtNotaSegundoParcial.TabIndex = 4;
+            this.txtNotaSegundoParcial.TextChanged += new System.EventHandler(this.txtNotaSegundoParcial_TextChanged);
             // 
             // txtNotaPrimerParcial
             // 
@@ -422,6 +460,7 @@
             this.txtNotaPrimerParcial.Name = "txtNotaPrimerParcial";
             this.txtNotaPrimerParcial.Size = new System.Drawing.Size(139, 22);
             this.txtNotaPrimerParcial.TabIndex = 3;
+            this.txtNotaPrimerParcial.TextChanged += new System.EventHandler(this.txtNotaPrimerParcial_TextChanged);
             // 
             // txtNombreCurso
             // 
@@ -429,6 +468,7 @@
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(139, 22);
             this.txtNombreCurso.TabIndex = 2;
+            this.txtNombreCurso.TextChanged += new System.EventHandler(this.txtNombreCurso_TextChanged);
             // 
             // txtCarnetEstudiante
             // 
@@ -436,6 +476,7 @@
             this.txtCarnetEstudiante.Name = "txtCarnetEstudiante";
             this.txtCarnetEstudiante.Size = new System.Drawing.Size(139, 22);
             this.txtCarnetEstudiante.TabIndex = 0;
+            this.txtCarnetEstudiante.TextChanged += new System.EventHandler(this.txtCarnetEstudiante_TextChanged);
             // 
             // pictureBox4
             // 
@@ -460,32 +501,6 @@
             this.pictureBox3.TabIndex = 83;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // txtCodigoNotas
-            // 
-            this.txtCodigoNotas.Location = new System.Drawing.Point(173, 111);
-            this.txtCodigoNotas.Name = "txtCodigoNotas";
-            this.txtCodigoNotas.Size = new System.Drawing.Size(139, 22);
-            this.txtCodigoNotas.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 16);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Codigo Curso";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // FrmNotas
             // 
