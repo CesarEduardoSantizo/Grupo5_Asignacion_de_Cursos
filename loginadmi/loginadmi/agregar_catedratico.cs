@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//PROGRAMADO POR: GERBER ALEXANDER ASTURIAS TEJAXÚN CARNET: 0901-22-11992
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,7 +97,7 @@ namespace loginadmi
                         return;
                     }
 
-                    string scorreoExistente = @"SELECT COUNT(*) FROM Usuario WHERE correo = @correo";
+                    string scorreoExistente = @"SELECT COUNT(*) FROM Catedratico WHERE correoCatedratico = @correo";
                     MySqlCommand comandoValidarCorreo = new MySqlCommand(scorreoExistente, conexion);
                     comandoValidarCorreo.Parameters.AddWithValue("@correo", scorreo);
                     int countCorreo = Convert.ToInt32(comandoValidarCorreo.ExecuteScalar());
@@ -164,9 +165,9 @@ namespace loginadmi
 
         private void btn_listacatedratico_Click(object sender, EventArgs e)
         {
-            //ListaCatedratico nuevoFormulario = new ListaCatedratico();
-            //nuevoFormulario.Show();
-            //this.Hide(); // o this.Close(); si quieres cerrarlo
+             ListaCatedratico nuevoFormulario = new ListaCatedratico();
+             nuevoFormulario.Show();
+             this.Hide(); // o this.Close(); si quieres cerrarlo
         }
     }
 }

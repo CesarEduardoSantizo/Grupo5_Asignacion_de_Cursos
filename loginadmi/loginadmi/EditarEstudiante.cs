@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//PROGRAMADO POR: GERBER ALEXANDER ASTURIAS TEJAXÚN CARNET: 0901-22-11992
+using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace loginadmi
         public EditarEstudiante(string carnet)
         {
             InitializeComponent();
+            LlenarCarreras();
             scarnetEstudiante = carnet;
             txt_carne.Enabled = false; 
             CargarDatosEstudiante();
@@ -50,7 +52,7 @@ namespace loginadmi
                             txt_apellidos.Text = reader["apellidosEstudiante"].ToString();
                             txt_telefono.Text = reader["telefonoEstudiante"].ToString();
                             txt_correo.Text = reader["correoEstudiante"].ToString();
-                            txt_carrera.Text = reader["nombreCarrera"].ToString();
+                            cbocarrera.Text = reader["nombreCarrera"].ToString();
                             txt_usuario.Text = reader.IsDBNull(reader.GetOrdinal("usuario")) ? "" : reader["usuario"].ToString();
                             txt_contraseña.Text = reader.IsDBNull(reader.GetOrdinal("contraseña")) ? "" : reader["contraseña"].ToString();
                         }
@@ -68,9 +70,40 @@ namespace loginadmi
             }
         }
 
+        private void LlenarCarreras()
+        {
+            string sconexionBD = ConexionBD.CadenaConexion();
+
+            using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string consulta = "SELECT nombreCarrera FROM carrera";
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    MySqlDataReader reader = comando.ExecuteReader();
+
+                    cbocarrera.Items.Clear(); // Limpia el ComboBox antes de llenarlo
+
+                    while (reader.Read())
+                    {
+                        cbocarrera.Items.Add(reader["nombreCarrera"].ToString());
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar las carreras: " + ex.Message);
+                }
+            }
+        }
+         
+
         private void btn_editarestudiante_Click(object sender, EventArgs e)
         {
-            string snombreCarrera = txt_carrera.Text.Trim();
+            string snombreCarrera = cbocarrera.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(snombreCarrera))
             {

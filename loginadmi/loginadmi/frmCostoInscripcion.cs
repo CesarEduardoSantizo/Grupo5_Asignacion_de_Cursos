@@ -142,5 +142,10 @@ namespace loginadmi
             frmModuloCursos.Show();
             this.Hide();
         }
+
+        private void cboSemestre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//PROGRAMADO POR: GERBER ALEXANDER ASTURIAS TEJAXÚN CARNET: 0901-22-11992
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,47 @@ namespace loginadmi
         {
 
         }
+
+        private void agregarestudiante_Load(object sender, EventArgs e)
+        {
+            LlenarCarreras();
+        }
+
+        private void LlenarCarreras()
+{
+    string sconexionBD = ConexionBD.CadenaConexion();
+
+    using (MySqlConnection conexion = new MySqlConnection(sconexionBD))
+    {
+        try
+        {
+            conexion.Open();
+
+            string consulta = "SELECT nombreCarrera FROM carrera";
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            cboCarrera.Items.Clear(); // Limpiar el ComboBox antes de llenar
+
+            while (reader.Read())
+            {
+                string nombreCarrera = reader.GetString("nombreCarrera");
+                cboCarrera.Items.Add(nombreCarrera);
+            }
+
+            if (cboCarrera.Items.Count > 0)
+            {
+                cboCarrera.SelectedIndex = 0; // Seleccionar la primera carrera por defecto
+            }
+
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al cargar las carreras: " + ex.Message);
+        }
+    }
+}
 
         private void btn_inicio_Click(object sender, EventArgs e)
         {
@@ -51,11 +93,7 @@ namespace loginadmi
         {
 
         }
-
-        private void agregarestudiante_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btn_estudiantes_Click(object sender, EventArgs e)
         {
@@ -105,7 +143,7 @@ namespace loginadmi
             string snombres = txt_nombres.Text;
             string sapellidos = txt_apellidos.Text;
             string scarne = txt_carne.Text;
-            string scarrera = txt_carrera.Text;
+            string scarrera = cboCarrera.Text;
             string scorreo = txt_correo.Text;
             string stelefono = txt_telefono.Text;
             string susuario = txt_usuario.Text;
@@ -128,7 +166,7 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                   
+
                     string sconsultaUsuario = "SELECT COUNT(*) FROM usuario WHERE usuario = @usuario";
                     MySqlCommand comandoValidarUsuario = new MySqlCommand(sconsultaUsuario, conexion);
                     comandoValidarUsuario.Parameters.AddWithValue("@usuario", susuario);
@@ -169,7 +207,7 @@ namespace loginadmi
 
                     if (resultado == null)
                     {
-                        
+
                         string sinsertarCarrera = "INSERT INTO carrera (nombreCarrera) VALUES (@carrera)";
                         MySqlCommand comandoInsertarCarrera = new MySqlCommand(sinsertarCarrera, conexion);
                         comandoInsertarCarrera.Parameters.AddWithValue("@carrera", scarrera);
@@ -183,7 +221,7 @@ namespace loginadmi
                         codigoCarrera = Convert.ToInt32(resultado);
                     }
 
-                   
+
                     string sinsertarEstudiante = "INSERT INTO estudiante (nombreEstudiante, apellidosEstudiante, carnetEstudiante_pk, codigoCarrera_fk, correoEstudiante, telefonoEstudiante) " +
                                                 "VALUES (@nombres, @apellidos, @carne, @codigoCarrera, @correo, @telefono)";
                     MySqlCommand comandoInsertarEstudiante = new MySqlCommand(sinsertarEstudiante, conexion);
@@ -195,7 +233,7 @@ namespace loginadmi
                     comandoInsertarEstudiante.Parameters.AddWithValue("@telefono", stelefono);
                     comandoInsertarEstudiante.ExecuteNonQuery();
 
-                    
+
                     string insertarUsuario = "INSERT INTO usuario (usuario, contraseña, carnetEstudiante_fk, codigoRolUsuario_fk) " +
                                                 "VALUES (@usuario, @contraseña, @carnetEstudiante, 1)";
                     MySqlCommand comandoInsertarUsuario = new MySqlCommand(insertarUsuario, conexion);
@@ -228,7 +266,12 @@ namespace loginadmi
         {
             ListaEstudiantes nuevoFormulario = new ListaEstudiantes();
             nuevoFormulario.Show();
-            this.Hide(); 
+            this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
