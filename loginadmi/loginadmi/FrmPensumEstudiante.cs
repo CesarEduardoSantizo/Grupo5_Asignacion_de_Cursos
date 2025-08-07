@@ -17,8 +17,8 @@ namespace loginadmi
 
         private int ObtenerCarreraDelEstudiante()
         {
-            int carnet = clsSesion.CarnetEstudiante;
-            int codigoCarrera = -1;
+            int icarnet = clsSesion.CarnetEstudiante;
+            int icodigoCarrera = -1;
 
             string sconexionBD = ConexionBD.CadenaConexion();
             string query = "SELECT codigoCarrera_fk FROM Estudiante WHERE carnetEstudiante_pk = @carnet";
@@ -30,11 +30,11 @@ namespace loginadmi
                     conexion.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                     {
-                        cmd.Parameters.AddWithValue("@carnet", carnet);
+                        cmd.Parameters.AddWithValue("@carnet", icarnet);
                         object result = cmd.ExecuteScalar();
                         if (result != null && result != DBNull.Value)
                         {
-                            codigoCarrera = Convert.ToInt32(result);
+                            icodigoCarrera = Convert.ToInt32(result);
                         }
                     }
                 }
@@ -44,7 +44,7 @@ namespace loginadmi
                 MessageBox.Show("Error al obtener la carrera del estudiante: " + ex.Message);
             }
 
-            return codigoCarrera;
+            return icodigoCarrera;
         }
 
         private void CargarPensum()
