@@ -169,5 +169,54 @@ namespace loginadmi
              nuevoFormulario.Show();
              this.Hide(); // o this.Close(); si quieres cerrarlo
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            homeadmi homeadmi = new homeadmi();
+            homeadmi.Show();
+            this.Hide();
+        }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            agregarestudiante agregarestudiante = new agregarestudiante();
+            agregarestudiante.Show();
+            this.Hide();
+        }
+
+        private void btnCatedratico_Click(object sender, EventArgs e)
+        {
+            agregar_catedratico agregar_Catedratico = new agregar_catedratico();
+            agregar_Catedratico.Show();
+            this.Hide();
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotas frmNotas = new FrmNotas();
+            frmNotas.Show();
+            this.Hide();
+        }
+
+        private void btnFacultad_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide();
+        }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            FrmInscripcion frmCostoInscripcion = new FrmInscripcion();
+            frmCostoInscripcion.Show();
+            this.Hide();
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            frmModuloCursos frmModuloCursos = new frmModuloCursos();
+            frmModuloCursos.Show();
+            this.Hide();
+        }
     }
 }
