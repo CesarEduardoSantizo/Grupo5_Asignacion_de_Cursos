@@ -55,7 +55,7 @@ namespace loginadmi
             {
                 conexion.Open();
                 string sConsulta = @"
-                    SELECT codigoUsuario_pk, usuario, codigoRolUsuario_fk, carnetEstudiante_fk
+                    SELECT codigoUsuario_pk, usuario, codigoRolUsuario_fk, carnetEstudiante_fk, carnetCatedratico_fk
                     FROM usuario
                     WHERE usuario = @usuario AND contraseña = @contraseña";
                 MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
@@ -70,7 +70,7 @@ namespace loginadmi
                         clsSesion.Usuario = reader.GetString("usuario");
                         clsSesion.CodigoRol = reader.GetInt32("codigoRolUsuario_fk");
                         clsSesion.CarnetEstudiante = reader.IsDBNull(reader.GetOrdinal("carnetEstudiante_fk")) ? 0 : reader.GetInt32("carnetEstudiante_fk");
-
+                        clsSesion.CarnetCatedratico = reader.IsDBNull(reader.GetOrdinal("carnetCatedratico_fk")) ? 0 : reader.GetInt32("carnetCatedratico_fk");
                         MessageBox.Show("Inicio de sesión exitoso.");
 
                         if (clsSesion.CodigoRol == 1)
@@ -80,8 +80,9 @@ namespace loginadmi
                         }
                         else if (clsSesion.CodigoRol == 2)
                         {
-                            homeadmi frmAdmin = new homeadmi();
-                            frmAdmin.Show();
+                            frmHomeCatedraticos frmHomeCatedraticos = new frmHomeCatedraticos();    
+                            frmHomeCatedraticos.Show();
+
 
                         }
                         else if (clsSesion.CodigoRol == 3)

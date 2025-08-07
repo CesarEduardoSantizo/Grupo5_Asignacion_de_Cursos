@@ -72,24 +72,28 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT COUNT(*) FROM costoinscripcion WHERE codigoCostoInscripcion_pk = @codigo AND semestre = @semestre AND año = @año";
+                    string sConsulta = @"SELECT i.noDocumento_pk
+                                        FROM Inscripcion i
+                                        INNER JOIN CostoInscripcion ci ON i.codigoCostoInscripcion_fk = ci.codigoCostoInscripcion_pk
+                                        WHERE i.noDocumento_pk = @noDocumento
+                                          AND ci.semestre = @semestre
+                                          AND ci.año = @año";
 
-                    using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
+                    using (MySqlCommand cmd = new MySqlCommand(sConsulta, conexion))
                     {
-                        cmd.Parameters.AddWithValue("@codigo", documento);
+                        cmd.Parameters.AddWithValue("@noDocumento", documento);
                         cmd.Parameters.AddWithValue("@semestre", semestre);
                         cmd.Parameters.AddWithValue("@año", año);
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        object result = cmd.ExecuteScalar();
 
-                        if (count > 0)
+                        if (result != null)
                         {
                             MessageBox.Show("Todos los datos son correctos.");
-
-
-                           // FrmAsignacionCursos nuevoFormulario = new FrmAsignacionCursos();
-                            //nuevoFormulario.Show();
-                            //this.Hide();
+                            clsSesion.noDocumento = Convert.ToInt32(result);
+                            frmAsignarCursosAlumno nuevoFormulario = new frmAsignarCursosAlumno();
+                            nuevoFormulario.Show();
+                            this.Hide();
                         }
                         else
                         {
