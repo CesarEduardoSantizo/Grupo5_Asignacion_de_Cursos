@@ -12,5 +12,8 @@ namespace loginadmi
         public static string Usuario { get; set; }
         public static int CodigoRol { get; set; }
         public static int CarnetEstudiante { get; set; }
+
+        public static int CarnetCatedratico { get; set; }
+        public static int noDocumento { get; set; }
     }
 }
