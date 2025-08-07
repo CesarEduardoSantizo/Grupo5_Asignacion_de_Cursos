@@ -78,12 +78,12 @@ namespace loginadmi
                         adapter.SelectCommand.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        lstPensumEstudiante.DataSource = dt;
+                        dgvPensumEstudiante.DataSource = dt;
 
-                        lstPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
-                        lstPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
-                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
-                        lstPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
+                        dgvPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
+                        dgvPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
+                        dgvPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
+                        dgvPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
                     }
                 }
             }
@@ -177,12 +177,12 @@ namespace loginadmi
 
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        lstPensumEstudiante.DataSource = dt;
+                        dgvPensumEstudiante.DataSource = dt;
 
-                        lstPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
-                        lstPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
-                        lstPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
-                        lstPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
+                        dgvPensumEstudiante.Columns["codigoCurso_fk"].HeaderText = "Código";
+                        dgvPensumEstudiante.Columns["nombreCurso"].HeaderText = "Nombre";
+                        dgvPensumEstudiante.Columns["codigoPreRequisito_fk"].HeaderText = "Pre requisito";
+                        dgvPensumEstudiante.Columns["numeroCiclo"].HeaderText = "Ciclo";
                     }
                 }
             }
@@ -226,15 +226,25 @@ namespace loginadmi
 
         }
 
-        private void lstPensumEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
+
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
             FrmNotasEstudiante nuevoFormulario = new FrmNotasEstudiante();
             nuevoFormulario.Show();
             this.Hide(); 
+        }
+
+        private void dgvPensumEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            FrmCursosEstudiante nuevoFormulario = new FrmCursosEstudiante();
+            nuevoFormulario.Show();
+            this.Hide();
         }
     }
 }

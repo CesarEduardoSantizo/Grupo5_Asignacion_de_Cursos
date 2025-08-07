@@ -119,6 +119,27 @@ namespace loginadmi
         {
 
         }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            FrmCursosEstudiante nuevoFormulario = new FrmCursosEstudiante();
+            nuevoFormulario.Show();
+            this.Hide(); 
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotasEstudiante nuevoFormulario = new FrmNotasEstudiante();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnPensum_Click(object sender, EventArgs e)
+        {
+            FrmPensumEstudiante nuevoFormulario = new FrmPensumEstudiante();
+            nuevoFormulario.Show();
+            this.Hide(); 
+        }
     }
 }
 
