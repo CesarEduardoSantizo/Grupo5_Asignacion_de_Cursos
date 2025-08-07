@@ -40,11 +40,11 @@
             this.btn_registrarfacu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_facus = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnInscripcion = new System.Windows.Forms.Button();
+            this.btnfacultades = new System.Windows.Forms.Button();
+            this.btnNotas = new System.Windows.Forms.Button();
+            this.btnCatedratico = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -98,10 +98,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(33, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 27);
+            this.label3.Size = new System.Drawing.Size(252, 29);
             this.label3.TabIndex = 13;
             this.label3.Text = "Datos de la Facultad";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -119,10 +119,10 @@
             // lbl_edificio
             // 
             this.lbl_edificio.AutoSize = true;
-            this.lbl_edificio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_edificio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_edificio.Location = new System.Drawing.Point(409, 86);
             this.lbl_edificio.Name = "lbl_edificio";
-            this.lbl_edificio.Size = new System.Drawing.Size(192, 23);
+            this.lbl_edificio.Size = new System.Drawing.Size(173, 25);
             this.lbl_edificio.TabIndex = 2;
             this.lbl_edificio.Text = "Codigo del Edificio";
             this.lbl_edificio.Click += new System.EventHandler(this.lbl_edificio_Click);
@@ -140,17 +140,17 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.Location = new System.Drawing.Point(33, 87);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(90, 23);
+            this.lbl_nombre.Size = new System.Drawing.Size(81, 25);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
             // 
             // btn_listaFacu
             // 
             this.btn_listaFacu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_listaFacu.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_listaFacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_listaFacu.ForeColor = System.Drawing.Color.White;
             this.btn_listaFacu.Location = new System.Drawing.Point(574, 544);
             this.btn_listaFacu.Margin = new System.Windows.Forms.Padding(4);
@@ -164,7 +164,7 @@
             // btn_registrarfacu
             // 
             this.btn_registrarfacu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_registrarfacu.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrarfacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarfacu.ForeColor = System.Drawing.Color.White;
             this.btn_registrarfacu.Location = new System.Drawing.Point(229, 544);
             this.btn_registrarfacu.Margin = new System.Windows.Forms.Padding(4);
@@ -188,85 +188,89 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(368, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 70);
+            this.label1.Size = new System.Drawing.Size(332, 69);
             this.label1.TabIndex = 0;
             this.label1.Text = "Facultades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // btnCursos
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(119, 681);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 34);
-            this.button1.TabIndex = 116;
-            this.button1.Text = "Cursos";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.Color.White;
+            this.btnCursos.Location = new System.Drawing.Point(119, 681);
+            this.btnCursos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(111, 34);
+            this.btnCursos.TabIndex = 116;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
-            // button2
+            // btnInscripcion
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(119, 607);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 34);
-            this.button2.TabIndex = 115;
-            this.button2.Text = "Inscripcion";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnInscripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcion.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcion.Location = new System.Drawing.Point(119, 607);
+            this.btnInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInscripcion.Name = "btnInscripcion";
+            this.btnInscripcion.Size = new System.Drawing.Size(111, 34);
+            this.btnInscripcion.TabIndex = 115;
+            this.btnInscripcion.Text = "Inscripcion";
+            this.btnInscripcion.UseVisualStyleBackColor = false;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
             // 
-            // btn_facus
+            // btnfacultades
             // 
-            this.btn_facus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_facus.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_facus.ForeColor = System.Drawing.Color.White;
-            this.btn_facus.Location = new System.Drawing.Point(119, 528);
-            this.btn_facus.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_facus.Name = "btn_facus";
-            this.btn_facus.Size = new System.Drawing.Size(111, 34);
-            this.btn_facus.TabIndex = 114;
-            this.btn_facus.Text = "Facultades";
-            this.btn_facus.UseVisualStyleBackColor = false;
-            this.btn_facus.Click += new System.EventHandler(this.btn_facus_Click);
+            this.btnfacultades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnfacultades.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfacultades.ForeColor = System.Drawing.Color.White;
+            this.btnfacultades.Location = new System.Drawing.Point(119, 528);
+            this.btnfacultades.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfacultades.Name = "btnfacultades";
+            this.btnfacultades.Size = new System.Drawing.Size(111, 34);
+            this.btnfacultades.TabIndex = 114;
+            this.btnfacultades.Text = "Facultades";
+            this.btnfacultades.UseVisualStyleBackColor = false;
+            this.btnfacultades.Click += new System.EventHandler(this.btn_facus_Click);
             // 
-            // button4
+            // btnNotas
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(119, 441);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 34);
-            this.button4.TabIndex = 113;
-            this.button4.Text = "Notas";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotas.ForeColor = System.Drawing.Color.White;
+            this.btnNotas.Location = new System.Drawing.Point(119, 441);
+            this.btnNotas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNotas.Name = "btnNotas";
+            this.btnNotas.Size = new System.Drawing.Size(111, 34);
+            this.btnNotas.TabIndex = 113;
+            this.btnNotas.Text = "Notas";
+            this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
-            // button5
+            // btnCatedratico
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(119, 354);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 34);
-            this.button5.TabIndex = 112;
-            this.button5.Text = "Catedratico";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnCatedratico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnCatedratico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatedratico.ForeColor = System.Drawing.Color.White;
+            this.btnCatedratico.Location = new System.Drawing.Point(119, 354);
+            this.btnCatedratico.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCatedratico.Name = "btnCatedratico";
+            this.btnCatedratico.Size = new System.Drawing.Size(111, 34);
+            this.btnCatedratico.TabIndex = 112;
+            this.btnCatedratico.Text = "Catedratico";
+            this.btnCatedratico.UseVisualStyleBackColor = false;
+            this.btnCatedratico.Click += new System.EventHandler(this.btnCatedratico_Click);
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(119, 271);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
@@ -275,11 +279,12 @@
             this.button6.TabIndex = 111;
             this.button6.Text = "Estudiante";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(119, 192);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
@@ -288,6 +293,7 @@
             this.button7.TabIndex = 110;
             this.button7.Text = "Inicio";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox14
             // 
@@ -387,11 +393,11 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn_facus);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnCursos);
+            this.Controls.Add(this.btnInscripcion);
+            this.Controls.Add(this.btnfacultades);
+            this.Controls.Add(this.btnNotas);
+            this.Controls.Add(this.btnCatedratico);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox14);
@@ -426,11 +432,11 @@
         private System.Windows.Forms.Panel pnl_home;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_facus;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnInscripcion;
+        private System.Windows.Forms.Button btnfacultades;
+        private System.Windows.Forms.Button btnNotas;
+        private System.Windows.Forms.Button btnCatedratico;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox14;

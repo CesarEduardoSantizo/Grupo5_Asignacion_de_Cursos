@@ -85,7 +85,7 @@ namespace loginadmi
 
         private void btnInscripcion_Click(object sender, EventArgs e)
         {
-            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            FrmInscripcion frmCostoInscripcion = new FrmInscripcion();
             frmCostoInscripcion.Show();
             this.Hide();
         }

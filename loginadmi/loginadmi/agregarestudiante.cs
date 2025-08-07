@@ -19,10 +19,6 @@ namespace loginadmi
             InitializeComponent();
         }
 
-        private void ptb_estudiante_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void agregarestudiante_Load(object sender, EventArgs e)
         {
@@ -65,34 +61,15 @@ namespace loginadmi
     }
 }
 
-        private void btn_inicio_Click(object sender, EventArgs e)
-        {
-            homeadmi nuevoFormulario = new homeadmi();
 
-            nuevoFormulario.Show();
 
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_agregar_estudiantes_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lbl_año_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
 
-        }
         
 
         private void btn_estudiantes_Click(object sender, EventArgs e)
@@ -104,10 +81,6 @@ namespace loginadmi
             this.Hide(); // o this.Close(); si quieres cerrarlo
         }
 
-        private void lbl_dpi_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lbl_carrera_Click(object sender, EventArgs e)
         {
@@ -124,14 +97,6 @@ namespace loginadmi
 
         }
 
-        private void btn_catedratico_Click(object sender, EventArgs e)
-        {
-            agregar_catedratico nuevoFormulario = new agregar_catedratico();
-
-            nuevoFormulario.Show();
-
-            this.Hide(); // o this.Close(); si quieres cerrarlo
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -257,10 +222,6 @@ namespace loginadmi
 
         }
 
-        private void txt_carrera_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_listaEstudiantes_Click(object sender, EventArgs e)
         {
@@ -272,6 +233,56 @@ namespace loginadmi
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+ 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            homeadmi nuevoFormulario = new homeadmi();
+            nuevoFormulario.Show();
+            this.Hide();
+
+        }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            agregarestudiante nuevoFormulario = new agregarestudiante();
+            nuevoFormulario.Show();
+            this.Hide(); 
+        }
+
+        private void btnCatedratico_Click(object sender, EventArgs e)
+        {
+            agregar_catedratico nuevoFormulario = new agregar_catedratico();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+            FrmNotas nuevoFormulario = new FrmNotas();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnFacultad_Click(object sender, EventArgs e)
+        {
+            Facultades nuevoFormulario = new Facultades();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            FrmInscripcion nuevoFormulario = new FrmInscripcion();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            frmCursos nuevoFormulario = new frmCursos();
+            nuevoFormulario.Show();
         }
     }
 }

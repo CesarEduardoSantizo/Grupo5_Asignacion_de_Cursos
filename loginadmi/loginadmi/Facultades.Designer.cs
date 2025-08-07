@@ -321,11 +321,12 @@
             this.button1.TabIndex = 99;
             this.button1.Text = "Cursos";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(114, 620);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
@@ -334,11 +335,12 @@
             this.button2.TabIndex = 98;
             this.button2.Text = "Inscripcion";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnFacultades
             // 
             this.btnFacultades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btnFacultades.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacultades.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacultades.ForeColor = System.Drawing.Color.White;
             this.btnFacultades.Location = new System.Drawing.Point(114, 541);
             this.btnFacultades.Margin = new System.Windows.Forms.Padding(4);
@@ -347,11 +349,12 @@
             this.btnFacultades.TabIndex = 97;
             this.btnFacultades.Text = "Facultades";
             this.btnFacultades.UseVisualStyleBackColor = false;
+            this.btnFacultades.Click += new System.EventHandler(this.btnFacultades_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(114, 454);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
@@ -360,11 +363,12 @@
             this.button4.TabIndex = 96;
             this.button4.Text = "Notas";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(114, 367);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
@@ -373,11 +377,12 @@
             this.button5.TabIndex = 95;
             this.button5.Text = "Catedratico";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(114, 284);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
@@ -386,11 +391,12 @@
             this.button6.TabIndex = 94;
             this.button6.Text = "Estudiante";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(114, 205);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
@@ -523,11 +529,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(368, 603);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 21);
+            this.label2.Size = new System.Drawing.Size(77, 22);
             this.label2.TabIndex = 48;
             this.label2.Text = "Edificios";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -535,11 +541,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(641, 601);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
+            this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 47;
             this.label3.Text = "Cursos";
             // 
@@ -578,11 +584,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(363, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 70);
+            this.label1.Size = new System.Drawing.Size(332, 69);
             this.label1.TabIndex = 0;
             this.label1.Text = "Facultades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -632,33 +638,33 @@
             // lbl_cursos
             // 
             this.lbl_cursos.AutoSize = true;
-            this.lbl_cursos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cursos.Location = new System.Drawing.Point(506, 375);
             this.lbl_cursos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cursos.Name = "lbl_cursos";
-            this.lbl_cursos.Size = new System.Drawing.Size(83, 21);
+            this.lbl_cursos.Size = new System.Drawing.Size(80, 22);
             this.lbl_cursos.TabIndex = 16;
             this.lbl_cursos.Text = "Carreras";
             // 
             // lbl_notas
             // 
             this.lbl_notas.AutoSize = true;
-            this.lbl_notas.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_notas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_notas.Location = new System.Drawing.Point(774, 372);
             this.lbl_notas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_notas.Name = "lbl_notas";
-            this.lbl_notas.Size = new System.Drawing.Size(79, 21);
+            this.lbl_notas.Size = new System.Drawing.Size(75, 22);
             this.lbl_notas.TabIndex = 15;
             this.lbl_notas.Text = "Pensum";
             // 
             // lbl_laboratorios
             // 
             this.lbl_laboratorios.AutoSize = true;
-            this.lbl_laboratorios.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_laboratorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_laboratorios.Location = new System.Drawing.Point(217, 375);
             this.lbl_laboratorios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_laboratorios.Name = "lbl_laboratorios";
-            this.lbl_laboratorios.Size = new System.Drawing.Size(107, 21);
+            this.lbl_laboratorios.Size = new System.Drawing.Size(98, 22);
             this.lbl_laboratorios.TabIndex = 14;
             this.lbl_laboratorios.Text = "Facultades";
             // 

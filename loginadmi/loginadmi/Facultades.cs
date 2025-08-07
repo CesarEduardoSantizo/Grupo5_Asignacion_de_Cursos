@@ -79,5 +79,47 @@ namespace loginadmi
             nuevoFormulario.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            agregarestudiante nuevoFormulario = new agregarestudiante();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            agregar_catedratico nuevoFormulario = new agregar_catedratico();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmNotas nuevoFormulario = new FrmNotas();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btnFacultades_Click(object sender, EventArgs e)
+        {
+            Facultades nuevoFormulario = new Facultades();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmInscripcion frmCostoInscripcion = new FrmInscripcion();
+            frmCostoInscripcion.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmCursos nuevoFormulario = new frmCursos();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
     }
 }
