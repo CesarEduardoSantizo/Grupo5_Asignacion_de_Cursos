@@ -1,4 +1,5 @@
 ﻿
+//PROGRAMADO POR: GERBER ALEXANDER ASTURIAS TEJAXÚN CARNET: 0901-22-11992
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -23,8 +24,19 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT nombreEstudiante, apellidosEstudiante, carnetEstudiante_pk, codigoCarrera_fk, correoEstudiante, telefonoEstudiante FROM estudiante";
-                    MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
+                    string sconsulta = @"
+                SELECT 
+                    e.nombreEstudiante, 
+                    e.apellidosEstudiante, 
+                    e.carnetEstudiante_pk, 
+                    c.nombreCarrera AS Carrera, 
+                    e.correoEstudiante, 
+                    e.telefonoEstudiante
+                FROM estudiante e
+                LEFT JOIN carrera c ON e.codigoCarrera_fk = c.codigoCarrera_pk";
+
+                    
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(sconsulta, conexion);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
                     list_estudiantes.DataSource = tabla;
@@ -33,7 +45,7 @@ namespace loginadmi
                     list_estudiantes.Columns["nombreEstudiante"].HeaderText = "Nombres";
                     list_estudiantes.Columns["apellidosEstudiante"].HeaderText = "Apellidos";
                     list_estudiantes.Columns["carnetEstudiante_pk"].HeaderText = "Carné";
-                    list_estudiantes.Columns["codigoCarrera_fk"].HeaderText = "Carrera";
+                    list_estudiantes.Columns["Carrera"].HeaderText = "Carrera";
                     list_estudiantes.Columns["correoEstudiante"].HeaderText = "Correo";
                     list_estudiantes.Columns["telefonoEstudiante"].HeaderText = "Teléfono";
                 }

@@ -273,6 +273,7 @@
             this.cboSemestre.Name = "cboSemestre";
             this.cboSemestre.Size = new System.Drawing.Size(374, 29);
             this.cboSemestre.TabIndex = 20;
+            this.cboSemestre.SelectedIndexChanged += new System.EventHandler(this.cboSemestre_SelectedIndexChanged);
             // 
             // lblAño
             // 

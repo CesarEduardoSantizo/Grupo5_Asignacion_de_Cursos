@@ -55,7 +55,6 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txt_carrera = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_apeliidos = new System.Windows.Forms.Label();
             this.btn = new System.Windows.Forms.Button();
@@ -69,6 +68,7 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_notas = new System.Windows.Forms.Button();
+            this.cbocarrera = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -344,15 +344,6 @@
             this.pictureBox3.TabIndex = 56;
             this.pictureBox3.TabStop = false;
             // 
-            // txt_carrera
-            // 
-            this.txt_carrera.Location = new System.Drawing.Point(408, 187);
-            this.txt_carrera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 4);
-            this.txt_carrera.Multiline = true;
-            this.txt_carrera.Name = "txt_carrera";
-            this.txt_carrera.Size = new System.Drawing.Size(289, 42);
-            this.txt_carrera.TabIndex = 5;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -476,6 +467,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.cbocarrera);
             this.panel1.Controls.Add(this.lbl_contraseña);
             this.panel1.Controls.Add(this.lbl_usurio);
             this.panel1.Controls.Add(this.txt_contraseña);
@@ -489,7 +481,6 @@
             this.panel1.Controls.Add(this.lbl_telefono);
             this.panel1.Controls.Add(this.txt_correo);
             this.panel1.Controls.Add(this.lbl_correo);
-            this.panel1.Controls.Add(this.txt_carrera);
             this.panel1.Controls.Add(this.lbl_carrera);
             this.panel1.Controls.Add(this.txt_carne);
             this.panel1.Controls.Add(this.lbl_apeliidos);
@@ -511,6 +502,14 @@
             this.btn_notas.TabIndex = 66;
             this.btn_notas.Text = "Notas";
             this.btn_notas.UseVisualStyleBackColor = false;
+            // 
+            // cbocarrera
+            // 
+            this.cbocarrera.FormattingEnabled = true;
+            this.cbocarrera.Location = new System.Drawing.Point(408, 189);
+            this.cbocarrera.Name = "cbocarrera";
+            this.cbocarrera.Size = new System.Drawing.Size(289, 24);
+            this.cbocarrera.TabIndex = 19;
             // 
             // EditarEstudiante
             // 
@@ -583,7 +582,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox txt_carrera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_apeliidos;
         private System.Windows.Forms.Button btn;
@@ -597,5 +595,6 @@
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_notas;
+        private System.Windows.Forms.ComboBox cbocarrera;
     }
 }
