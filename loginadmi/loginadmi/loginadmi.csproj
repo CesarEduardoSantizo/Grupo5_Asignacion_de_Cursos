@@ -331,10 +331,10 @@
     <EmbeddedResource Include="frmAsignarCursosAlumno.resx">
       <DependentUpon>frmAsignarCursosAlumno.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="frmCostoInscripcion.resx">
-		  <DependentUpon>frmCostoInscripcion.cs</DependentUpon>
-	  </EmbeddedResource>
-		<EmbeddedResource Include="frmCursos.resx">
+    <EmbeddedResource Include="frmCostoInscripcion.resx">
+      <DependentUpon>frmCostoInscripcion.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="frmCursos.resx">
       <DependentUpon>frmCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdificios.resx">
