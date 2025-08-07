@@ -133,6 +133,7 @@ namespace loginadmi
         }
 
         private void btnPago_Click(object sender, EventArgs e)
+     
         {
             string año = cboAnio.Text;
             string semestre = cboSemestre.Text;
@@ -144,67 +145,149 @@ namespace loginadmi
             }
 
             string conexionBD = ConexionBD.CadenaConexion();
-            long codigo = 0;
-            string valorDesdeBD = "";
+            long codigoCosto = 0;
+            decimal valorCosto = 0m;
+            long noDocumentoInsert = 0;
 
-            using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+            using (var conexion = new MySqlConnection(conexionBD))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT codigoCostoInscripcion_pk, costo FROM costoinscripcion WHERE semestre = @semestre AND año = @año";
-                    using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
+                    // 1. Obtener código y costo de inscripción
+                    const string sqlCosto = @"
+                SELECT codigoCostoInscripcion_pk, costo
+                  FROM costoinscripcion
+                 WHERE semestre = @semestre
+                   AND año      = @año";
+                    using (var cmdCosto = new MySqlCommand(sqlCosto, conexion))
                     {
-                        cmd.Parameters.AddWithValue("@semestre", semestre);
-                        cmd.Parameters.AddWithValue("@año", año);
+                        cmdCosto.Parameters.AddWithValue("@semestre", semestre);
+                        cmdCosto.Parameters.AddWithValue("@año", año);
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        using (var reader = cmdCosto.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                codigo = reader.GetInt64("codigoCostoInscripcion_pk");
-                                valorDesdeBD = reader.GetDecimal("costo").ToString("F2");
-
-                                MessageBox.Show("Datos verificados correctamente.");
-
-                                // Generar PDF
-                                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                                saveFileDialog.Filter = "Archivo PDF (*.pdf)|*.pdf";
-                                saveFileDialog.FileName = "boleta_inscripcion_" + codigo + ".pdf";
-
-                                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                                {
-                                    Document doc = new Document();
-                                    PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
-                                    doc.Open();
-
-                                    doc.Add(new Paragraph("BOLETA DE INSCRIPCIÓN", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)));
-                                    doc.Add(new Paragraph(" "));
-                                    doc.Add(new Paragraph("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy")));
-                                    doc.Add(new Paragraph("Código de inscripción: " + codigo));
-                                    doc.Add(new Paragraph("Año: " + año));
-                                    doc.Add(new Paragraph("Semestre: " + semestre));
-                                    doc.Add(new Paragraph("Valor pagado: Q" + valorDesdeBD));
-
-                                    doc.Close();
-
-                                    MessageBox.Show("PDF generado exitosamente.");
-                                }
+                                codigoCosto = reader.GetInt64("codigoCostoInscripcion_pk");
+                                valorCosto = reader.GetDecimal("costo");
                             }
                             else
                             {
-                                MessageBox.Show("No se encontró una inscripción con esos datos.");
+                                MessageBox.Show("No existe un costo de inscripción para ese semestre y año.");
+                                return;
                             }
                         }
                     }
+
+                    // 2. Verificar si ya está inscrito
+                    const string sqlVerificar = @"
+                SELECT COUNT(*)
+                  FROM inscripcion
+                 WHERE carnetEstudiante_fk       = @carnet
+                   AND codigoCostoInscripcion_fk = @codigoCosto";
+                    using (var cmdVerificar = new MySqlCommand(sqlVerificar, conexion))
+                    {
+                        cmdVerificar.Parameters.AddWithValue("@carnet", clsSesion.CarnetEstudiante);
+                        cmdVerificar.Parameters.AddWithValue("@codigoCosto", codigoCosto);
+
+                        int yaInscrito = Convert.ToInt32(cmdVerificar.ExecuteScalar());
+                        if (yaInscrito > 0)
+                        {
+                            MessageBox.Show("Ya tienes una inscripción para este semestre y año.");
+                            return;
+                        }
+                    }
+
+                    // 3. Insertar nueva inscripción
+                    const string sqlInsert = @"
+                INSERT INTO inscripcion
+                            (carnetEstudiante_fk,
+                             codigoCostoInscripcion_fk,
+                             fechaInscripcion)
+                VALUES (@carnet, @codigoCosto, @fecha)";
+                    using (var cmdInsert = new MySqlCommand(sqlInsert, conexion))
+                    {
+                        cmdInsert.Parameters.AddWithValue("@carnet", clsSesion.CarnetEstudiante);
+                        cmdInsert.Parameters.AddWithValue("@codigoCosto", codigoCosto);
+                        cmdInsert.Parameters.AddWithValue("@fecha", DateTime.Now.Date);
+
+                        cmdInsert.ExecuteNonQuery();
+                        noDocumentoInsert = cmdInsert.LastInsertedId;
+                    }
+
+                    MessageBox.Show("Inscripción registrada exitosamente. Boleta No.: " + noDocumentoInsert);
+
+
+
+                    // Variables para el nombre completo
+                    string nombreAlumno = "";
+                    string apellidoAlumno = "";
+
+                    // 2.1 Obtener nombre y apellidos desde la tabla estudiante
+                    const string sqlAlumno = @"
+                        SELECT nombreEstudiante, apellidosEstudiante
+                        FROM estudiante
+                         WHERE carnetEstudiante_pk = @carnet";
+
+                    using (var cmdAlumno = new MySqlCommand(sqlAlumno, conexion))
+                    {
+                        cmdAlumno.Parameters.AddWithValue("@carnet", clsSesion.CarnetEstudiante);
+
+                        using (var readerAl = cmdAlumno.ExecuteReader())
+                        {
+                            if (readerAl.Read())
+                            {
+                                nombreAlumno = readerAl.GetString("nombreEstudiante");
+                                apellidoAlumno = readerAl.GetString("apellidosEstudiante");
+                            }
+                        }
+                    }
+
+                    // 4. Generar PDF
+using (var save = new SaveFileDialog())
+{
+    save.Filter   = "Archivo PDF (*.pdf)|*.pdf";
+    save.FileName = $"boleta_inscripcion_{noDocumentoInsert}.pdf";
+
+    if (save.ShowDialog() == DialogResult.OK)
+    {
+        using (var fs = new FileStream(save.FileName, FileMode.Create))
+        {
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, fs);
+            doc.Open();
+
+            doc.Add(new Paragraph("BOLETA DE INSCRIPCIÓN", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)));
+            doc.Add(new Paragraph(""));
+
+            doc.Add(new Paragraph("Fecha: "       + DateTime.Now.ToString("dd/MM/yyyy")));
+            doc.Add(new Paragraph("Boleta No.: "  + noDocumentoInsert));
+            doc.Add(new Paragraph("Carnet: "       + clsSesion.CarnetEstudiante));
+
+            // Aquí añadimos Nombre y Apellidos
+            doc.Add(new Paragraph("Nombre: "       + nombreAlumno));
+            doc.Add(new Paragraph("Apellidos: "    + apellidoAlumno));
+
+            doc.Add(new Paragraph("Año: "          + año));
+            doc.Add(new Paragraph("Semestre: "     + semestre));
+            doc.Add(new Paragraph("Valor pagado: Q" + valorCosto.ToString("F2")));
+
+            doc.Close();
+        }
+
+        MessageBox.Show("PDF generado exitosamente.");
+    }
+}
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al buscar los datos: " + ex.Message);
+                    MessageBox.Show("Error al procesar la inscripción: " + ex.Message);
                 }
             }
         }
+
 
 
         private void FrmInscripcion_Load(object sender, EventArgs e)
