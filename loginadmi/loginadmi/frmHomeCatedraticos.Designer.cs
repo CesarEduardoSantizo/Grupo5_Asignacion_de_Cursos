@@ -32,7 +32,7 @@
             this.btnNotas = new System.Windows.Forms.Button();
             this.btnListados = new System.Windows.Forms.Button();
             this.PicAsignacion = new System.Windows.Forms.PictureBox();
-            this.btnListadoCursos = new System.Windows.Forms.Button();
+            this.btnCursosC = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.PicNotas = new System.Windows.Forms.PictureBox();
             this.picInicio = new System.Windows.Forms.PictureBox();
@@ -98,18 +98,18 @@
             this.PicAsignacion.TabIndex = 89;
             this.PicAsignacion.TabStop = false;
             // 
-            // btnListadoCursos
+            // btnCursosC
             // 
-            this.btnListadoCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnListadoCursos.ForeColor = System.Drawing.Color.White;
-            this.btnListadoCursos.Location = new System.Drawing.Point(111, 362);
-            this.btnListadoCursos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnListadoCursos.Name = "btnListadoCursos";
-            this.btnListadoCursos.Size = new System.Drawing.Size(111, 34);
-            this.btnListadoCursos.TabIndex = 88;
-            this.btnListadoCursos.Text = "Cursos";
-            this.btnListadoCursos.UseVisualStyleBackColor = false;
-            this.btnListadoCursos.Click += new System.EventHandler(this.btnListadoCursos_Click);
+            this.btnCursosC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCursosC.ForeColor = System.Drawing.Color.White;
+            this.btnCursosC.Location = new System.Drawing.Point(111, 362);
+            this.btnCursosC.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCursosC.Name = "btnCursosC";
+            this.btnCursosC.Size = new System.Drawing.Size(111, 34);
+            this.btnCursosC.TabIndex = 88;
+            this.btnCursosC.Text = "Cursos";
+            this.btnCursosC.UseVisualStyleBackColor = false;
+            this.btnCursosC.Click += new System.EventHandler(this.btnCursosC_Click);
             // 
             // btnInicio
             // 
@@ -187,6 +187,7 @@
             this.btnModuloNotas.TabIndex = 47;
             this.btnModuloNotas.Text = "Notas";
             this.btnModuloNotas.UseVisualStyleBackColor = false;
+            this.btnModuloNotas.Click += new System.EventHandler(this.btnModuloNotas_Click);
             // 
             // btnCursos
             // 
@@ -200,6 +201,7 @@
             this.btnCursos.TabIndex = 46;
             this.btnCursos.Text = "Cursos";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // btnModuloListados
             // 
@@ -213,6 +215,7 @@
             this.btnModuloListados.TabIndex = 45;
             this.btnModuloListados.Text = "Listados ";
             this.btnModuloListados.UseVisualStyleBackColor = false;
+            this.btnModuloListados.Click += new System.EventHandler(this.btnModuloListados_Click);
             // 
             // PanBienvenidos
             // 
@@ -289,7 +292,7 @@
             this.Controls.Add(this.btnNotas);
             this.Controls.Add(this.btnListados);
             this.Controls.Add(this.PicAsignacion);
-            this.Controls.Add(this.btnListadoCursos);
+            this.Controls.Add(this.btnCursosC);
             this.Controls.Add(this.picCursos);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.PicNotas);
@@ -319,7 +322,7 @@
         private System.Windows.Forms.Button btnNotas;
         private System.Windows.Forms.Button btnListados;
         private System.Windows.Forms.PictureBox PicAsignacion;
-        private System.Windows.Forms.Button btnListadoCursos;
+        private System.Windows.Forms.Button btnCursosC;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.PictureBox PicNotas;
         private System.Windows.Forms.PictureBox picInicio;

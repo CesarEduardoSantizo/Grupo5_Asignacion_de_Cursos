@@ -147,6 +147,12 @@
     <Compile Include="frmCursos.Designer.cs">
       <DependentUpon>frmCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCursosCatedratico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCursosCatedratico.Designer.cs">
+      <DependentUpon>frmCursosCatedratico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCursosEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,12 @@
     </Compile>
     <Compile Include="frmListadoLaboratorio.Designer.cs">
       <DependentUpon>frmListadoLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadosAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadosAlumnos.Designer.cs">
+      <DependentUpon>frmListadosAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmlistaedificios.cs">
       <SubType>Form</SubType>
@@ -343,6 +355,9 @@
     <EmbeddedResource Include="frmCursos.resx">
       <DependentUpon>frmCursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCursosCatedratico.resx">
+      <DependentUpon>frmCursosCatedratico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCursosEstudiante.resx">
       <DependentUpon>FrmCursosEstudiante.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoLaboratorio.resx">
       <DependentUpon>frmListadoLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadosAlumnos.resx">
+      <DependentUpon>frmListadosAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlistaedificios.resx">
       <DependentUpon>frmlistaedificios.cs</DependentUpon>

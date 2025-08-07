@@ -34,6 +34,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCodigoNotas = new System.Windows.Forms.TextBox();
             this.pnl_home = new System.Windows.Forms.Panel();
+            this.buttonMod = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +53,6 @@
             this.txtCarnetEstudiante = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_Notas = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnNotas = new System.Windows.Forms.Button();
             this.btnListados = new System.Windows.Forms.Button();
             this.PicAsignacion = new System.Windows.Forms.PictureBox();
@@ -60,12 +61,11 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.PicNotas = new System.Windows.Forms.PictureBox();
             this.picInicio = new System.Windows.Forms.PictureBox();
-            this.buttonMod = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_home.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicNotas)).BeginInit();
@@ -135,6 +135,40 @@
             this.pnl_home.Name = "pnl_home";
             this.pnl_home.Size = new System.Drawing.Size(1072, 788);
             this.pnl_home.TabIndex = 98;
+            // 
+            // buttonMod
+            // 
+            this.buttonMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.buttonMod.ForeColor = System.Drawing.Color.White;
+            this.buttonMod.Location = new System.Drawing.Point(424, 602);
+            this.buttonMod.Name = "buttonMod";
+            this.buttonMod.Size = new System.Drawing.Size(160, 49);
+            this.buttonMod.TabIndex = 81;
+            this.buttonMod.Text = "Modificar";
+            this.buttonMod.UseVisualStyleBackColor = false;
+            this.buttonMod.Click += new System.EventHandler(this.buttonMod_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1072, 92);
+            this.panel1.TabIndex = 80;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(173, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(191, 69);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Notas";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -276,28 +310,6 @@
             this.lbl_Notas.Text = "Notas";
             this.lbl_Notas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1072, 92);
-            this.panel1.TabIndex = 80;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(173, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(191, 69);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Notas";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnNotas
             // 
             this.btnNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
@@ -324,6 +336,7 @@
             this.btnListados.TabIndex = 105;
             this.btnListados.Text = "Listados";
             this.btnListados.UseVisualStyleBackColor = false;
+            this.btnListados.Click += new System.EventHandler(this.btnListados_Click);
             // 
             // PicAsignacion
             // 
@@ -396,18 +409,6 @@
             this.picInicio.TabIndex = 99;
             this.picInicio.TabStop = false;
             // 
-            // buttonMod
-            // 
-            this.buttonMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.buttonMod.ForeColor = System.Drawing.Color.White;
-            this.buttonMod.Location = new System.Drawing.Point(424, 602);
-            this.buttonMod.Name = "buttonMod";
-            this.buttonMod.Size = new System.Drawing.Size(160, 49);
-            this.buttonMod.TabIndex = 81;
-            this.buttonMod.Text = "Modificar";
-            this.buttonMod.UseVisualStyleBackColor = false;
-            this.buttonMod.Click += new System.EventHandler(this.buttonMod_Click);
-            // 
             // FrmNotasCatedratico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,16 +426,18 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnl_home);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "FrmNotasCatedratico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNotasCatedratico";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_home.ResumeLayout(false);
             this.pnl_home.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicNotas)).EndInit();
