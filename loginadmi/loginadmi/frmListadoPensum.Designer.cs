@@ -31,32 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoPensum));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnfacul = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnl_home = new System.Windows.Forms.Panel();
-            this.btn_eliminarPensum = new System.Windows.Forms.Button();
+            this.btneliminarPensum = new System.Windows.Forms.Button();
             this.list_pensum = new System.Windows.Forms.DataGridView();
-            this.btn_modificarpensum = new System.Windows.Forms.Button();
+            this.btnmodificarpensum = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_usurio = new System.Windows.Forms.Label();
             this.txt_codigopensum = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.picInscripcion = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -65,6 +61,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.list_pensum)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -90,21 +90,22 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 34);
             this.button2.TabIndex = 147;
-            this.button2.Text = "Notas";
+            this.button2.Text = "Inscripcion";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnfacul
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(114, 522);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 34);
-            this.button3.TabIndex = 146;
-            this.button3.Text = "Facultades";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnfacul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnfacul.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfacul.ForeColor = System.Drawing.Color.White;
+            this.btnfacul.Location = new System.Drawing.Point(114, 522);
+            this.btnfacul.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfacul.Name = "btnfacul";
+            this.btnfacul.Size = new System.Drawing.Size(111, 34);
+            this.btnfacul.TabIndex = 146;
+            this.btnfacul.Text = "Facultades";
+            this.btnfacul.UseVisualStyleBackColor = false;
+            this.btnfacul.Click += new System.EventHandler(this.btnfacul_Click);
             // 
             // button4
             // 
@@ -158,50 +159,6 @@
             this.button7.Text = "Inicio";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(22, 504);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 141;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(22, 585);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 140;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(22, 663);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 139;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(21, 415);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 138;
-            this.pictureBox9.TabStop = false;
-            // 
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
@@ -249,9 +206,9 @@
             // pnl_home
             // 
             this.pnl_home.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnl_home.Controls.Add(this.btn_eliminarPensum);
+            this.pnl_home.Controls.Add(this.btneliminarPensum);
             this.pnl_home.Controls.Add(this.list_pensum);
-            this.pnl_home.Controls.Add(this.btn_modificarpensum);
+            this.pnl_home.Controls.Add(this.btnmodificarpensum);
             this.pnl_home.Controls.Add(this.panel1);
             this.pnl_home.Controls.Add(this.panel3);
             this.pnl_home.Location = new System.Drawing.Point(255, -3);
@@ -260,19 +217,19 @@
             this.pnl_home.Size = new System.Drawing.Size(1057, 788);
             this.pnl_home.TabIndex = 149;
             // 
-            // btn_eliminarPensum
+            // btneliminarPensum
             // 
-            this.btn_eliminarPensum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_eliminarPensum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminarPensum.ForeColor = System.Drawing.Color.White;
-            this.btn_eliminarPensum.Location = new System.Drawing.Point(77, 678);
-            this.btn_eliminarPensum.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_eliminarPensum.Name = "btn_eliminarPensum";
-            this.btn_eliminarPensum.Size = new System.Drawing.Size(261, 66);
-            this.btn_eliminarPensum.TabIndex = 49;
-            this.btn_eliminarPensum.Text = "Eliminar Pensum";
-            this.btn_eliminarPensum.UseVisualStyleBackColor = false;
-            this.btn_eliminarPensum.Click += new System.EventHandler(this.btn_eliminarPensum_Click);
+            this.btneliminarPensum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btneliminarPensum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminarPensum.ForeColor = System.Drawing.Color.White;
+            this.btneliminarPensum.Location = new System.Drawing.Point(77, 678);
+            this.btneliminarPensum.Margin = new System.Windows.Forms.Padding(4);
+            this.btneliminarPensum.Name = "btneliminarPensum";
+            this.btneliminarPensum.Size = new System.Drawing.Size(261, 66);
+            this.btneliminarPensum.TabIndex = 49;
+            this.btneliminarPensum.Text = "Eliminar Pensum";
+            this.btneliminarPensum.UseVisualStyleBackColor = false;
+            this.btneliminarPensum.Click += new System.EventHandler(this.btn_eliminarPensum_Click);
             // 
             // list_pensum
             // 
@@ -284,20 +241,21 @@
             this.list_pensum.RowTemplate.Height = 24;
             this.list_pensum.Size = new System.Drawing.Size(903, 430);
             this.list_pensum.TabIndex = 48;
+            this.list_pensum.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_pensum_CellContentClick);
             // 
-            // btn_modificarpensum
+            // btnmodificarpensum
             // 
-            this.btn_modificarpensum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_modificarpensum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarpensum.ForeColor = System.Drawing.Color.White;
-            this.btn_modificarpensum.Location = new System.Drawing.Point(372, 678);
-            this.btn_modificarpensum.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_modificarpensum.Name = "btn_modificarpensum";
-            this.btn_modificarpensum.Size = new System.Drawing.Size(261, 66);
-            this.btn_modificarpensum.TabIndex = 47;
-            this.btn_modificarpensum.Text = "Modificar Pensum";
-            this.btn_modificarpensum.UseVisualStyleBackColor = false;
-            this.btn_modificarpensum.Click += new System.EventHandler(this.btn_modificarpensum_Click);
+            this.btnmodificarpensum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnmodificarpensum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificarpensum.ForeColor = System.Drawing.Color.White;
+            this.btnmodificarpensum.Location = new System.Drawing.Point(372, 678);
+            this.btnmodificarpensum.Margin = new System.Windows.Forms.Padding(4);
+            this.btnmodificarpensum.Name = "btnmodificarpensum";
+            this.btnmodificarpensum.Size = new System.Drawing.Size(261, 66);
+            this.btnmodificarpensum.TabIndex = 47;
+            this.btnmodificarpensum.Text = "Modificar Pensum";
+            this.btnmodificarpensum.UseVisualStyleBackColor = false;
+            this.btnmodificarpensum.Click += new System.EventHandler(this.btn_modificarpensum_Click);
             // 
             // panel1
             // 
@@ -352,36 +310,76 @@
             this.label4.Text = "Facultades";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ListadoPensum
+            // picInscripcion
+            // 
+            this.picInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("picInscripcion.Image")));
+            this.picInscripcion.Location = new System.Drawing.Point(22, 581);
+            this.picInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.picInscripcion.Name = "picInscripcion";
+            this.picInscripcion.Size = new System.Drawing.Size(67, 62);
+            this.picInscripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInscripcion.TabIndex = 153;
+            this.picInscripcion.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(22, 499);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 152;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(22, 412);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 151;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(22, 658);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 150;
+            this.pictureBox8.TabStop = false;
+            // 
+            // frmListadoPensum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1312, 783);
+            this.Controls.Add(this.picInscripcion);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pnl_home);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnfacul);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox5);
             this.MaximizeBox = false;
-            this.Name = "ListadoPensum";
+            this.Name = "frmListadoPensum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListadoPensum";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -392,6 +390,10 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,15 +402,11 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnfacul;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
@@ -416,11 +414,15 @@
         private System.Windows.Forms.Panel pnl_home;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_eliminarPensum;
+        private System.Windows.Forms.Button btneliminarPensum;
         private System.Windows.Forms.DataGridView list_pensum;
-        private System.Windows.Forms.Button btn_modificarpensum;
+        private System.Windows.Forms.Button btnmodificarpensum;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_usurio;
         private System.Windows.Forms.TextBox txt_codigopensum;
+        private System.Windows.Forms.PictureBox picInscripcion;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

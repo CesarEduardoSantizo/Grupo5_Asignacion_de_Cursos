@@ -1,6 +1,6 @@
 ﻿namespace loginadmi
 {
-    partial class frmListaFacultades
+    partial class frmlistacursos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaFacultades));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlistacursos));
             this.pnl_home = new System.Windows.Forms.Panel();
-            this.btneliminarfacu = new System.Windows.Forms.Button();
-            this.list_facultades = new System.Windows.Forms.DataGridView();
-            this.btnmodificarfacultad = new System.Windows.Forms.Button();
+            this.btneliminarcurso = new System.Windows.Forms.Button();
+            this.listcurso = new System.Windows.Forms.DataGridView();
+            this.btnmodificarCurso = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_usurio = new System.Windows.Forms.Label();
-            this.txt_nombrefacu = new System.Windows.Forms.TextBox();
+            this.lbl_carrera = new System.Windows.Forms.Label();
+            this.txtnombreCurso = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnfacu2 = new System.Windows.Forms.Button();
+            this.btnfacultades = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pnl_home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.list_facultades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listcurso)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -70,86 +70,85 @@
             // pnl_home
             // 
             this.pnl_home.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnl_home.Controls.Add(this.btneliminarfacu);
-            this.pnl_home.Controls.Add(this.list_facultades);
-            this.pnl_home.Controls.Add(this.btnmodificarfacultad);
+            this.pnl_home.Controls.Add(this.btneliminarcurso);
+            this.pnl_home.Controls.Add(this.listcurso);
+            this.pnl_home.Controls.Add(this.btnmodificarCurso);
             this.pnl_home.Controls.Add(this.panel1);
             this.pnl_home.Controls.Add(this.panel3);
-            this.pnl_home.Location = new System.Drawing.Point(255, -1);
+            this.pnl_home.Location = new System.Drawing.Point(261, -3);
             this.pnl_home.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_home.Name = "pnl_home";
             this.pnl_home.Size = new System.Drawing.Size(1057, 788);
             this.pnl_home.TabIndex = 181;
             // 
-            // btneliminarfacu
+            // btneliminarcurso
             // 
-            this.btneliminarfacu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btneliminarfacu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminarfacu.ForeColor = System.Drawing.Color.White;
-            this.btneliminarfacu.Location = new System.Drawing.Point(77, 678);
-            this.btneliminarfacu.Margin = new System.Windows.Forms.Padding(4);
-            this.btneliminarfacu.Name = "btneliminarfacu";
-            this.btneliminarfacu.Size = new System.Drawing.Size(261, 66);
-            this.btneliminarfacu.TabIndex = 49;
-            this.btneliminarfacu.Text = "Eliminar Facultad";
-            this.btneliminarfacu.UseVisualStyleBackColor = false;
-            this.btneliminarfacu.Click += new System.EventHandler(this.btn_eliminarFacultad_Click);
+            this.btneliminarcurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btneliminarcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminarcurso.ForeColor = System.Drawing.Color.White;
+            this.btneliminarcurso.Location = new System.Drawing.Point(77, 678);
+            this.btneliminarcurso.Margin = new System.Windows.Forms.Padding(4);
+            this.btneliminarcurso.Name = "btneliminarcurso";
+            this.btneliminarcurso.Size = new System.Drawing.Size(261, 66);
+            this.btneliminarcurso.TabIndex = 49;
+            this.btneliminarcurso.Text = "Eliminar Curso";
+            this.btneliminarcurso.UseVisualStyleBackColor = false;
+            this.btneliminarcurso.Click += new System.EventHandler(this.btneliminarcurso_Click);
             // 
-            // list_facultades
+            // listcurso
             // 
-            this.list_facultades.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.list_facultades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.list_facultades.Location = new System.Drawing.Point(77, 142);
-            this.list_facultades.Name = "list_facultades";
-            this.list_facultades.RowHeadersWidth = 51;
-            this.list_facultades.RowTemplate.Height = 24;
-            this.list_facultades.Size = new System.Drawing.Size(903, 430);
-            this.list_facultades.TabIndex = 48;
+            this.listcurso.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.listcurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listcurso.Location = new System.Drawing.Point(77, 142);
+            this.listcurso.Name = "listcurso";
+            this.listcurso.RowHeadersWidth = 51;
+            this.listcurso.RowTemplate.Height = 24;
+            this.listcurso.Size = new System.Drawing.Size(903, 430);
+            this.listcurso.TabIndex = 48;
             // 
-            // btnmodificarfacultad
+            // btnmodificarCurso
             // 
-            this.btnmodificarfacultad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btnmodificarfacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificarfacultad.ForeColor = System.Drawing.Color.White;
-            this.btnmodificarfacultad.Location = new System.Drawing.Point(372, 678);
-            this.btnmodificarfacultad.Margin = new System.Windows.Forms.Padding(4);
-            this.btnmodificarfacultad.Name = "btnmodificarfacultad";
-            this.btnmodificarfacultad.Size = new System.Drawing.Size(261, 66);
-            this.btnmodificarfacultad.TabIndex = 47;
-            this.btnmodificarfacultad.Text = "Modificar Facultad";
-            this.btnmodificarfacultad.UseVisualStyleBackColor = false;
-            this.btnmodificarfacultad.Click += new System.EventHandler(this.btnmodificarfacultad_Click);
+            this.btnmodificarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnmodificarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnmodificarCurso.Location = new System.Drawing.Point(372, 678);
+            this.btnmodificarCurso.Margin = new System.Windows.Forms.Padding(4);
+            this.btnmodificarCurso.Name = "btnmodificarCurso";
+            this.btnmodificarCurso.Size = new System.Drawing.Size(261, 66);
+            this.btnmodificarCurso.TabIndex = 47;
+            this.btnmodificarCurso.Text = "Modificar Curso";
+            this.btnmodificarCurso.UseVisualStyleBackColor = false;
+            this.btnmodificarCurso.Click += new System.EventHandler(this.btnmodificarCurso_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel1.Controls.Add(this.lbl_usurio);
-            this.panel1.Controls.Add(this.txt_nombrefacu);
+            this.panel1.Controls.Add(this.lbl_carrera);
+            this.panel1.Controls.Add(this.txtnombreCurso);
             this.panel1.Location = new System.Drawing.Point(77, 582);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(903, 83);
             this.panel1.TabIndex = 46;
             // 
-            // lbl_usurio
+            // lbl_carrera
             // 
-            this.lbl_usurio.AutoSize = true;
-            this.lbl_usurio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usurio.Location = new System.Drawing.Point(34, 9);
-            this.lbl_usurio.Name = "lbl_usurio";
-            this.lbl_usurio.Size = new System.Drawing.Size(161, 25);
-            this.lbl_usurio.TabIndex = 34;
-            this.lbl_usurio.Text = "Nombre Facultad";
+            this.lbl_carrera.AutoSize = true;
+            this.lbl_carrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_carrera.Location = new System.Drawing.Point(34, 9);
+            this.lbl_carrera.Name = "lbl_carrera";
+            this.lbl_carrera.Size = new System.Drawing.Size(139, 25);
+            this.lbl_carrera.TabIndex = 34;
+            this.lbl_carrera.Text = "Nombre Curso";
             // 
-            // txt_nombrefacu
+            // txtnombreCurso
             // 
-            this.txt_nombrefacu.Location = new System.Drawing.Point(39, 36);
-            this.txt_nombrefacu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 4);
-            this.txt_nombrefacu.Multiline = true;
-            this.txt_nombrefacu.Name = "txt_nombrefacu";
-            this.txt_nombrefacu.Size = new System.Drawing.Size(289, 42);
-            this.txt_nombrefacu.TabIndex = 32;
-            this.txt_nombrefacu.TextChanged += new System.EventHandler(this.txt_nombrefacu_TextChanged);
+            this.txtnombreCurso.Location = new System.Drawing.Point(38, 36);
+            this.txtnombreCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 4);
+            this.txtnombreCurso.Multiline = true;
+            this.txtnombreCurso.Name = "txtnombreCurso";
+            this.txtnombreCurso.Size = new System.Drawing.Size(289, 42);
+            this.txtnombreCurso.TabIndex = 32;
             // 
             // panel3
             // 
@@ -178,7 +177,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 675);
+            this.button1.Location = new System.Drawing.Point(120, 675);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 34);
@@ -191,34 +190,34 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(114, 601);
+            this.button2.Location = new System.Drawing.Point(120, 601);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 34);
             this.button2.TabIndex = 179;
-            this.button2.Text = "Inscripcion";
+            this.button2.Text = "Inscipcion";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // btnfacu2
+            // btnfacultades
             // 
-            this.btnfacu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btnfacu2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfacu2.ForeColor = System.Drawing.Color.White;
-            this.btnfacu2.Location = new System.Drawing.Point(114, 522);
-            this.btnfacu2.Margin = new System.Windows.Forms.Padding(4);
-            this.btnfacu2.Name = "btnfacu2";
-            this.btnfacu2.Size = new System.Drawing.Size(111, 34);
-            this.btnfacu2.TabIndex = 178;
-            this.btnfacu2.Text = "Facultades";
-            this.btnfacu2.UseVisualStyleBackColor = false;
-            this.btnfacu2.Click += new System.EventHandler(this.btnfacu2_Click);
+            this.btnfacultades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnfacultades.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfacultades.ForeColor = System.Drawing.Color.White;
+            this.btnfacultades.Location = new System.Drawing.Point(120, 522);
+            this.btnfacultades.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfacultades.Name = "btnfacultades";
+            this.btnfacultades.Size = new System.Drawing.Size(111, 34);
+            this.btnfacultades.TabIndex = 178;
+            this.btnfacultades.Text = "Facultades";
+            this.btnfacultades.UseVisualStyleBackColor = false;
+            this.btnfacultades.Click += new System.EventHandler(this.btnfacultades_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(114, 435);
+            this.button4.Location = new System.Drawing.Point(120, 435);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 34);
@@ -231,7 +230,7 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(114, 348);
+            this.button5.Location = new System.Drawing.Point(120, 348);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 34);
@@ -244,7 +243,7 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(114, 265);
+            this.button6.Location = new System.Drawing.Point(120, 265);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 34);
@@ -257,7 +256,7 @@
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.button7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(114, 186);
+            this.button7.Location = new System.Drawing.Point(120, 186);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 34);
@@ -268,7 +267,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(22, 334);
+            this.pictureBox14.Location = new System.Drawing.Point(28, 334);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(67, 62);
@@ -279,7 +278,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(22, 168);
+            this.pictureBox15.Location = new System.Drawing.Point(28, 168);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(67, 62);
@@ -290,7 +289,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(22, 250);
+            this.pictureBox16.Location = new System.Drawing.Point(28, 250);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(67, 62);
@@ -301,7 +300,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(40, 7);
+            this.pictureBox5.Location = new System.Drawing.Point(46, 7);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(156, 133);
@@ -312,7 +311,7 @@
             // picInscripcion
             // 
             this.picInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("picInscripcion.Image")));
-            this.picInscripcion.Location = new System.Drawing.Point(22, 582);
+            this.picInscripcion.Location = new System.Drawing.Point(28, 589);
             this.picInscripcion.Margin = new System.Windows.Forms.Padding(4);
             this.picInscripcion.Name = "picInscripcion";
             this.picInscripcion.Size = new System.Drawing.Size(67, 62);
@@ -323,7 +322,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(22, 500);
+            this.pictureBox6.Location = new System.Drawing.Point(28, 507);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(67, 62);
@@ -334,7 +333,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(22, 413);
+            this.pictureBox7.Location = new System.Drawing.Point(28, 420);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(67, 62);
@@ -345,7 +344,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(22, 659);
+            this.pictureBox8.Location = new System.Drawing.Point(28, 666);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(67, 62);
@@ -353,7 +352,7 @@
             this.pictureBox8.TabIndex = 182;
             this.pictureBox8.TabStop = false;
             // 
-            // frmListaFacultades
+            // frmlistacursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,7 +365,7 @@
             this.Controls.Add(this.pnl_home);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnfacu2);
+            this.Controls.Add(this.btnfacultades);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -376,11 +375,11 @@
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox5);
             this.MaximizeBox = false;
-            this.Name = "frmListaFacultades";
+            this.Name = "frmlistacursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListaFacultades";
+            this.Text = "frmlistacursos";
             this.pnl_home.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.list_facultades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listcurso)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -400,17 +399,17 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_home;
-        private System.Windows.Forms.Button btneliminarfacu;
-        private System.Windows.Forms.DataGridView list_facultades;
-        private System.Windows.Forms.Button btnmodificarfacultad;
+        private System.Windows.Forms.Button btneliminarcurso;
+        private System.Windows.Forms.DataGridView listcurso;
+        private System.Windows.Forms.Button btnmodificarCurso;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_usurio;
-        private System.Windows.Forms.TextBox txt_nombrefacu;
+        private System.Windows.Forms.Label lbl_carrera;
+        private System.Windows.Forms.TextBox txtnombreCurso;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnfacu2;
+        private System.Windows.Forms.Button btnfacultades;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

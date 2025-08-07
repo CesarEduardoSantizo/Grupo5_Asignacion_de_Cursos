@@ -26,22 +26,21 @@ namespace loginadmi
 
         private void btn_registrarCarrera_Click(object sender, EventArgs e)
         {
-            string nombres = txt_nombres.Text;
-            string facultad = txt_facultad.Text;
+            string nombres = txt_nombres.Text.Trim();
+            string facultad = txt_facultad.Text.Trim();
 
             string conexionBD = ConexionBD.CadenaConexion();
 
             using (MySqlConnection conexion = new MySqlConnection(conexionBD))
-
             {
                 try
                 {
                     conexion.Open();
 
-                    // Verifica si la facultad ya existe
-                    string consultaFacultad = "SELECT codigoFacultad_pk FROM facultad WHERE nombreFacultad = @facultad";
+                    // Normaliza el nombre para la búsqueda
+                    string consultaFacultad = "SELECT codigoFacultad_pk FROM facultad WHERE TRIM(LOWER(nombreFacultad)) = TRIM(LOWER(@facultad))";
                     MySqlCommand comandoFacultad = new MySqlCommand(consultaFacultad, conexion);
-                    comandoFacultad.Parameters.AddWithValue("@facultad", facultad);
+                    comandoFacultad.Parameters.AddWithValue("@facultad", facultad.ToLower());
                     object resultadoFacultad = comandoFacultad.ExecuteScalar();
                     int codigoFacultad;
 
@@ -62,10 +61,10 @@ namespace loginadmi
                         codigoFacultad = Convert.ToInt32(resultadoFacultad);
                     }
 
-                    // esto es para insertar la carrera asociada a esa facultad
+                    // Insertar la carrera asociada a esa facultad
                     string insertarCarrera = "INSERT INTO carrera (nombreCarrera, codigoFacultad_fk) VALUES (@carrera, @codigoFacultad)";
                     MySqlCommand insertarCarreraCmd = new MySqlCommand(insertarCarrera, conexion);
-                    insertarCarreraCmd.Parameters.AddWithValue("@carrera", nombres); // nombres = nombre de la carrera
+                    insertarCarreraCmd.Parameters.AddWithValue("@carrera", nombres);
                     insertarCarreraCmd.Parameters.AddWithValue("@codigoFacultad", codigoFacultad);
                     insertarCarreraCmd.ExecuteNonQuery();
 
@@ -83,15 +82,21 @@ namespace loginadmi
 
         private void btn_listaCarrera_Click(object sender, EventArgs e)
         {
-            ////ListaCarrera listaCarrera = new ListaCarrera();
-            //listaCarrera.Show();
-            //this.Hide(); 
+            frmListaCarrera listaCarrera = new frmListaCarrera();
+            listaCarrera.Show();
+            this.Hide(); 
         }
 
         private void txt_nombres_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void btnfacultade_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide(); 
+        }
     }
  }
-        

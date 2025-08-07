@@ -49,7 +49,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnFacultades = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -57,22 +57,28 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pnl_home = new System.Windows.Forms.Panel();
+            this.btnEdificios = new System.Windows.Forms.Button();
+            this.btngregarcursos = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_agregar6 = new System.Windows.Forms.Button();
-            this.btn_agregar5 = new System.Windows.Forms.Button();
-            this.btn_agregar4 = new System.Windows.Forms.Button();
+            this.btnagregarCarreras = new System.Windows.Forms.Button();
+            this.btnagregarPensum = new System.Windows.Forms.Button();
+            this.btnagregarFacus = new System.Windows.Forms.Button();
             this.lbl_cursos = new System.Windows.Forms.Label();
             this.lbl_notas = new System.Windows.Forms.Label();
             this.lbl_laboratorios = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.picInscripcion = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -86,15 +92,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.pnl_home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -324,21 +332,21 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 34);
             this.button2.TabIndex = 98;
-            this.button2.Text = "Notas";
+            this.button2.Text = "Inscripcion";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnFacultades
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(114, 541);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 34);
-            this.button3.TabIndex = 97;
-            this.button3.Text = "Facultades";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnFacultades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnFacultades.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacultades.ForeColor = System.Drawing.Color.White;
+            this.btnFacultades.Location = new System.Drawing.Point(114, 541);
+            this.btnFacultades.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFacultades.Name = "btnFacultades";
+            this.btnFacultades.Size = new System.Drawing.Size(111, 34);
+            this.btnFacultades.TabIndex = 97;
+            this.btnFacultades.Text = "Facultades";
+            this.btnFacultades.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -407,7 +415,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(22, 604);
+            this.pictureBox7.Location = new System.Drawing.Point(22, 436);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(67, 62);
@@ -425,17 +433,6 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 90;
             this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(23, 434);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 89;
-            this.pictureBox9.TabStop = false;
             // 
             // pictureBox14
             // 
@@ -473,10 +470,16 @@
             // pnl_home
             // 
             this.pnl_home.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnl_home.Controls.Add(this.btnEdificios);
+            this.pnl_home.Controls.Add(this.btngregarcursos);
+            this.pnl_home.Controls.Add(this.label2);
+            this.pnl_home.Controls.Add(this.label3);
+            this.pnl_home.Controls.Add(this.pictureBox20);
+            this.pnl_home.Controls.Add(this.pictureBox21);
             this.pnl_home.Controls.Add(this.panel1);
-            this.pnl_home.Controls.Add(this.btn_agregar6);
-            this.pnl_home.Controls.Add(this.btn_agregar5);
-            this.pnl_home.Controls.Add(this.btn_agregar4);
+            this.pnl_home.Controls.Add(this.btnagregarCarreras);
+            this.pnl_home.Controls.Add(this.btnagregarPensum);
+            this.pnl_home.Controls.Add(this.btnagregarFacus);
             this.pnl_home.Controls.Add(this.lbl_cursos);
             this.pnl_home.Controls.Add(this.lbl_notas);
             this.pnl_home.Controls.Add(this.lbl_laboratorios);
@@ -488,6 +491,79 @@
             this.pnl_home.Name = "pnl_home";
             this.pnl_home.Size = new System.Drawing.Size(1057, 788);
             this.pnl_home.TabIndex = 100;
+            // 
+            // btnEdificios
+            // 
+            this.btnEdificios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnEdificios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdificios.ForeColor = System.Drawing.Color.White;
+            this.btnEdificios.Location = new System.Drawing.Point(332, 629);
+            this.btnEdificios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdificios.Name = "btnEdificios";
+            this.btnEdificios.Size = new System.Drawing.Size(155, 38);
+            this.btnEdificios.TabIndex = 50;
+            this.btnEdificios.Text = "Agregar";
+            this.btnEdificios.UseVisualStyleBackColor = false;
+            this.btnEdificios.Click += new System.EventHandler(this.btnEdificios_Click);
+            // 
+            // btngregarcursos
+            // 
+            this.btngregarcursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btngregarcursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngregarcursos.ForeColor = System.Drawing.Color.White;
+            this.btngregarcursos.Location = new System.Drawing.Point(597, 626);
+            this.btngregarcursos.Margin = new System.Windows.Forms.Padding(4);
+            this.btngregarcursos.Name = "btngregarcursos";
+            this.btngregarcursos.Size = new System.Drawing.Size(155, 39);
+            this.btngregarcursos.TabIndex = 49;
+            this.btngregarcursos.Text = "Agregar";
+            this.btngregarcursos.UseVisualStyleBackColor = false;
+            this.btngregarcursos.Click += new System.EventHandler(this.btngregarcursos_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(368, 603);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 21);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Edificios";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(641, 601);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 21);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Cursos";
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(347, 491);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(121, 108);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 46;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(612, 492);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(121, 100);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 45;
+            this.pictureBox21.TabStop = false;
             // 
             // panel1
             // 
@@ -511,53 +587,53 @@
             this.label1.Text = "Facultades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btn_agregar6
+            // btnagregarCarreras
             // 
-            this.btn_agregar6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_agregar6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar6.ForeColor = System.Drawing.Color.White;
-            this.btn_agregar6.Location = new System.Drawing.Point(471, 487);
-            this.btn_agregar6.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar6.Name = "btn_agregar6";
-            this.btn_agregar6.Size = new System.Drawing.Size(155, 38);
-            this.btn_agregar6.TabIndex = 21;
-            this.btn_agregar6.Text = "Agregar";
-            this.btn_agregar6.UseVisualStyleBackColor = false;
-            this.btn_agregar6.Click += new System.EventHandler(this.btn_agregar6_Click);
+            this.btnagregarCarreras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnagregarCarreras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarCarreras.ForeColor = System.Drawing.Color.White;
+            this.btnagregarCarreras.Location = new System.Drawing.Point(471, 401);
+            this.btnagregarCarreras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarCarreras.Name = "btnagregarCarreras";
+            this.btnagregarCarreras.Size = new System.Drawing.Size(155, 38);
+            this.btnagregarCarreras.TabIndex = 21;
+            this.btnagregarCarreras.Text = "Agregar";
+            this.btnagregarCarreras.UseVisualStyleBackColor = false;
+            this.btnagregarCarreras.Click += new System.EventHandler(this.btn_agregar6_Click);
             // 
-            // btn_agregar5
+            // btnagregarPensum
             // 
-            this.btn_agregar5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_agregar5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar5.ForeColor = System.Drawing.Color.White;
-            this.btn_agregar5.Location = new System.Drawing.Point(736, 483);
-            this.btn_agregar5.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar5.Name = "btn_agregar5";
-            this.btn_agregar5.Size = new System.Drawing.Size(155, 39);
-            this.btn_agregar5.TabIndex = 20;
-            this.btn_agregar5.Text = "Agregar";
-            this.btn_agregar5.UseVisualStyleBackColor = false;
-            this.btn_agregar5.Click += new System.EventHandler(this.btn_agregar5_Click);
+            this.btnagregarPensum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnagregarPensum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarPensum.ForeColor = System.Drawing.Color.White;
+            this.btnagregarPensum.Location = new System.Drawing.Point(736, 397);
+            this.btnagregarPensum.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarPensum.Name = "btnagregarPensum";
+            this.btnagregarPensum.Size = new System.Drawing.Size(155, 39);
+            this.btnagregarPensum.TabIndex = 20;
+            this.btnagregarPensum.Text = "Agregar";
+            this.btnagregarPensum.UseVisualStyleBackColor = false;
+            this.btnagregarPensum.Click += new System.EventHandler(this.btn_agregar5_Click);
             // 
-            // btn_agregar4
+            // btnagregarFacus
             // 
-            this.btn_agregar4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_agregar4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar4.ForeColor = System.Drawing.Color.White;
-            this.btn_agregar4.Location = new System.Drawing.Point(189, 487);
-            this.btn_agregar4.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar4.Name = "btn_agregar4";
-            this.btn_agregar4.Size = new System.Drawing.Size(155, 38);
-            this.btn_agregar4.TabIndex = 19;
-            this.btn_agregar4.Text = "Agregar";
-            this.btn_agregar4.UseVisualStyleBackColor = false;
-            this.btn_agregar4.Click += new System.EventHandler(this.btn_agregar4_Click);
+            this.btnagregarFacus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnagregarFacus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarFacus.ForeColor = System.Drawing.Color.White;
+            this.btnagregarFacus.Location = new System.Drawing.Point(189, 401);
+            this.btnagregarFacus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarFacus.Name = "btnagregarFacus";
+            this.btnagregarFacus.Size = new System.Drawing.Size(155, 38);
+            this.btnagregarFacus.TabIndex = 19;
+            this.btnagregarFacus.Text = "Agregar";
+            this.btnagregarFacus.UseVisualStyleBackColor = false;
+            this.btnagregarFacus.Click += new System.EventHandler(this.btn_agregar4_Click);
             // 
             // lbl_cursos
             // 
             this.lbl_cursos.AutoSize = true;
             this.lbl_cursos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cursos.Location = new System.Drawing.Point(506, 461);
+            this.lbl_cursos.Location = new System.Drawing.Point(506, 375);
             this.lbl_cursos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cursos.Name = "lbl_cursos";
             this.lbl_cursos.Size = new System.Drawing.Size(83, 21);
@@ -568,7 +644,7 @@
             // 
             this.lbl_notas.AutoSize = true;
             this.lbl_notas.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_notas.Location = new System.Drawing.Point(774, 458);
+            this.lbl_notas.Location = new System.Drawing.Point(774, 372);
             this.lbl_notas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_notas.Name = "lbl_notas";
             this.lbl_notas.Size = new System.Drawing.Size(79, 21);
@@ -579,7 +655,7 @@
             // 
             this.lbl_laboratorios.AutoSize = true;
             this.lbl_laboratorios.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_laboratorios.Location = new System.Drawing.Point(217, 461);
+            this.lbl_laboratorios.Location = new System.Drawing.Point(217, 375);
             this.lbl_laboratorios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_laboratorios.Name = "lbl_laboratorios";
             this.lbl_laboratorios.Size = new System.Drawing.Size(107, 21);
@@ -589,7 +665,7 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(486, 349);
+            this.pictureBox17.Location = new System.Drawing.Point(486, 263);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(121, 108);
@@ -600,7 +676,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(752, 349);
+            this.pictureBox18.Location = new System.Drawing.Point(752, 263);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(121, 100);
@@ -611,7 +687,7 @@
             // pictureBox19
             // 
             this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(205, 349);
+            this.pictureBox19.Location = new System.Drawing.Point(205, 263);
             this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(121, 108);
@@ -619,16 +695,28 @@
             this.pictureBox19.TabIndex = 7;
             this.pictureBox19.TabStop = false;
             // 
+            // picInscripcion
+            // 
+            this.picInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("picInscripcion.Image")));
+            this.picInscripcion.Location = new System.Drawing.Point(22, 605);
+            this.picInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.picInscripcion.Name = "picInscripcion";
+            this.picInscripcion.Size = new System.Drawing.Size(67, 62);
+            this.picInscripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInscripcion.TabIndex = 118;
+            this.picInscripcion.TabStop = false;
+            // 
             // Facultades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1312, 783);
+            this.Controls.Add(this.picInscripcion);
             this.Controls.Add(this.pnl_home);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnFacultades);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -636,7 +724,6 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox16);
@@ -676,17 +763,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.pnl_home.ResumeLayout(false);
             this.pnl_home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,7 +803,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnFacultades;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -722,21 +811,27 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Panel pnl_home;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_agregar6;
-        private System.Windows.Forms.Button btn_agregar5;
-        private System.Windows.Forms.Button btn_agregar4;
+        private System.Windows.Forms.Button btnagregarCarreras;
+        private System.Windows.Forms.Button btnagregarPensum;
+        private System.Windows.Forms.Button btnagregarFacus;
         private System.Windows.Forms.Label lbl_cursos;
         private System.Windows.Forms.Label lbl_notas;
         private System.Windows.Forms.Label lbl_laboratorios;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.Button btnEdificios;
+        private System.Windows.Forms.Button btngregarcursos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.PictureBox picInscripcion;
     }
 }

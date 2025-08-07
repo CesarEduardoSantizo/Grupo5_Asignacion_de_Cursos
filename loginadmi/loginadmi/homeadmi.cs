@@ -143,5 +143,19 @@ namespace loginadmi
             frmModuloCursos.Show();
             this.Hide();
         }
+
+        private void btnfacultades_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide();
+        }
+
+        private void btnfacu_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide();
+        }
     }
 }

@@ -98,5 +98,86 @@ namespace loginadmi
         {
 
         }
+
+        private void btnmodificarCarrera_Click(object sender, EventArgs e)
+        {
+            if (list_carreras.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor selecciona una carrera de la lista.");
+                return;
+            }
+
+            try
+            {
+                // Obtener valores de la fila actual
+                DataGridViewRow fila = list_carreras.CurrentRow;
+                int codigoCarrera = Convert.ToInt32(fila.Cells["codigoCarrera_pk"].Value);
+                string nombreCarrera = fila.Cells["nombreCarrera"].Value.ToString().Trim();
+                int codigoFacultad = Convert.ToInt32(fila.Cells["codigoFacultad_fk"].Value);
+
+                // Validar campos
+                if (string.IsNullOrEmpty(nombreCarrera))
+                {
+                    MessageBox.Show("El nombre de la carrera no puede estar vacío.");
+                    return;
+                }
+
+                // Actualizar en la base de datos
+                string conexionBD = ConexionBD.CadenaConexion();
+
+                using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+                {
+                    conexion.Open();
+                    string consulta = "UPDATE carrera SET nombreCarrera = @nombreCarrera, codigoFacultad_fk = @codigoFacultad WHERE codigoCarrera_pk = @codigoCarrera";
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@nombreCarrera", nombreCarrera);
+                    comando.Parameters.AddWithValue("@codigoFacultad", codigoFacultad);
+                    comando.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
+
+                    int filasActualizadas = comando.ExecuteNonQuery();
+
+                    if (filasActualizadas > 0)
+                    {
+                        MessageBox.Show("Carrera modificada exitosamente.");
+                        CargarCarreras(); // Recargar los datos actualizados
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar la carrera.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar la carrera: " + ex.Message);
+            }
+        }
+
+        private void btnfacultade(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picInscripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

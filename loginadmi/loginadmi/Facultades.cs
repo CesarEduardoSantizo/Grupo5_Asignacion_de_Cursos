@@ -36,31 +36,48 @@ namespace loginadmi
         private void button7_Click(object sender, EventArgs e)
         {
             homeadmi nuevoFormulario = new homeadmi();
-
             nuevoFormulario.Show();
-
             this.Hide();
         }
 
         private void btn_agregar4_Click(object sender, EventArgs e)
         {
-            //Facultades2 nuevoFormulario = new Facultades2();
-            //nuevoFormulario.Show();
-           // this.Hide();
+            frmFacultades nuevoFormulario = new frmFacultades();
+            nuevoFormulario.Show();
+           this.Hide();
         }
 
         private void btn_agregar6_Click(object sender, EventArgs e)
         {
-            //Carreras nuevoFormulario = new Carreras();
-            //nuevoFormulario.Show();
-           // this.Hide();
+            frmCarreras nuevoFormulario = new frmCarreras();
+            nuevoFormulario.Show();
+            this.Hide();
         }
 
         private void btn_agregar5_Click(object sender, EventArgs e)
         {
-          //  Pensum nuevoFormulario = new Pensum();
-          //  nuevoFormulario.Show();
-           // this.Hide();
+            frmPensum nuevoFormulario = new frmPensum();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdificios_Click(object sender, EventArgs e)
+        {
+            frmEdificios nuevoFormulario = new frmEdificios();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void btngregarcursos_Click(object sender, EventArgs e)
+        {
+            frmCursos nuevoFormulario = new frmCursos();
+            nuevoFormulario.Show();
+            this.Hide();
         }
     }
 }
