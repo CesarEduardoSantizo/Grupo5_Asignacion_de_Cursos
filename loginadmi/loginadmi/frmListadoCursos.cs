@@ -44,7 +44,7 @@ namespace loginadmi
                 using (MySqlConnection conexion = new MySqlConnection(conexionBD))
                 {
                     conexion.Open();
-                    string sEliminacion = "DELETE FROM asignacionCurso WHERE codigoAsignacionCurso_pk = @codigoAsignacion";
+                    string sEliminacion = "DELETE FROM AsignacionCurso WHERE codigoAsignacionCurso_pk = @codigoAsignacion";
                     MySqlCommand comando = new MySqlCommand(sEliminacion, conexion);
                     comando.Parameters.AddWithValue("@codigoAsignacion", codigoAsignacion);
                     int filasAfectadas = comando.ExecuteNonQuery();
@@ -97,7 +97,7 @@ namespace loginadmi
                     return false;
 
                 string setClause = string.Join(", ", sets);
-                comando.CommandText = $"UPDATE asignacioncurso SET {setClause} WHERE codigoAsignacionCurso_pk = @codigoAsignacion";
+                comando.CommandText = $"UPDATE AsignacionCurso SET {setClause} WHERE codigoAsignacionCurso_pk = @codigoAsignacion";
                 comando.Parameters.AddWithValue("@codigoAsignacion", codigoAsignacion);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -204,7 +204,7 @@ namespace loginadmi
                                                         ac.horaSalida AS horaSalida,
                                                         ca.nombreCatedratico AS Catedratico, 
                                                         ac.diascurso AS Dia 
-                                                FROM asignacioncurso ac 
+                                                FROM AsignacionCurso ac 
                                                 JOIN Curso c ON ac.codigoCurso_fk = c.codigoCurso_pk 
                                                 JOIN Catedratico ca ON ac.codigoCatedratico_fk = ca.carnetCatedratico_pk 
                                                 JOIN Carrera cr ON ac.codigoCarrera_fk = cr.codigoCarrera_pk 
