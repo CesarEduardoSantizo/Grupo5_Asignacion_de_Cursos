@@ -229,7 +229,7 @@ namespace loginadmi
         private void btnCursos_Click(object sender, EventArgs e)
         {
             frmCursos nuevoFormulario = new frmCursos();
-            nuevoFormulario.sh();
+            nuevoFormulario.Show();
             this.Hide();
         }
     }
