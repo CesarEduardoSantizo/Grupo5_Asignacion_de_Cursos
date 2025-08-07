@@ -138,14 +138,20 @@
     <Compile Include="frmCostoInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="frmCostoInscripcion.Designer.cs">
-		  <DependentUpon>frmCostoInscripcion.cs</DependentUpon>
-	  </Compile>
-		<Compile Include="frmCursos.cs">
+    <Compile Include="frmCostoInscripcion.Designer.cs">
+      <DependentUpon>frmCostoInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCursos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCursos.Designer.cs">
       <DependentUpon>frmCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCursosEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCursosEstudiante.Designer.cs">
+      <DependentUpon>FrmCursosEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEdificios.cs">
       <SubType>Form</SubType>
@@ -333,9 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCostoInscripcion.resx">
       <DependentUpon>frmCostoInscripcion.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCursos.resx">
       <DependentUpon>frmCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCursosEstudiante.resx">
+      <DependentUpon>FrmCursosEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdificios.resx">
       <DependentUpon>frmEdificios.cs</DependentUpon>

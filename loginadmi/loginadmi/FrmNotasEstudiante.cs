@@ -96,7 +96,7 @@ namespace loginadmi
 
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        lstNotasEstudiante.DataSource = dt;
+                        dgvNotasEstudiante.DataSource = dt;
                     }
                 }
             }
@@ -115,7 +115,6 @@ namespace loginadmi
             }
         }
 
-        private void lstNotasEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void lblCiclo_Click(object sender, EventArgs e) { }
 
         private void btnNotas_Click(object sender, EventArgs e)
@@ -149,6 +148,18 @@ namespace loginadmi
         private void btnAsignacion_Click(object sender, EventArgs e)
         {
             FrmAsignacion nuevoFormulario = new FrmAsignacion();
+            nuevoFormulario.Show();
+            this.Hide();
+        }
+
+        private void dgvNotasEstudiante_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            FrmCursosEstudiante nuevoFormulario = new FrmCursosEstudiante();
             nuevoFormulario.Show();
             this.Hide();
         }

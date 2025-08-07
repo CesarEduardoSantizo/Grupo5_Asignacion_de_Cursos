@@ -54,7 +54,6 @@
             this.PanMenu = new System.Windows.Forms.Panel();
             this.cboPensum = new System.Windows.Forms.ComboBox();
             this.lblNoCiclo = new System.Windows.Forms.Label();
-            this.lstPensumEstudiante = new System.Windows.Forms.DataGridView();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_agregar_estudiante = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.ptb_estudiante = new System.Windows.Forms.PictureBox();
+            this.dgvPensumEstudiante = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.PicAsignacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicInscripcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicCursos)).BeginInit();
@@ -92,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PanBienvenidos.SuspendLayout();
             this.PanMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lstPensumEstudiante)).BeginInit();
             this.pnl_home.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -101,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPensumEstudiante)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPensum
@@ -155,6 +155,7 @@
             this.btnCursos.TabIndex = 99;
             this.btnCursos.Text = "Cursos";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // btnAsignacion
             // 
@@ -366,9 +367,9 @@
             // 
             this.PanMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PanMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanMenu.Controls.Add(this.dgvPensumEstudiante);
             this.PanMenu.Controls.Add(this.cboPensum);
             this.PanMenu.Controls.Add(this.lblNoCiclo);
-            this.PanMenu.Controls.Add(this.lstPensumEstudiante);
             this.PanMenu.Controls.Add(this.PanBienvenidos);
             this.PanMenu.Location = new System.Drawing.Point(256, 2);
             this.PanMenu.Margin = new System.Windows.Forms.Padding(4);
@@ -394,19 +395,6 @@
             this.lblNoCiclo.Size = new System.Drawing.Size(87, 24);
             this.lblNoCiclo.TabIndex = 50;
             this.lblNoCiclo.Text = "No. Ciclo";
-            // 
-            // lstPensumEstudiante
-            // 
-            this.lstPensumEstudiante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.lstPensumEstudiante.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.lstPensumEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lstPensumEstudiante.Location = new System.Drawing.Point(128, 223);
-            this.lstPensumEstudiante.Name = "lstPensumEstudiante";
-            this.lstPensumEstudiante.RowHeadersWidth = 51;
-            this.lstPensumEstudiante.RowTemplate.Height = 24;
-            this.lstPensumEstudiante.Size = new System.Drawing.Size(799, 509);
-            this.lstPensumEstudiante.TabIndex = 49;
-            this.lstPensumEstudiante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lstPensumEstudiante_CellContentClick);
             // 
             // pnl_home
             // 
@@ -668,6 +656,19 @@
             this.ptb_estudiante.TabIndex = 4;
             this.ptb_estudiante.TabStop = false;
             // 
+            // dgvPensumEstudiante
+            // 
+            this.dgvPensumEstudiante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPensumEstudiante.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvPensumEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPensumEstudiante.Location = new System.Drawing.Point(144, 198);
+            this.dgvPensumEstudiante.Name = "dgvPensumEstudiante";
+            this.dgvPensumEstudiante.RowHeadersWidth = 51;
+            this.dgvPensumEstudiante.RowTemplate.Height = 24;
+            this.dgvPensumEstudiante.Size = new System.Drawing.Size(799, 509);
+            this.dgvPensumEstudiante.TabIndex = 52;
+            this.dgvPensumEstudiante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPensumEstudiante_CellContentClick);
+            // 
             // FrmPensumEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -719,7 +720,6 @@
             this.PanBienvenidos.PerformLayout();
             this.PanMenu.ResumeLayout(false);
             this.PanMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lstPensumEstudiante)).EndInit();
             this.pnl_home.ResumeLayout(false);
             this.pnl_home.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -730,6 +730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_estudiante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPensumEstudiante)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -779,8 +780,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox ptb_estudiante;
-        private System.Windows.Forms.DataGridView lstPensumEstudiante;
         private System.Windows.Forms.Label lblNoCiclo;
         private System.Windows.Forms.ComboBox cboPensum;
+        private System.Windows.Forms.DataGridView dgvPensumEstudiante;
     }
 }
