@@ -26,12 +26,12 @@ namespace loginadmi
 
         private void txt_nombrecurso_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void text_codigoPre_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void text_numerociclo_TextChanged(object sender, EventArgs e)
@@ -42,8 +42,8 @@ namespace loginadmi
         private void btn_registrarpensum_Click(object sender, EventArgs e)
         {
             string nombreCarrera = txt_nombrescarrera.Text.Trim();
-            int codigoCurso = int.Parse(txt_nombrecurso.Text.Trim());
-            int codigoPreRequisito = int.Parse(text_codigoPre.Text.Trim());
+            string nombreCurso = txt_nombrecurso.Text.Trim();
+            string nombrePreRequisito = text_codigoPre.Text.Trim();
             int numeroCiclo = int.Parse(text_numerociclo.Text.Trim());
 
             string conexionBD = ConexionBD.CadenaConexion();
@@ -55,9 +55,9 @@ namespace loginadmi
                     conexion.Open();
 
                     // Buscar el código de la carrera por nombre
-                    string consultaCarrera = "SELECT codigoCarrera_pk FROM carrera WHERE nombreCarrera = @nombreCarrera";
+                    string consultaCarrera = "SELECT codigoCarrera_pk FROM carrera WHERE TRIM(LOWER(nombreCarrera)) = TRIM(LOWER(@nombreCarrera))";
                     MySqlCommand comandoCarrera = new MySqlCommand(consultaCarrera, conexion);
-                    comandoCarrera.Parameters.AddWithValue("@nombreCarrera", nombreCarrera);
+                    comandoCarrera.Parameters.AddWithValue("@nombreCarrera", nombreCarrera.ToLower());
                     object resultadoCarrera = comandoCarrera.ExecuteScalar();
 
                     if (resultadoCarrera == null)
@@ -65,8 +65,37 @@ namespace loginadmi
                         MessageBox.Show("No se encontró una carrera con ese nombre.");
                         return;
                     }
-
                     int codigoCarrera = Convert.ToInt32(resultadoCarrera);
+
+                    // Buscar el código del curso por nombre
+                    string consultaCurso = "SELECT codigoCurso_pk FROM curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombreCurso))";
+                    MySqlCommand comandoCurso = new MySqlCommand(consultaCurso, conexion);
+                    comandoCurso.Parameters.AddWithValue("@nombreCurso", nombreCurso.ToLower());
+                    object resultadoCurso = comandoCurso.ExecuteScalar();
+
+                    if (resultadoCurso == null)
+                    {
+                        MessageBox.Show("No se encontró un curso con ese nombre.");
+                        return;
+                    }
+                    int codigoCurso = Convert.ToInt32(resultadoCurso);
+
+                    // Buscar el código del prerrequisito por nombre (solo si no está vacío)
+                    int? codigoPreRequisito = null;
+                    if (!string.IsNullOrWhiteSpace(nombrePreRequisito))
+                    {
+                        string consultaPre = "SELECT codigoCurso_pk FROM curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombrePre))";
+                        MySqlCommand comandoPre = new MySqlCommand(consultaPre, conexion);
+                        comandoPre.Parameters.AddWithValue("@nombrePre", nombrePreRequisito.ToLower());
+                        object resultadoPre = comandoPre.ExecuteScalar();
+
+                        if (resultadoPre == null)
+                        {
+                            MessageBox.Show("No se encontró un curso prerrequisito con ese nombre.");
+                            return;
+                        }
+                        codigoPreRequisito = Convert.ToInt32(resultadoPre);
+                    }
 
                     // Insertar el pensum
                     string insertarPensum = "INSERT INTO pensum (codigoCarrera_fk, codigoCurso_fk, codigoPreRequisito_fk, numeroCiclo) " +
@@ -74,7 +103,10 @@ namespace loginadmi
                     MySqlCommand comandoInsertar = new MySqlCommand(insertarPensum, conexion);
                     comandoInsertar.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
                     comandoInsertar.Parameters.AddWithValue("@codigoCurso", codigoCurso);
-                    comandoInsertar.Parameters.AddWithValue("@codigoPreRequisito", codigoPreRequisito);
+                    if (codigoPreRequisito.HasValue)
+                        comandoInsertar.Parameters.AddWithValue("@codigoPreRequisito", codigoPreRequisito.Value);
+                    else
+                        comandoInsertar.Parameters.AddWithValue("@codigoPreRequisito", DBNull.Value);
                     comandoInsertar.Parameters.AddWithValue("@numeroCiclo", numeroCiclo);
                     comandoInsertar.ExecuteNonQuery();
 
@@ -92,6 +124,13 @@ namespace loginadmi
         {
             frmListadoPensum listaPensum = new frmListadoPensum();
             listaPensum.Show();
+            this.Hide();
+        }
+
+        private void btnfacus3_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();  
+            facultades.Show();
             this.Hide();
         }
     }

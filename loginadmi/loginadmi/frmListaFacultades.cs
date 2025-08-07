@@ -94,5 +94,73 @@ namespace loginadmi
             }
 
         }
+
+        private void btnfacu2_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();  
+            facultades.Show();
+            this.Hide(); 
+        }
+
+        private void btnmodificarfacultad_Click(object sender, EventArgs e)
+        {
+            if (list_facultades.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor selecciona una facultad de la lista.");
+                return;
+            }
+
+            try
+            {
+                // Obtener la fila seleccionada
+                DataGridViewRow fila = list_facultades.CurrentRow;
+
+                int codigoFacultad = Convert.ToInt32(fila.Cells["codigoFacultad_pk"].Value);
+                string nombreFacultad = fila.Cells["nombreFacultad"].Value.ToString().Trim();
+                int codigoEdificio = Convert.ToInt32(fila.Cells["codigoEdificio_fk"].Value);
+
+                // Validar
+                if (string.IsNullOrEmpty(nombreFacultad))
+                {
+                    MessageBox.Show("El nombre de la facultad no puede estar vacío.");
+                    return;
+                }
+
+                string conexionBD = ConexionBD.CadenaConexion();
+
+                using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+                {
+                    conexion.Open();
+
+                    string consulta = @"
+                UPDATE facultad 
+                SET nombreFacultad = @nombreFacultad,
+                    codigoEdificio_fk = @codigoEdificio
+                WHERE codigoFacultad_pk = @codigoFacultad";
+
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@nombreFacultad", nombreFacultad);
+                    comando.Parameters.AddWithValue("@codigoEdificio", codigoEdificio);
+                    comando.Parameters.AddWithValue("@codigoFacultad", codigoFacultad);
+
+                    int filasAfectadas = comando.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Facultad modificada exitosamente.");
+                        CargarFacultades(); // Refrescar la tabla
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar la facultad.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar la facultad: " + ex.Message);
+            }
+        }
+
     }
 }

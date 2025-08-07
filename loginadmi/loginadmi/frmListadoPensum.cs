@@ -29,18 +29,23 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT codigoPensum_pk, codigoCarrera_fk, codigoCurso_fk, codigoPreRequisito_fk, numeroCiclo FROM pensum";
+
+                    string consulta = @"
+                SELECT 
+                    p.codigoPensum_pk AS 'Código Pensum',
+                    c.nombreCarrera AS 'Carrera',
+                    cu.nombreCurso AS 'Curso',
+                    IFNULL(pr.nombreCurso, 'Sin Pre-requisito') AS 'Pre-Requisito',
+                    p.numeroCiclo AS 'Ciclo'
+                FROM pensum p
+                INNER JOIN carrera c ON p.codigoCarrera_fk = c.codigoCarrera_pk
+                INNER JOIN curso cu ON p.codigoCurso_fk = cu.codigoCurso_pk
+                LEFT JOIN curso pr ON p.codigoPreRequisito_fk = pr.codigoCurso_pk";
+
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
-                    list_pensum.DataSource = tabla; // Cambia 'list_pensum' por el nombre real de tu DataGridView
-
-                    // Cambiar los títulos de las columnas
-                    list_pensum.Columns["codigoPensum_pk"].HeaderText = "Código Pensum";
-                    list_pensum.Columns["codigoCarrera_fk"].HeaderText = "Carrera";
-                    list_pensum.Columns["codigoCurso_fk"].HeaderText = "Curso";
-                    list_pensum.Columns["codigoPreRequisito_fk"].HeaderText = "Pre-Requisito";
-                    list_pensum.Columns["numeroCiclo"].HeaderText = "Ciclo";
+                    list_pensum.DataSource = tabla;
                 }
                 catch (Exception ex)
                 {
@@ -48,6 +53,7 @@ namespace loginadmi
                 }
             }
         }
+
 
 
         private void txt_codigopensum_TextChanged(object sender, EventArgs e)
@@ -96,6 +102,85 @@ namespace loginadmi
 
 
         private void btn_modificarpensum_Click(object sender, EventArgs e)
+        {
+            if (list_pensum.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor selecciona un registro del pensum.");
+                return;
+            }
+
+            try
+            {
+                // Obtener datos de la fila seleccionada
+                DataGridViewRow fila = list_pensum.CurrentRow;
+
+                int codigoPensum = Convert.ToInt32(fila.Cells["codigoPensum_pk"].Value);
+                int codigoCarrera = Convert.ToInt32(fila.Cells["codigoCarrera_fk"].Value);
+                int codigoCurso = Convert.ToInt32(fila.Cells["codigoCurso_fk"].Value);
+                int codigoPreRequisito = Convert.ToInt32(fila.Cells["codigoPreRequisito_fk"].Value);
+                int numeroCiclo = Convert.ToInt32(fila.Cells["numeroCiclo"].Value);
+
+                // Validación básica
+                if (codigoCarrera <= 0 || codigoCurso <= 0 || numeroCiclo <= 0)
+                {
+                    MessageBox.Show("Los campos Carrera, Curso y Ciclo deben tener valores válidos.");
+                    return;
+                }
+
+                string conexionBD = ConexionBD.CadenaConexion();
+
+                using (MySqlConnection conexion = new MySqlConnection(conexionBD))
+                {
+                    conexion.Open();
+
+                    string consulta = @"
+                UPDATE pensum 
+                SET codigoCarrera_fk = @codigoCarrera, 
+                    codigoCurso_fk = @codigoCurso, 
+                    codigoPreRequisito_fk = @codigoPreRequisito, 
+                    numeroCiclo = @numeroCiclo 
+                WHERE codigoPensum_pk = @codigoPensum";
+
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);
+                    comando.Parameters.AddWithValue("@codigoCurso", codigoCurso);
+                    comando.Parameters.AddWithValue("@codigoPreRequisito", codigoPreRequisito);
+                    comando.Parameters.AddWithValue("@numeroCiclo", numeroCiclo);
+                    comando.Parameters.AddWithValue("@codigoPensum", codigoPensum);
+
+                    int filasAfectadas = comando.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Pensum modificado exitosamente.");
+                        CargarPensum(); // Refresca la tabla
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar el pensum.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el pensum: " + ex.Message);
+            }
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnfacul_Click(object sender, EventArgs e)
+        {
+            Facultades facultades = new Facultades();
+            facultades.Show();
+            this.Hide(); 
+        }
+
+        private void list_pensum_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
