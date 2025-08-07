@@ -116,7 +116,7 @@ namespace loginadmi
                         conexion.Open();
 
                         //Verificar si existe ya un curso ingresado en ese semestre del año, con la sección y la carrera ingresada
-                        string sConsultaExistencia = @"SELECT ac.codigoAsignacionCurso_pk FROM asignacionCurso ac
+                        string sConsultaExistencia = @"SELECT ac.codigoAsignacionCurso_pk FROM AsignacionCurso ac
                                                         JOIN Curso c ON ac.codigoCurso_fk = c.codigoCurso_pk
                                                         WHERE ac.seccion = @seccion AND ac.semestreAsignacion = @semestre 
                                                         AND ac.añoAsignacion = @año AND c.nombreCurso = @curso AND ac.codigoCarrera_fk = @carrera ";
@@ -135,7 +135,7 @@ namespace loginadmi
                         
                         else
                         {
-                            string sConsultaInsertar = "INSERT INTO asignacioncurso (codigoCurso_fk, seccion, salon, " +
+                            string sConsultaInsertar = "INSERT INTO AsignacionCurso (codigoCurso_fk, seccion, salon, " +
                                     "horaInicio, horaSalida, diasCurso, semestreAsignacion, añoAsignacion, codigoCarrera_fk, codigoCatedratico_fk, fechaAsignacion) " +
                                     "VALUES (@codigoCurso, @seccion, @salon, @horaInicio, @horaSalida, @dias, @semestre, @año, @codigoCarrera, @codigoCatedratico, @fecha)";
                             MySqlCommand comando = new MySqlCommand(sConsultaInsertar, conexion);

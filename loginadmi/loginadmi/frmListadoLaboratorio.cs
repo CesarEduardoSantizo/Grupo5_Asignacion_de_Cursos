@@ -37,7 +37,7 @@ namespace loginadmi
                 using (MySqlConnection conexion = new MySqlConnection(conexionBD))
                 {
                     conexion.Open();
-                    string sEliminacion = "DELETE FROM asignacionlaboratorio WHERE codigoAsignacionLaboratorio_pk = @codigoAsignacion";
+                    string sEliminacion = "DELETE FROM AsignacionLaboratorio WHERE codigoAsignacionLaboratorio_pk = @codigoAsignacion";
                     MySqlCommand comando = new MySqlCommand(sEliminacion, conexion);
                     comando.Parameters.AddWithValue("@codigoAsignacion", codigoAsignacion);
                     int filasAfectadas = comando.ExecuteNonQuery();
@@ -96,7 +96,7 @@ namespace loginadmi
                     return false;
 
                 string setClause = string.Join(", ", sets);
-                comando.CommandText = $"UPDATE asignacionlaboratorio SET {setClause} WHERE codigoAsignacionLaboratorio_pk = @codigoAsignacion";
+                comando.CommandText = $"UPDATE AsignacionLaboratorio SET {setClause} WHERE codigoAsignacionLaboratorio_pk = @codigoAsignacion";
                 comando.Parameters.AddWithValue("@codigoAsignacion", codigoAsignacion);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -125,7 +125,7 @@ namespace loginadmi
                                                         al.horaSalida AS horaSalida,
                                                         al.diaLaboratorio AS Dia,
                                                         al.precioLaboratorio AS Precio
-                                                FROM asignacionlaboratorio al 
+                                                FROM AsignacionLaboratorio al 
                                                 JOIN Curso c ON al.codigoCurso_fk = c.codigoCurso_pk 
                                                 JOIN Carrera cr ON al.codigoCarrera_fk = cr.codigoCarrera_pk 
                                                 WHERE al.añoAsignacion = @año 

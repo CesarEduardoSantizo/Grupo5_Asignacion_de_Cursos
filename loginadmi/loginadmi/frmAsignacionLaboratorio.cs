@@ -77,7 +77,7 @@ namespace loginadmi
                         conexion.Open();
 
                         //Verificar si existe ya un laboratorio ingresado en ese semestre del año, con la sección y la carrera ingresada
-                        string sConsultaExistencia = @"SELECT al.codigoAsignacionLaboratorio_pk FROM asignacionlaboratorio al
+                        string sConsultaExistencia = @"SELECT al.codigoAsignacionLaboratorio_pk FROM AsignacionLaboratorio al
                                                     WHERE al.seccion = @seccion AND al.semestreAsignacion = @semestre 
                                                     AND al.añoAsignacion = @año AND al.codigoCurso_fk = @curso AND al.codigoCarrera_fk = @carrera ";
                         MySqlCommand comandoSeleccion = new MySqlCommand(sConsultaExistencia, conexion);
@@ -94,7 +94,7 @@ namespace loginadmi
                         }
                         else
                         {
-                            string sConsultaInsertar = "INSERT INTO asignacionlaboratorio (codigoCurso_fk, precioLaboratorio, horaInicio, " +
+                            string sConsultaInsertar = "INSERT INTO AsignacionLaboratorio (codigoCurso_fk, precioLaboratorio, horaInicio, " +
                                 "diaLaboratorio, semestreAsignacion, añoAsignacion, codigoCarrera_fk, horaSalida, seccion) " +
                                 "VALUES (@codigoCurso, @precio,@horaInicio, @dia, @semestre, @año, @codigoCarrera, @horaSalida, @seccion)";
                             MySqlCommand comando = new MySqlCommand(sConsultaInsertar, conexion);

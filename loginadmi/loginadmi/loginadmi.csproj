@@ -469,5 +469,8 @@
   <ItemGroup>
     <None Include="Resources\inscripcion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2025-08-07 at 1.17.58 AM.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
