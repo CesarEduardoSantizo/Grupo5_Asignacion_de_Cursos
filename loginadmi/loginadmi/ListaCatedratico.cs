@@ -203,9 +203,9 @@ namespace loginadmi
 
         private void btnInscripcion_Click(object sender, EventArgs e)
         {
-            FrmInscripcion nuevoFormulario = new FrmInscripcion();
-            nuevoFormulario.Show();
-            this.Hide(); // o this.Close(); si quieres cerrarlo
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            frmCostoInscripcion.Show();
+            this.Hide();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)

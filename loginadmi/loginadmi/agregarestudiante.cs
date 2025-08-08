@@ -274,15 +274,16 @@ namespace loginadmi
 
         private void btnInscripcion_Click(object sender, EventArgs e)
         {
-            FrmInscripcion nuevoFormulario = new FrmInscripcion();
-            nuevoFormulario.Show();
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            frmCostoInscripcion.Show();
             this.Hide();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-            frmCursos nuevoFormulario = new frmCursos();
+            frmModuloCursos nuevoFormulario = new frmModuloCursos();
             nuevoFormulario.Show();
+            this.Hide();
         }
     }
 }
