@@ -47,7 +47,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Verificar si el edificio ya existe
-                    string consulta = "SELECT codigoEdificio_pk FROM edificio WHERE nombreEdificio = @nombreEdificio";
+                    string consulta = "SELECT codigoEdificio_pk FROM Edificio WHERE nombreEdificio = @nombreEdificio";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreEdificio", nombreEdificio);
                     object resultado = comando.ExecuteScalar();
@@ -56,7 +56,7 @@ namespace loginadmi
                     if (resultado == null)
                     {
                         // Insertar nuevo edificio
-                        string insertar = "INSERT INTO edificio (nombreEdificio) VALUES (@nombreEdificio)";
+                        string insertar = "INSERT INTO Edificio (nombreEdificio) VALUES (@nombreEdificio)";
                         MySqlCommand insertarCmd = new MySqlCommand(insertar, conexion);
                         insertarCmd.Parameters.AddWithValue("@nombreEdificio", nombreEdificio);
                         insertarCmd.ExecuteNonQuery();
