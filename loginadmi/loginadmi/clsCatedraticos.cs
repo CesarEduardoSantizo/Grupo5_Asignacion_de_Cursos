@@ -21,7 +21,7 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string sConsultaSeleccion = "SELECT carnetCatedratico_pk, nombreCatedratico FROM catedratico";
+                    string sConsultaSeleccion = "SELECT carnetCatedratico_pk, nombreCatedratico FROM Catedratico";
                     MySqlCommand comando = new MySqlCommand(sConsultaSeleccion, conexion);
 
                     MySqlDataReader datos = comando.ExecuteReader();

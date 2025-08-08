@@ -164,7 +164,7 @@ namespace loginadmi
                     // 1. Obtener código y costo de inscripción
                     const string sqlCosto = @"
                 SELECT codigoCostoInscripcion_pk, costo
-                  FROM costoinscripcion
+                  FROM CostoInscripcion
                  WHERE semestre = @semestre
                    AND año      = @año";
                     using (var cmdCosto = new MySqlCommand(sqlCosto, conexion))
@@ -190,7 +190,7 @@ namespace loginadmi
                     // 2. Verificar si ya está inscrito
                     const string sqlVerificar = @"
                 SELECT COUNT(*)
-                  FROM inscripcion
+                  FROM Inscripcion
                  WHERE carnetEstudiante_fk       = @carnet
                    AND codigoCostoInscripcion_fk = @codigoCosto";
                     using (var cmdVerificar = new MySqlCommand(sqlVerificar, conexion))
@@ -208,7 +208,7 @@ namespace loginadmi
 
                     // 3. Insertar nueva inscripción
                     const string sqlInsert = @"
-                INSERT INTO inscripcion
+                INSERT INTO Inscripcion
                             (carnetEstudiante_fk,
                              codigoCostoInscripcion_fk,
                              fechaInscripcion)
@@ -234,7 +234,7 @@ namespace loginadmi
                     // 2.1 Obtener nombre y apellidos desde la tabla estudiante
                     const string sqlAlumno = @"
                         SELECT nombreEstudiante, apellidosEstudiante
-                        FROM estudiante
+                        FROM Estudiante
                          WHERE carnetEstudiante_pk = @carnet";
 
                     using (var cmdAlumno = new MySqlCommand(sqlAlumno, conexion))
@@ -333,7 +333,7 @@ using (var save = new SaveFileDialog())
                 {
                     conexion.Open();
 
-                    string query = "SELECT costo FROM costoinscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
+                    string query = "SELECT costo FROM CostoInscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                     {

@@ -56,7 +56,7 @@ namespace loginadmi
                 conexion.Open();
                 string sConsulta = @"
                     SELECT codigoUsuario_pk, usuario, codigoRolUsuario_fk, carnetEstudiante_fk, carnetCatedratico_fk
-                    FROM usuario
+                    FROM Usuario
                     WHERE usuario = @usuario AND contraseña = @contraseña";
                 MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
                 comando.Parameters.AddWithValue("@usuario", sUsuario);
