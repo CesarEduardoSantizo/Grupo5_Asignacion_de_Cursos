@@ -55,7 +55,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Buscar el código de la carrera por nombre
-                    string consultaCarrera = "SELECT codigoCarrera_pk FROM carrera WHERE TRIM(LOWER(nombreCarrera)) = TRIM(LOWER(@nombreCarrera))";
+                    string consultaCarrera = "SELECT codigoCarrera_pk FROM Carrera WHERE TRIM(LOWER(nombreCarrera)) = TRIM(LOWER(@nombreCarrera))";
                     MySqlCommand comandoCarrera = new MySqlCommand(consultaCarrera, conexion);
                     comandoCarrera.Parameters.AddWithValue("@nombreCarrera", nombreCarrera.ToLower());
                     object resultadoCarrera = comandoCarrera.ExecuteScalar();
@@ -68,7 +68,7 @@ namespace loginadmi
                     int codigoCarrera = Convert.ToInt32(resultadoCarrera);
 
                     // Buscar el código del curso por nombre
-                    string consultaCurso = "SELECT codigoCurso_pk FROM curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombreCurso))";
+                    string consultaCurso = "SELECT codigoCurso_pk FROM Curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombreCurso))";
                     MySqlCommand comandoCurso = new MySqlCommand(consultaCurso, conexion);
                     comandoCurso.Parameters.AddWithValue("@nombreCurso", nombreCurso.ToLower());
                     object resultadoCurso = comandoCurso.ExecuteScalar();
@@ -84,7 +84,7 @@ namespace loginadmi
                     int? codigoPreRequisito = null;
                     if (!string.IsNullOrWhiteSpace(nombrePreRequisito))
                     {
-                        string consultaPre = "SELECT codigoCurso_pk FROM curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombrePre))";
+                        string consultaPre = "SELECT codigoCurso_pk FROM Curso WHERE TRIM(LOWER(nombreCurso)) = TRIM(LOWER(@nombrePre))";
                         MySqlCommand comandoPre = new MySqlCommand(consultaPre, conexion);
                         comandoPre.Parameters.AddWithValue("@nombrePre", nombrePreRequisito.ToLower());
                         object resultadoPre = comandoPre.ExecuteScalar();
@@ -98,7 +98,7 @@ namespace loginadmi
                     }
 
                     // Insertar el pensum
-                    string insertarPensum = "INSERT INTO pensum (codigoCarrera_fk, codigoCurso_fk, codigoPreRequisito_fk, numeroCiclo) " +
+                    string insertarPensum = "INSERT INTO Pensum (codigoCarrera_fk, codigoCurso_fk, codigoPreRequisito_fk, numeroCiclo) " +
                                             "VALUES (@codigoCarrera, @codigoCurso, @codigoPreRequisito, @numeroCiclo)";
                     MySqlCommand comandoInsertar = new MySqlCommand(insertarPensum, conexion);
                     comandoInsertar.Parameters.AddWithValue("@codigoCarrera", codigoCarrera);

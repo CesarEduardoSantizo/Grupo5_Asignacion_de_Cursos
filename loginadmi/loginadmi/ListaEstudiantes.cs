@@ -32,8 +32,8 @@ namespace loginadmi
                     c.nombreCarrera AS Carrera, 
                     e.correoEstudiante, 
                     e.telefonoEstudiante
-                FROM estudiante e
-                LEFT JOIN carrera c ON e.codigoCarrera_fk = c.codigoCarrera_pk";
+                FROM Estudiante e
+                LEFT JOIN Carrera c ON e.codigoCarrera_fk = c.codigoCarrera_pk";
 
                     
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(sconsulta, conexion);
@@ -84,12 +84,12 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string eliminacionUser = "DELETE FROM usuario WHERE carnetEstudiante_fk = @carnet";
+                    string eliminacionUser = "DELETE FROM Usuario WHERE carnetEstudiante_fk = @carnet";
                     MySqlCommand comandoUser = new MySqlCommand(eliminacionUser, conexion);
                     comandoUser.Parameters.AddWithValue("@carnet", carnet);
                     comandoUser.ExecuteNonQuery();
 
-                    string consulta = "DELETE FROM estudiante WHERE carnetEstudiante_pk = @carnet";
+                    string consulta = "DELETE FROM Estudiante WHERE carnetEstudiante_pk = @carnet";
                     MySqlCommand comandoEstudiante = new MySqlCommand(consulta, conexion);
                     comandoEstudiante.Parameters.AddWithValue("@carnet", carnet);
                     int filasAfectadas = comandoEstudiante.ExecuteNonQuery();
@@ -160,7 +160,7 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT COUNT(*) FROM estudiante WHERE carnetEstudiante_pk = @carnet";
+                    string consulta = "SELECT COUNT(*) FROM Estudiante WHERE carnetEstudiante_pk = @carnet";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@carnet", carnet);
                     int existe = Convert.ToInt32(comando.ExecuteScalar());

@@ -38,7 +38,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Normaliza el nombre para la búsqueda
-                    string consultaFacultad = "SELECT codigoFacultad_pk FROM facultad WHERE TRIM(LOWER(nombreFacultad)) = TRIM(LOWER(@facultad))";
+                    string consultaFacultad = "SELECT codigoFacultad_pk FROM Facultad WHERE TRIM(LOWER(nombreFacultad)) = TRIM(LOWER(@facultad))";
                     MySqlCommand comandoFacultad = new MySqlCommand(consultaFacultad, conexion);
                     comandoFacultad.Parameters.AddWithValue("@facultad", facultad.ToLower());
                     object resultadoFacultad = comandoFacultad.ExecuteScalar();
@@ -47,7 +47,7 @@ namespace loginadmi
                     if (resultadoFacultad == null)
                     {
                         // Insertar nueva facultad
-                        string insertarFacultad = "INSERT INTO facultad (nombreFacultad) VALUES (@facultad)";
+                        string insertarFacultad = "INSERT INTO Facultad (nombreFacultad) VALUES (@facultad)";
                         MySqlCommand insertarFacultadCmd = new MySqlCommand(insertarFacultad, conexion);
                         insertarFacultadCmd.Parameters.AddWithValue("@facultad", facultad);
                         insertarFacultadCmd.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace loginadmi
                     }
 
                     // Insertar la carrera asociada a esa facultad
-                    string insertarCarrera = "INSERT INTO carrera (nombreCarrera, codigoFacultad_fk) VALUES (@carrera, @codigoFacultad)";
+                    string insertarCarrera = "INSERT INTO Carrera (nombreCarrera, codigoFacultad_fk) VALUES (@carrera, @codigoFacultad)";
                     MySqlCommand insertarCarreraCmd = new MySqlCommand(insertarCarrera, conexion);
                     insertarCarreraCmd.Parameters.AddWithValue("@carrera", nombres);
                     insertarCarreraCmd.Parameters.AddWithValue("@codigoFacultad", codigoFacultad);

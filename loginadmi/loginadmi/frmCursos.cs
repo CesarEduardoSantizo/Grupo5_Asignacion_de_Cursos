@@ -58,7 +58,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Verificar si ya existe el curso
-                    string consulta = "SELECT codigoCurso_pk FROM curso WHERE codigoCurso_pk = @codigoCurso";
+                    string consulta = "SELECT codigoCurso_pk FROM Curso WHERE codigoCurso_pk = @codigoCurso";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@codigoCurso", codigoCurso);
                     object resultado = comando.ExecuteScalar();
@@ -66,7 +66,7 @@ namespace loginadmi
                     if (resultado == null)
                     {
                         // Insertar nuevo curso
-                        string insertar = @"INSERT INTO curso 
+                        string insertar = @"INSERT INTO Curso 
                                             (codigoCurso_pk, nombreCurso, creditosAsignados, precio, creditosNecesarios)
                                             VALUES (@codigoCurso, @nombreCurso, @creditosAsignados, @precio, @creditosNecesarios)";
                         MySqlCommand insertarCmd = new MySqlCommand(insertar, conexion);

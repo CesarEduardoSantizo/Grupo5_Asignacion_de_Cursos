@@ -321,7 +321,7 @@
             this.btnlistaedificio.Name = "btnlistaedificio";
             this.btnlistaedificio.Size = new System.Drawing.Size(261, 66);
             this.btnlistaedificio.TabIndex = 48;
-            this.btnlistaedificio.Text = "Lista Edificios";
+            this.btnlistaedificio.Text = "Lista Curso";
             this.btnlistaedificio.UseVisualStyleBackColor = false;
             this.btnlistaedificio.Click += new System.EventHandler(this.btnlistaedificio_Click);
             // 
@@ -335,7 +335,7 @@
             this.btnregistraredificio.Name = "btnregistraredificio";
             this.btnregistraredificio.Size = new System.Drawing.Size(261, 66);
             this.btnregistraredificio.TabIndex = 47;
-            this.btnregistraredificio.Text = "Registrar Edificio";
+            this.btnregistraredificio.Text = "Registrar Curso";
             this.btnregistraredificio.UseVisualStyleBackColor = false;
             this.btnregistraredificio.Click += new System.EventHandler(this.btnregistraredificio_Click);
             // 
@@ -352,13 +352,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(417, 10);
+            this.label1.Location = new System.Drawing.Point(354, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 69);
+            this.label1.Size = new System.Drawing.Size(349, 70);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pensum";
+            this.label1.Text = "Facultades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox14

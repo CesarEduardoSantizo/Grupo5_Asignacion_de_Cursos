@@ -371,7 +371,7 @@ using (var save = new SaveFileDialog())
                 return;
             }
 
-            string query = "SELECT costo FROM costoinscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
+            string query = "SELECT costo FROM CostoInscripcion WHERE semestre = @semestre AND año = @anio LIMIT 1";
 
             string conexionBD = ConexionBD.CadenaConexion(); // Usa tu método de conexión
             using (MySqlConnection conexion = new MySqlConnection(conexionBD))

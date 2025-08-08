@@ -37,10 +37,10 @@ namespace loginadmi
                     cu.nombreCurso AS 'Curso',
                     IFNULL(pr.nombreCurso, 'Sin Pre-requisito') AS 'Pre-Requisito',
                     p.numeroCiclo AS 'Ciclo'
-                FROM pensum p
-                INNER JOIN carrera c ON p.codigoCarrera_fk = c.codigoCarrera_pk
-                INNER JOIN curso cu ON p.codigoCurso_fk = cu.codigoCurso_pk
-                LEFT JOIN curso pr ON p.codigoPreRequisito_fk = pr.codigoCurso_pk";
+                FROM Pensum p
+                INNER JOIN Carrera c ON p.codigoCarrera_fk = c.codigoCarrera_pk
+                INNER JOIN Curso cu ON p.codigoCurso_fk = cu.codigoCurso_pk
+                LEFT JOIN Curso pr ON p.codigoPreRequisito_fk = pr.codigoCurso_pk";
 
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                     DataTable tabla = new DataTable();
@@ -77,7 +77,7 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string consultaEliminar = "DELETE FROM pensum WHERE codigoPensum_pk = @codigoPensum";
+                    string consultaEliminar = "DELETE FROM Pensum WHERE codigoPensum_pk = @codigoPensum";
                     MySqlCommand comandoEliminar = new MySqlCommand(consultaEliminar, conexion);
                     comandoEliminar.Parameters.AddWithValue("@codigoPensum", codigoPensum);
 
@@ -134,7 +134,7 @@ namespace loginadmi
                     conexion.Open();
 
                     string consulta = @"
-                UPDATE pensum 
+                UPDATE Pensum 
                 SET codigoCarrera_fk = @codigoCarrera, 
                     codigoCurso_fk = @codigoCurso, 
                     codigoPreRequisito_fk = @codigoPreRequisito, 

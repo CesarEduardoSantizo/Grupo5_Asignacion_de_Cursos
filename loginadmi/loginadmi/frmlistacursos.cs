@@ -28,7 +28,7 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT codigoCurso_pk, nombreCurso, creditosAsignados, precio, creditosNecesarios FROM curso";
+                    string consulta = "SELECT codigoCurso_pk, nombreCurso, creditosAsignados, precio, creditosNecesarios FROM Curso";
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
@@ -66,7 +66,7 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string consulta = "DELETE FROM curso WHERE nombreCurso = @nombreCurso";
+                    string consulta = "DELETE FROM Curso WHERE nombreCurso = @nombreCurso";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
                     int filasAfectadas = comando.ExecuteNonQuery();
@@ -117,7 +117,7 @@ namespace loginadmi
                 using (MySqlConnection conexion = new MySqlConnection(conexionBD))
                 {
                     conexion.Open();
-                    string consulta = @"UPDATE curso 
+                    string consulta = @"UPDATE Curso 
                                         SET nombreCurso = @nombreCurso, 
                                             creditosAsignados = @creditosAsignados,
                                             precio = @precio,

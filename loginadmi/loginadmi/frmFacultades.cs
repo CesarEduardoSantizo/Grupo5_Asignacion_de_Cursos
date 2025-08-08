@@ -58,7 +58,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Verifica si la facultad ya existe con ese nombre y código de edificio
-                    string consulta = "SELECT codigoFacultad_pk FROM facultad WHERE nombreFacultad = @nombreFacultad AND codigoEdificio_fk = @codigoEdificio";
+                    string consulta = "SELECT codigoFacultad_pk FROM Facultad WHERE nombreFacultad = @nombreFacultad AND codigoEdificio_fk = @codigoEdificio";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreFacultad", nombreFacultad);
                     comando.Parameters.AddWithValue("@codigoEdificio", codigoEdificio);
@@ -68,7 +68,7 @@ namespace loginadmi
                     if (resultado == null)
                     {
                         // Insertar nueva facultad
-                        string insertar = "INSERT INTO facultad (nombreFacultad, codigoEdificio_fk) VALUES (@nombreFacultad, @codigoEdificio)";
+                        string insertar = "INSERT INTO Facultad (nombreFacultad, codigoEdificio_fk) VALUES (@nombreFacultad, @codigoEdificio)";
                         MySqlCommand insertarCmd = new MySqlCommand(insertar, conexion);
                         insertarCmd.Parameters.AddWithValue("@nombreFacultad", nombreFacultad);
                         insertarCmd.Parameters.AddWithValue("@codigoEdificio", codigoEdificio);

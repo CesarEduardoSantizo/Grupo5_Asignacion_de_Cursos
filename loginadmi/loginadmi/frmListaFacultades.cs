@@ -29,7 +29,7 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT codigoFacultad_pk, nombreFacultad, codigoEdificio_fk FROM facultad";
+                    string consulta = "SELECT codigoFacultad_pk, nombreFacultad, codigoEdificio_fk FROM Facultad";
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
@@ -72,7 +72,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Eliminar todas las filas que coincidan con el nombre de la facultad
-                    string consulta = "DELETE FROM facultad WHERE nombreFacultad = @nombreFacultad";
+                    string consulta = "DELETE FROM Facultad WHERE nombreFacultad = @nombreFacultad";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreFacultad", nombreFacultad);
                     int filasAfectadas = comando.ExecuteNonQuery();
@@ -133,7 +133,7 @@ namespace loginadmi
                     conexion.Open();
 
                     string consulta = @"
-                UPDATE facultad 
+                UPDATE Facultad 
                 SET nombreFacultad = @nombreFacultad,
                     codigoEdificio_fk = @codigoEdificio
                 WHERE codigoFacultad_pk = @codigoFacultad";

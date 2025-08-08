@@ -76,12 +76,12 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string seliminacionUser = "DELETE FROM usuario WHERE carnetCatedratico_fk = @carnet";
+                    string seliminacionUser = "DELETE FROM Usuario WHERE carnetCatedratico_fk = @carnet";
                     MySqlCommand comandoUser = new MySqlCommand(seliminacionUser, conexion);
                     comandoUser.Parameters.AddWithValue("@carnet", scarnet);
                     comandoUser.ExecuteNonQuery();
 
-                    string sconsulta = "DELETE FROM catedratico WHERE carnetCatedratico_pk = @carnet";
+                    string sconsulta = "DELETE FROM Catedratico WHERE carnetCatedratico_pk = @carnet";
                     MySqlCommand comandoCatedratico = new MySqlCommand(sconsulta, conexion);
                     comandoCatedratico.Parameters.AddWithValue("@carnet", scarnet);
                     int filasAfectadas = comandoCatedratico.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace loginadmi
                 {
                     conexion.Open();
 
-                    string sconsulta = "SELECT COUNT(*) FROM catedratico WHERE carnetCatedratico_pk = @carnet";
+                    string sconsulta = "SELECT COUNT(*) FROM Catedratico WHERE carnetCatedratico_pk = @carnet";
                     MySqlCommand comando = new MySqlCommand(sconsulta, conexion);
                     comando.Parameters.AddWithValue("@carnet", scarnet);
                     int existe = Convert.ToInt32(comando.ExecuteScalar());

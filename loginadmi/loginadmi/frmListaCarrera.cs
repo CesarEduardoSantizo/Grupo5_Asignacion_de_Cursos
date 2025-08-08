@@ -29,7 +29,7 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string consulta = "SELECT codigoCarrera_pk, nombreCarrera, codigoFacultad_fk FROM carrera";
+                    string consulta = "SELECT codigoCarrera_pk, nombreCarrera, codigoFacultad_fk FROM Carrera";
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
@@ -67,7 +67,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Eliminar por nombre
-                    string consulta = "DELETE FROM carrera WHERE nombreCarrera = @nombreCarrera";
+                    string consulta = "DELETE FROM Carrera WHERE nombreCarrera = @nombreCarrera";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreCarrera", nombreCarrera);
                     int filasAfectadas = comando.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace loginadmi
                 using (MySqlConnection conexion = new MySqlConnection(conexionBD))
                 {
                     conexion.Open();
-                    string consulta = "UPDATE carrera SET nombreCarrera = @nombreCarrera, codigoFacultad_fk = @codigoFacultad WHERE codigoCarrera_pk = @codigoCarrera";
+                    string consulta = "UPDATE Carrera SET nombreCarrera = @nombreCarrera, codigoFacultad_fk = @codigoFacultad WHERE codigoCarrera_pk = @codigoCarrera";
                     MySqlCommand comando = new MySqlCommand(consulta, conexion);
                     comando.Parameters.AddWithValue("@nombreCarrera", nombreCarrera);
                     comando.Parameters.AddWithValue("@codigoFacultad", codigoFacultad);
