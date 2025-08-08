@@ -147,7 +147,7 @@ namespace loginadmi
                 try
                 {
                     conexion.Open();
-                    string sConsulta = "SELECT codigoCurso_pk FROM curso where nombreCurso = @curso";
+                    string sConsulta = "SELECT codigoCurso_pk FROM Curso where nombreCurso = @curso";
                     MySqlCommand comando = new MySqlCommand(sConsulta, conexion);
                     comando.Parameters.AddWithValue("@curso", sNombreCurso);
                     object resultado = comando.ExecuteScalar();
@@ -164,7 +164,7 @@ namespace loginadmi
                         codigoCurso = Convert.ToInt32(resultado);
                     }
 
-                    string sConsultaEstudiante = "SELECT carnetEstudiante_pk FROM estudiante where carnetEstudiante_pk  = @carnetestudiante";
+                    string sConsultaEstudiante = "SELECT carnetEstudiante_pk FROM Estudiante where carnetEstudiante_pk  = @carnetestudiante";
                     MySqlCommand comandoE = new MySqlCommand(sConsultaEstudiante, conexion);
                     comandoE.Parameters.AddWithValue("@carnetestudiante", sCarnetEstudiante);
                     object resultadoE = comandoE.ExecuteScalar();
@@ -188,7 +188,7 @@ namespace loginadmi
                     object notaFinalParcial = string.IsNullOrWhiteSpace(sNotaFinalParcial) ? DBNull.Value : (object)sNotaFinalParcial;
 
                     // Ingresar las notas en la base de datos
-                    string sinsertarNotas = "INSERT INTO notas (carnetEstudiante_fk, codigoCurso_fk, notaPrimerParcial, notaSegundoParcial, notaActividades, examenFinal) " +
+                    string sinsertarNotas = "INSERT INTO Notas (carnetEstudiante_fk, codigoCurso_fk, notaPrimerParcial, notaSegundoParcial, notaActividades, examenFinal) " +
                                              "VALUES (@carnetEstudiante, @codigoCurso, @nota1, @nota2, @notaA, @notaF)";
                     MySqlCommand comandoInsertarNota = new MySqlCommand(sinsertarNotas, conexion);
                     comandoInsertarNota.Parameters.AddWithValue("@carnetEstudiante", carnetEstudiante);
@@ -237,7 +237,7 @@ namespace loginadmi
                            notaSegundoParcial AS '2º Parcial',
                            notaActividades    AS Actividades,
                            examenFinal        AS Final
-                    FROM notas join curso c on notas.codigocurso_fk=c.codigocurso_pk";
+                    FROM Notas join Curso c on Notas.codigocurso_fk=c.codigocurso_pk";
 
 
                     // 3) Llenamos un DataTable
@@ -299,7 +299,7 @@ namespace loginadmi
                     {
                         conexion.Open();
 
-                        string consultaEliminar = "DELETE FROM notas WHERE carnetEstudiante_fk = @estudiante";
+                        string consultaEliminar = "DELETE FROM Notas WHERE carnetEstudiante_fk = @estudiante";
                         MySqlCommand comandoEliminar = new MySqlCommand(consultaEliminar, conexion);
                         comandoEliminar.Parameters.AddWithValue("@estudiante", carnetEstudiante);
 
@@ -368,7 +368,7 @@ namespace loginadmi
                     conexion.Open();
 
                     // Obtener código del curso
-                    string consultaCurso = "SELECT codigoCurso_pk FROM curso WHERE nombreCurso = @nombreCurso";
+                    string consultaCurso = "SELECT codigoCurso_pk FROM Curso WHERE nombreCurso = @nombreCurso";
                     MySqlCommand cmdCurso = new MySqlCommand(consultaCurso, conexion);
                     cmdCurso.Parameters.AddWithValue("@nombreCurso", sNombreCurso);
                     object resultCurso = cmdCurso.ExecuteScalar();
@@ -382,7 +382,7 @@ namespace loginadmi
                     int codigoCurso = Convert.ToInt32(resultCurso);
 
                     // Validar si el estudiante existe
-                    string consultaEst = "SELECT carnetEstudiante_pk FROM estudiante WHERE carnetEstudiante_pk = @carnet";
+                    string consultaEst = "SELECT carnetEstudiante_pk FROM Estudiante WHERE carnetEstudiante_pk = @carnet";
                     MySqlCommand cmdEst = new MySqlCommand(consultaEst, conexion);
                     cmdEst.Parameters.AddWithValue("@carnet", sCarnetEstudiante);
                     object resultEst = cmdEst.ExecuteScalar();
@@ -396,7 +396,7 @@ namespace loginadmi
                     int carnetEstudiante = Convert.ToInt32(resultEst);
 
                     // UPDATE
-                    string consultaUpdate = @"UPDATE notas 
+                    string consultaUpdate = @"UPDATE Notas 
                                 SET carnetEstudiante_fk = @carnet,
                                     codigoCurso_fk = @curso,
                                     notaPrimerParcial = @nota1,
