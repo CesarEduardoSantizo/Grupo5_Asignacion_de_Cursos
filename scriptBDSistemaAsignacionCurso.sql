@@ -2,11 +2,11 @@
 
 CREATE database BD_AsignacionCursos
 /*---------- Credenciales de usuario ----------------------*/
-CREATE USER 'grupoCinco'@'%' IDENTIFIED BY 'U&grupo5_2501.';
-GRANT ALL PRIVILEGES ON bd_asignacioncursos.* TO 'grupoCinco'@'%';
+CREATE USER 'usuarioSistema'@'%' IDENTIFIED BY 'U_suario.AC25';
+GRANT ALL PRIVILEGES ON bd_asignacioncursos.* TO 'usuarioSistema'@'%';
 FLUSH PRIVILEGES;
 
-SHOW GRANTS FOR 'grupoCinco'@'%';
+SHOW GRANTS FOR 'usuarioSistema'@'%';
 
 /*------------------------------------------- Creación de tablas -----------------------------------------------------*/
 
