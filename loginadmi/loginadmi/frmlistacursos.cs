@@ -155,5 +155,12 @@ namespace loginadmi
             nuevoFormulario.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            frmCostoInscripcion.Show();
+            this.Hide();
+        }
     }
 }

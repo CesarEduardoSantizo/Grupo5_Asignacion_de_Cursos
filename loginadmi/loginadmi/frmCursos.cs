@@ -135,7 +135,7 @@ namespace loginadmi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmInscripcion frmCostoInscripcion = new FrmInscripcion();
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
             frmCostoInscripcion.Show();
             this.Hide();
         }

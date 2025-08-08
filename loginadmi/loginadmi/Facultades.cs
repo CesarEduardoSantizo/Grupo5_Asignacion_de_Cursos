@@ -110,14 +110,14 @@ namespace loginadmi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmInscripcion frmCostoInscripcion = new FrmInscripcion();
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
             frmCostoInscripcion.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmCursos nuevoFormulario = new frmCursos();
+            frmModuloCursos nuevoFormulario = new frmModuloCursos();
             nuevoFormulario.Show();
             this.Hide();
         }

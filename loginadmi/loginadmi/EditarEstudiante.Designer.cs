@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarEstudiante));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_agregar_estudiante = new System.Windows.Forms.Label();
-            this.btn_cursos = new System.Windows.Forms.Button();
-            this.btn_catedratico = new System.Windows.Forms.Button();
             this.lbl_contraseña = new System.Windows.Forms.Label();
             this.lbl_usurio = new System.Windows.Forms.Label();
             this.txt_contraseña = new System.Windows.Forms.TextBox();
@@ -43,43 +41,45 @@
             this.lbl_carne = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lbl_telefono = new System.Windows.Forms.Label();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.lbl_correo = new System.Windows.Forms.Label();
             this.lbl_carrera = new System.Windows.Forms.Label();
             this.txt_carne = new System.Windows.Forms.TextBox();
-            this.btn_estudiantes = new System.Windows.Forms.Button();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_apeliidos = new System.Windows.Forms.Label();
-            this.btn = new System.Windows.Forms.Button();
-            this.btn_lab = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btn_inicio = new System.Windows.Forms.Button();
             this.txt_nombres = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.btn_editar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_notas = new System.Windows.Forms.Button();
             this.cbocarrera = new System.Windows.Forms.ComboBox();
+            this.picInscripcion = new System.Windows.Forms.PictureBox();
+            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnInscripcion = new System.Windows.Forms.Button();
+            this.btnFacultad = new System.Windows.Forms.Button();
+            this.btnNotas = new System.Windows.Forms.Button();
+            this.btnCatedratico = new System.Windows.Forms.Button();
+            this.btnEstudiantes = new System.Windows.Forms.Button();
+            this.btnInicio = new System.Windows.Forms.Button();
+            this.picFacultades = new System.Windows.Forms.PictureBox();
+            this.picNotas = new System.Windows.Forms.PictureBox();
+            this.picCursos = new System.Windows.Forms.PictureBox();
+            this.picCatedratico = new System.Windows.Forms.PictureBox();
+            this.picInicio = new System.Windows.Forms.PictureBox();
+            this.picEstudiante = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_home.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFacultades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCatedratico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstudiante)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -104,31 +104,6 @@
             this.lbl_agregar_estudiante.Text = "Editar Estudiantes";
             this.lbl_agregar_estudiante.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_agregar_estudiante.Click += new System.EventHandler(this.lbl_agregar_estudiante_Click);
-            // 
-            // btn_cursos
-            // 
-            this.btn_cursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_cursos.ForeColor = System.Drawing.Color.White;
-            this.btn_cursos.Location = new System.Drawing.Point(95, 696);
-            this.btn_cursos.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_cursos.Name = "btn_cursos";
-            this.btn_cursos.Size = new System.Drawing.Size(111, 34);
-            this.btn_cursos.TabIndex = 69;
-            this.btn_cursos.Text = "Cursos";
-            this.btn_cursos.UseVisualStyleBackColor = false;
-            // 
-            // btn_catedratico
-            // 
-            this.btn_catedratico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_catedratico.ForeColor = System.Drawing.Color.White;
-            this.btn_catedratico.Location = new System.Drawing.Point(95, 365);
-            this.btn_catedratico.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_catedratico.Name = "btn_catedratico";
-            this.btn_catedratico.Size = new System.Drawing.Size(111, 34);
-            this.btn_catedratico.TabIndex = 65;
-            this.btn_catedratico.Text = "Catedratico";
-            this.btn_catedratico.UseVisualStyleBackColor = false;
-            this.btn_catedratico.Click += new System.EventHandler(this.btn_catedratico_Click);
             // 
             // lbl_contraseña
             // 
@@ -217,39 +192,6 @@
             this.txt_telefono.Size = new System.Drawing.Size(289, 42);
             this.txt_telefono.TabIndex = 9;
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(3, 525);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 61;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(3, 606);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 60;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(3, 683);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 59;
-            this.pictureBox11.TabStop = false;
-            // 
             // lbl_telefono
             // 
             this.lbl_telefono.AutoSize = true;
@@ -298,52 +240,6 @@
             this.txt_carne.Size = new System.Drawing.Size(289, 42);
             this.txt_carne.TabIndex = 3;
             // 
-            // btn_estudiantes
-            // 
-            this.btn_estudiantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_estudiantes.ForeColor = System.Drawing.Color.White;
-            this.btn_estudiantes.Location = new System.Drawing.Point(95, 287);
-            this.btn_estudiantes.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_estudiantes.Name = "btn_estudiantes";
-            this.btn_estudiantes.Size = new System.Drawing.Size(111, 34);
-            this.btn_estudiantes.TabIndex = 64;
-            this.btn_estudiantes.Text = "Estudiante";
-            this.btn_estudiantes.UseVisualStyleBackColor = false;
-            this.btn_estudiantes.Click += new System.EventHandler(this.btn_estudiantes_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(3, 440);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 58;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 353);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 57;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 189);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 56;
-            this.pictureBox3.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -366,48 +262,11 @@
             this.lbl_apeliidos.TabIndex = 2;
             this.lbl_apeliidos.Text = "Apellidos";
             // 
-            // btn
-            // 
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn.ForeColor = System.Drawing.Color.White;
-            this.btn.Location = new System.Drawing.Point(95, 623);
-            this.btn.Margin = new System.Windows.Forms.Padding(4);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(111, 34);
-            this.btn.TabIndex = 68;
-            this.btn.Text = "Notas";
-            this.btn.UseVisualStyleBackColor = false;
-            // 
-            // btn_lab
-            // 
-            this.btn_lab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_lab.ForeColor = System.Drawing.Color.White;
-            this.btn_lab.Location = new System.Drawing.Point(95, 544);
-            this.btn_lab.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_lab.Name = "btn_lab";
-            this.btn_lab.Size = new System.Drawing.Size(111, 34);
-            this.btn_lab.TabIndex = 67;
-            this.btn_lab.Text = "Labotorios";
-            this.btn_lab.UseVisualStyleBackColor = false;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btn_inicio
-            // 
-            this.btn_inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_inicio.ForeColor = System.Drawing.Color.White;
-            this.btn_inicio.Location = new System.Drawing.Point(95, 211);
-            this.btn_inicio.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_inicio.Name = "btn_inicio";
-            this.btn_inicio.Size = new System.Drawing.Size(111, 34);
-            this.btn_inicio.TabIndex = 62;
-            this.btn_inicio.Text = "Inicio";
-            this.btn_inicio.UseVisualStyleBackColor = false;
-            this.btn_inicio.Click += new System.EventHandler(this.btn_inicio_Click);
             // 
             // txt_nombres
             // 
@@ -427,17 +286,6 @@
             this.lbl_nombre.Size = new System.Drawing.Size(91, 25);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombres";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 271);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
             // 
             // pnl_home
             // 
@@ -491,18 +339,6 @@
             this.panel1.Size = new System.Drawing.Size(733, 533);
             this.panel1.TabIndex = 42;
             // 
-            // btn_notas
-            // 
-            this.btn_notas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
-            this.btn_notas.ForeColor = System.Drawing.Color.White;
-            this.btn_notas.Location = new System.Drawing.Point(95, 457);
-            this.btn_notas.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_notas.Name = "btn_notas";
-            this.btn_notas.Size = new System.Drawing.Size(111, 34);
-            this.btn_notas.TabIndex = 66;
-            this.btn_notas.Text = "Notas";
-            this.btn_notas.UseVisualStyleBackColor = false;
-            // 
             // cbocarrera
             // 
             this.cbocarrera.FormattingEnabled = true;
@@ -511,46 +347,221 @@
             this.cbocarrera.Size = new System.Drawing.Size(289, 24);
             this.cbocarrera.TabIndex = 19;
             // 
+            // picInscripcion
+            // 
+            this.picInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("picInscripcion.Image")));
+            this.picInscripcion.Location = new System.Drawing.Point(13, 605);
+            this.picInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.picInscripcion.Name = "picInscripcion";
+            this.picInscripcion.Size = new System.Drawing.Size(67, 62);
+            this.picInscripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInscripcion.TabIndex = 144;
+            this.picInscripcion.TabStop = false;
+            // 
+            // btnCursos
+            // 
+            this.btnCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.Color.White;
+            this.btnCursos.Location = new System.Drawing.Point(105, 698);
+            this.btnCursos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(111, 34);
+            this.btnCursos.TabIndex = 143;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
+            // btnInscripcion
+            // 
+            this.btnInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnInscripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcion.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcion.Location = new System.Drawing.Point(105, 624);
+            this.btnInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInscripcion.Name = "btnInscripcion";
+            this.btnInscripcion.Size = new System.Drawing.Size(111, 34);
+            this.btnInscripcion.TabIndex = 142;
+            this.btnInscripcion.Text = "Inscripción";
+            this.btnInscripcion.UseVisualStyleBackColor = false;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
+            // 
+            // btnFacultad
+            // 
+            this.btnFacultad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnFacultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacultad.ForeColor = System.Drawing.Color.White;
+            this.btnFacultad.Location = new System.Drawing.Point(105, 545);
+            this.btnFacultad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFacultad.Name = "btnFacultad";
+            this.btnFacultad.Size = new System.Drawing.Size(111, 34);
+            this.btnFacultad.TabIndex = 141;
+            this.btnFacultad.Text = "Facultades";
+            this.btnFacultad.UseVisualStyleBackColor = false;
+            this.btnFacultad.Click += new System.EventHandler(this.btnFacultad_Click);
+            // 
+            // btnNotas
+            // 
+            this.btnNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotas.ForeColor = System.Drawing.Color.White;
+            this.btnNotas.Location = new System.Drawing.Point(105, 454);
+            this.btnNotas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNotas.Name = "btnNotas";
+            this.btnNotas.Size = new System.Drawing.Size(111, 34);
+            this.btnNotas.TabIndex = 140;
+            this.btnNotas.Text = "Notas";
+            this.btnNotas.UseVisualStyleBackColor = false;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
+            // 
+            // btnCatedratico
+            // 
+            this.btnCatedratico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnCatedratico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatedratico.ForeColor = System.Drawing.Color.White;
+            this.btnCatedratico.Location = new System.Drawing.Point(105, 366);
+            this.btnCatedratico.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCatedratico.Name = "btnCatedratico";
+            this.btnCatedratico.Size = new System.Drawing.Size(111, 34);
+            this.btnCatedratico.TabIndex = 139;
+            this.btnCatedratico.Text = "Catedratico";
+            this.btnCatedratico.UseVisualStyleBackColor = false;
+            this.btnCatedratico.Click += new System.EventHandler(this.btnCatedratico_Click);
+            // 
+            // btnEstudiantes
+            // 
+            this.btnEstudiantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstudiantes.ForeColor = System.Drawing.Color.White;
+            this.btnEstudiantes.Location = new System.Drawing.Point(105, 288);
+            this.btnEstudiantes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEstudiantes.Name = "btnEstudiantes";
+            this.btnEstudiantes.Size = new System.Drawing.Size(111, 34);
+            this.btnEstudiantes.TabIndex = 138;
+            this.btnEstudiantes.Text = "Estudiante";
+            this.btnEstudiantes.UseVisualStyleBackColor = false;
+            this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
+            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.Color.White;
+            this.btnInicio.Location = new System.Drawing.Point(105, 209);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(111, 34);
+            this.btnInicio.TabIndex = 137;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // picFacultades
+            // 
+            this.picFacultades.Image = ((System.Drawing.Image)(resources.GetObject("picFacultades.Image")));
+            this.picFacultades.Location = new System.Drawing.Point(13, 527);
+            this.picFacultades.Margin = new System.Windows.Forms.Padding(4);
+            this.picFacultades.Name = "picFacultades";
+            this.picFacultades.Size = new System.Drawing.Size(67, 62);
+            this.picFacultades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFacultades.TabIndex = 136;
+            this.picFacultades.TabStop = false;
+            // 
+            // picNotas
+            // 
+            this.picNotas.Image = ((System.Drawing.Image)(resources.GetObject("picNotas.Image")));
+            this.picNotas.Location = new System.Drawing.Point(13, 440);
+            this.picNotas.Margin = new System.Windows.Forms.Padding(4);
+            this.picNotas.Name = "picNotas";
+            this.picNotas.Size = new System.Drawing.Size(67, 62);
+            this.picNotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNotas.TabIndex = 135;
+            this.picNotas.TabStop = false;
+            // 
+            // picCursos
+            // 
+            this.picCursos.Image = ((System.Drawing.Image)(resources.GetObject("picCursos.Image")));
+            this.picCursos.Location = new System.Drawing.Point(13, 686);
+            this.picCursos.Margin = new System.Windows.Forms.Padding(4);
+            this.picCursos.Name = "picCursos";
+            this.picCursos.Size = new System.Drawing.Size(67, 62);
+            this.picCursos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCursos.TabIndex = 134;
+            this.picCursos.TabStop = false;
+            // 
+            // picCatedratico
+            // 
+            this.picCatedratico.Image = ((System.Drawing.Image)(resources.GetObject("picCatedratico.Image")));
+            this.picCatedratico.Location = new System.Drawing.Point(13, 356);
+            this.picCatedratico.Margin = new System.Windows.Forms.Padding(4);
+            this.picCatedratico.Name = "picCatedratico";
+            this.picCatedratico.Size = new System.Drawing.Size(67, 62);
+            this.picCatedratico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCatedratico.TabIndex = 133;
+            this.picCatedratico.TabStop = false;
+            // 
+            // picInicio
+            // 
+            this.picInicio.Image = ((System.Drawing.Image)(resources.GetObject("picInicio.Image")));
+            this.picInicio.Location = new System.Drawing.Point(13, 191);
+            this.picInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.picInicio.Name = "picInicio";
+            this.picInicio.Size = new System.Drawing.Size(67, 62);
+            this.picInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picInicio.TabIndex = 132;
+            this.picInicio.TabStop = false;
+            // 
+            // picEstudiante
+            // 
+            this.picEstudiante.Image = ((System.Drawing.Image)(resources.GetObject("picEstudiante.Image")));
+            this.picEstudiante.Location = new System.Drawing.Point(13, 273);
+            this.picEstudiante.Margin = new System.Windows.Forms.Padding(4);
+            this.picEstudiante.Name = "picEstudiante";
+            this.picEstudiante.Size = new System.Drawing.Size(67, 62);
+            this.picEstudiante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEstudiante.TabIndex = 131;
+            this.picEstudiante.TabStop = false;
+            // 
             // EditarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(7)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1312, 783);
+            this.Controls.Add(this.picInscripcion);
+            this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn_cursos);
-            this.Controls.Add(this.btn_catedratico);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.btn_estudiantes);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnInscripcion);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn);
-            this.Controls.Add(this.btn_lab);
-            this.Controls.Add(this.btn_inicio);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnFacultad);
             this.Controls.Add(this.pnl_home);
-            this.Controls.Add(this.btn_notas);
+            this.Controls.Add(this.btnNotas);
+            this.Controls.Add(this.picCursos);
+            this.Controls.Add(this.btnCatedratico);
+            this.Controls.Add(this.picEstudiante);
+            this.Controls.Add(this.btnEstudiantes);
+            this.Controls.Add(this.picInicio);
+            this.Controls.Add(this.btnInicio);
+            this.Controls.Add(this.picCatedratico);
+            this.Controls.Add(this.picFacultades);
+            this.Controls.Add(this.picNotas);
             this.MaximizeBox = false;
             this.Name = "EditarEstudiante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarEstudiante";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_home.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInscripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFacultades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCatedratico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstudiante)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,8 +570,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_agregar_estudiante;
-        private System.Windows.Forms.Button btn_cursos;
-        private System.Windows.Forms.Button btn_catedratico;
         private System.Windows.Forms.Label lbl_contraseña;
         private System.Windows.Forms.Label lbl_usurio;
         private System.Windows.Forms.TextBox txt_contraseña;
@@ -570,31 +579,33 @@
         private System.Windows.Forms.Label lbl_carne;
         private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.TextBox txt_telefono;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label lbl_telefono;
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.Label lbl_correo;
         private System.Windows.Forms.Label lbl_carrera;
         private System.Windows.Forms.TextBox txt_carne;
-        private System.Windows.Forms.Button btn_estudiantes;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_apeliidos;
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btn_lab;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.TextBox txt_nombres;
         private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnl_home;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_notas;
         private System.Windows.Forms.ComboBox cbocarrera;
+        private System.Windows.Forms.PictureBox picInscripcion;
+        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnInscripcion;
+        private System.Windows.Forms.Button btnFacultad;
+        private System.Windows.Forms.Button btnNotas;
+        private System.Windows.Forms.Button btnCatedratico;
+        private System.Windows.Forms.Button btnEstudiantes;
+        private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.PictureBox picFacultades;
+        private System.Windows.Forms.PictureBox picNotas;
+        private System.Windows.Forms.PictureBox picCursos;
+        private System.Windows.Forms.PictureBox picCatedratico;
+        private System.Windows.Forms.PictureBox picInicio;
+        private System.Windows.Forms.PictureBox picEstudiante;
     }
 }

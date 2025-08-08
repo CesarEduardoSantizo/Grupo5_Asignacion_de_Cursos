@@ -214,8 +214,8 @@ namespace loginadmi
 
         private void btnFacultad_Click(object sender, EventArgs e)
         {
-            Facultades nuevoFormulario = new Facultades();
-            nuevoFormulario.Show();
+            frmCostoInscripcion frmCostoInscripcion = new frmCostoInscripcion();
+            frmCostoInscripcion.Show();
             this.Hide();
         }
 
